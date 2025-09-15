@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-[var(--primary-pink)] py-12">
+    <footer className="text-[var(--wood-brown)] py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Description */}
@@ -52,9 +52,10 @@ const Footer = () => {
               연락처
             </h3>
             <ul className="space-y-2 text-gray-600">
-              <li>주소: 서울특별시 강남구 테헤란로 123</li>
+              <li>주소: 서울 은평구 진관동 72 드림스퀘어 4층</li>
+              <li>사업자번호: 772-99-01831</li>
               <li>전화: 02-2138-1568</li>
-              <li>이메일: contact@seongmoieum.com</li>
+              <li>이메일: sungmo-ieum@naver.com</li>
             </ul>
           </div>
         </div>

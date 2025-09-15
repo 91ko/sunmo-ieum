@@ -1,0 +1,26 @@
+RewriteEngine On
+
+# PHP 파일은 리다이렉트하지 않음
+RewriteCond %{REQUEST_URI} \.php$ [NC]
+RewriteRule ^ - [L]
+
+# favicon.ico 요청 무한 리디렉션 방지
+RewriteCond %{REQUEST_URI} ^/favicon\.ico$
+RewriteRule ^ - [L]
+
+# HTTPS 강제 리디렉트
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 정적 파일이나 디렉토리가 존재하면 그대로 접근
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Next.js 정적 내보내기를 위한 리다이렉트 규칙
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.html [L]
+
+AddType application/x-httpd-php .php
+AddHandler application/x-httpd-php .php 

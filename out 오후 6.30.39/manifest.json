@@ -1,0 +1,9 @@
+{
+  "name": "성모이음 정신건강의학과",
+  "short_name": "성모이음",
+  "description": "성모이음 정신건강의학과는 환자 중심의 맞춤형 치료를 제공하는 정신건강의학과 전문 클리닉입니다.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1976d2"
+} 

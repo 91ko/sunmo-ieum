@@ -1,37 +1,255 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 성모이음 정신건강의학과 홈페이지
 
-## Getting Started
+## 📋 프로젝트 개요
+성모이음 정신건강의학과의 공식 홈페이지입니다. Next.js 15.3.2와 TypeScript, Tailwind CSS를 사용하여 구축되었습니다.
 
-First, run the development server:
+## 🏥 병원 정보
+- **병원명**: 성모이음 정신건강의학과의원
+- **대표원장**: 김태형 (정신건강의학과 전문의, 소아청소년 정신건강의학과 전문의)
+- **주소**: 서울 은평구 진관동 72 드림스퀘어 4층
+- **전화번호**: 02-2138-1568
+- **이메일**: sungmo-ieum@naver.com
+- **사업자등록번호**: 772-99-01831
 
+## 📱 페이지 구성
+
+### 🏠 메인 페이지 (`/`)
+- **Hero 섹션**: 병원 소개 및 메인 메시지
+- **진료과목**: 4개 클리닉 소개
+  - 소아청소년 클리닉
+  - 성인 클리닉  
+  - 노인 클리닉
+  - 기타 진료
+- **진료시간**: 상세한 진료시간 안내
+- **오시는 길**: 위치 정보 및 지도
+
+### 👨‍⚕️ 의료진 소개 (`/about/doctors`)
+**탭 구성**
+- 정신과전문의 탭
+- 임상심리사 탭 (현재 내용 없음)
+
+**김태형 원장** (정신과전문의 탭)
+- 정신건강의학과 전문의
+- 소아청소년 정신건강의학과 전문의
+
+**주요 약력**
+- 가톨릭대학교 의과대학 정신건강의학교실 외래교수
+- 가톨릭대학교 은평성모병원 정신건강의학과 임상진료조교수
+- 가톨릭대학교 은평성모병원 정신건강의학과 전임의
+- 가톨릭중앙의료원 정신건강의학과 레지던트 수료
+- 가톨릭중앙의료원 인턴 수료
+
+**현재 활동**
+- 대한신경정신의학회 중독특임 간사
+- 교육부 응급심리지원 자문의
+- 서울특별시 서부교육지원청 WEE센터 자문의
+- 마약류 안전사용 전문가 협의체 위원
+- 한국도핑방지위원회 재재위원회 위원
+- 서대문 아이존 자문의
+
+**학회 및 자격**
+- 대한신경정신의학회 정회원, 지도전문의
+- 한국중독정신의학회 평생회원
+- 대한소아청소년정신의학회 정회원
+- 대한청소년정신의학회 평생회원
+- 한국학교정신건강의학회 평생회원
+- 대한아동정신치료의학회 정회원
+- 대한아동정신치료의학회 소아청소년 정신치료 심화과정 수료
+- 대한불안의학회 불안장애 심층치료 과정 수료
+- 치매진료의사 전문화 교육 수료
+- 노인장기요양 5등급 의사소견서 발급 교육 수료
+
+### 🖼️ 병원 둘러보기 (`/about/gallery`)
+**9개 공간 사진**
+1. 병원 외관
+2. 대기실
+3. 진료실
+4. 상담실
+5. 검사실
+6. 휴게공간
+7. 복도
+8. 수납대
+9. 전경
+
+### 📍 오시는 길 (`/about/location`)
+**위치 정보**
+- 주소: 서울 은평구 진관동 72 드림스퀘어 4층
+- 전화: 02-2138-1568
+- 이메일: sungmo-ieum@naver.com
+
+**교통편 안내**
+1. 지하철 3호선 구파발역 2번 출구에서 도보 5분
+2. 지하철 6호선 불광역 1번 출구에서 도보 10분
+3. 버스: 7017, 7019, 7022번 드림스퀘어 하차
+4. 주차장 이용 가능 (2시간 무료)
+
+### 🏥 진료과목 (`/treatment/subjects`)
+
+#### 소아청소년 클리닉
+- 발달지연
+- 지적장애/자폐스펙트럼장애
+- ADHD
+- 틱/투렛장애
+- 불안장애
+- 청소년 우울증
+- 신체화장애
+- 학습 부진
+- 또래 관계 문제
+- 부모자녀 관계 문제
+
+#### 성인클리닉
+- 우울증
+- 불안장애
+- 수면장애
+- 강박장애
+- 공황장애
+- 성인 ADHD
+- PTSD
+- 사회공포증
+- 신체화장애
+- 조현병
+- 양극성장애
+- 중독
+
+#### 노인클리닉
+- 노인 우울증
+- 건망증
+- 경도인지장애
+- 치매
+
+#### 기타진료
+- 비만
+- 경두개직류자극치료
+
+### 🔬 검사 및 치료 (`/treatment/exam`)
+
+#### 심리검사 및 평가
+**심리검사**
+- 인지기능검사 (60-90분) - 치매 및 인지기능 저하 평가
+- 지능검사 (K-WAIS) (90-120분) - 전반적인 지적 능력 평가
+- 성격검사 (MMPI-2) (60-90분) - 성격 특성 및 심리상태 평가
+- 주의집중력검사 (30-45분) - ADHD 진단을 위한 검사
+
+**정신건강 평가**
+- 우울증 검사 (20-30분) - 우울증 정도 및 증상 평가
+- 불안검사 (20-30분) - 불안장애 정도 및 증상 평가
+- 스트레스 검사 (15-25분) - 스트레스 수준 및 대처능력 평가
+- 수면검사 (20-30분) - 수면 패턴 및 수면장애 평가
+
+**발달평가**
+- 소아발달검사 (60-90분) - 전반적인 발달 수준 평가
+- 자폐스펙트럼 검사 (90-120분) - 자폐 특성 및 사회성 평가
+- 학습능력 검사 (60-90분) - 학습장애 진단 및 평가
+
+#### 치료 방법
+**심리치료**
+- 인지행동치료 (CBT) (50분, 주 1-2회) - 우울증, 불안장애, 강박장애
+- 마음챙김치료 (50분, 주 1회) - 스트레스, 불안, 우울
+- 놀이치료 (45분, 주 1-2회) - 소아청소년 정신건강 문제
+
+**가족치료**
+- 가족치료 (60분, 주 1회) - 가족 갈등, 소통 문제
+- 부부치료 (60분, 주 1회) - 부부 갈등, 관계 문제
+
+**그룹치료**
+- 인지기능 훈련 (90분, 주 2-3회) - 치매, 인지기능 저하
+- 사회기술 훈련 (90분, 주 1-2회) - 사회성 문제, 적응 장애
+
+### 💰 비급여 항목 및 가격 (`/treatment/nonbenefit`, `/non-covered`)
+
+#### 검사
+- 인지기능검사: 80,000원 - 치매 및 인지기능 평가
+- 성격검사: 60,000원 - 성격 특성 및 심리상태 평가
+- 지능검사: 100,000원 - IQ 및 인지능력 평가
+- 주의집중력검사: 70,000원 - ADHD 진단을 위한 검사
+- 우울증검사: 50,000원 - 우울증 정도 및 증상 평가
+- 불안검사: 50,000원 - 불안장애 정도 및 증상 평가
+
+#### 치료
+- 인지행동치료: 80,000원 - 1회 50분 개별치료
+- 마음챙김치료: 70,000원 - 1회 50분 개별치료
+- 가족치료: 100,000원 - 1회 60분 가족치료
+- 부부치료: 90,000원 - 1회 60분 부부치료
+- 그룹치료: 50,000원 - 1회 90분 그룹치료
+- 놀이치료: 60,000원 - 1회 45분 소아치료
+
+#### 약물치료
+- 항우울제: 30,000원 - 1개월 처방
+- 항불안제: 25,000원 - 1개월 처방
+- 수면제: 20,000원 - 1개월 처방
+- ADHD 치료제: 40,000원 - 1개월 처방
+- 기분안정제: 35,000원 - 1개월 처방
+- 항정신병약: 45,000원 - 1개월 처방
+
+### 📅 진료시간 안내 (`/hours`)
+
+#### 정기 진료시간
+- **월/화/수/금**: 09:00 ~ 19:00 (점심시간: 13:00 ~ 14:00)
+- **목요일**: 13:00 ~ 20:00 (점심시간 없음)
+- **토요일**: 08:30 ~ 14:00 (점심시간 없음)
+- **일요일**: 휴진
+
+#### 예약 및 문의
+- **전화 예약**: 02-2138-1568
+- **카카오톡 상담**: 24시간 문의 가능
+
+#### 응급상황 시
+- **응급실**: 119 - 생명이 위험한 응급상황
+- **정신건강위기상담전화**: 1577-0199 - 24시간 위기상담
+- **생명의전화**: 1588-9191 - 자살예방 상담
+
+### 📢 공지사항 (`/notice`)
+- 8월 진료일정 안내 (2025-08-01)
+- 7월 진료일정 안내 (2025-07-01)
+
+## 🛠️ 기술 스택
+- **Frontend**: Next.js 15.3.2, React 19, TypeScript
+- **Styling**: Tailwind CSS 4.1.13
+- **Animation**: Framer Motion
+- **Icons**: React Icons
+- **Fonts**: Inter, Pretendard, BMJUA, MaruBuri-Light
+
+## 🚀 실행 방법
 ```bash
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 빌드
+npm run build
+
+# 프로덕션 실행
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 프로젝트 구조
+```
+src/
+├── app/                    # Next.js App Router 페이지
+│   ├── about/             # 병원 소개 페이지
+│   ├── treatment/         # 진료 관련 페이지
+│   ├── notice/            # 공지사항
+│   ├── hours/             # 진료시간
+│   └── non-covered/       # 비급여 항목
+├── components/            # 재사용 가능한 컴포넌트
+│   ├── layout/           # 레이아웃 컴포넌트
+│   ├── sections/         # 섹션 컴포넌트
+│   ├── maps/             # 지도 컴포넌트
+│   └── common/           # 공통 컴포넌트
+├── fonts/                # 커스텀 폰트
+└── styles/               # 스타일 파일
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 디자인 시스템
+- **Primary Colors**: 성모이음 컬러 팔레트 (핑크, 베이지, 민트)
+- **Typography**: Inter, Pretendard, BMJUA, MaruBuri-Light
+- **Layout**: 반응형 디자인 (모바일 우선)
+- **Animation**: 부드러운 페이드인/슬라이드 애니메이션
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# ieum2" 
+## 📞 연락처
+- **전화**: 02-2138-1568
+- **카카오톡**: [카카오톡 상담하기](http://pf.kakao.com/_ynxoXn)
+- **이메일**: sungmo-ieum@naver.com
+- **주소**: 서울 은평구 진관동 72 드림스퀘어 4층
