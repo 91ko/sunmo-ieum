@@ -261,10 +261,10 @@ export default function NonBenefitPage() {
             </div>
             
             <div className="relative group">
-              <a className="hover:text-teal-600 transition flex items-center gap-1" href="/treatment/subjects">
+              <span className="hover:text-teal-600 transition flex items-center gap-1 cursor-pointer">
                 진료내용
                 <ChevronDown className="h-4 w-4" />
-              </a>
+              </span>
               <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="py-2">
                   <a href="/treatment/exam" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">검사 및 치료</a>
