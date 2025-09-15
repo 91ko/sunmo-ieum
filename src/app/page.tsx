@@ -335,7 +335,7 @@ export default function ClinicLanding() {
               <Badge className="mb-3">의료진</Badge>
               <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">대표원장 김태형</h3>
               <p className="text-slate-600 mt-3">
-                "환자분의 속도에 맞춰, 충분히 듣고 함께 해결책을 찾습니다."
+                &ldquo;환자분의 속도에 맞춰, 충분히 듣고 함께 해결책을 찾습니다.&rdquo;
               </p>
               <div className="mt-6 grid sm:grid-cols-2 gap-4 text-sm">
                 <div className="rounded-xl border p-4">
