@@ -138,9 +138,9 @@ export default function GalleryPage() {
           {mobileMenuOpen && (
             <div className="absolute top-full left-0 right-0 bg-white border-t border-slate-200 shadow-lg z-50 md:hidden">
               <div className="px-4 py-4 space-y-4">
-                <a href="/" className="block font-medium text-slate-900 hover:text-teal-600">
+                <Link href="/" className="block font-medium text-slate-900 hover:text-teal-600">
                   Home
-                </a>
+                </Link>
                 
                 <div>
                   <div className="font-medium text-slate-900 mb-2">성모이음 소개</div>

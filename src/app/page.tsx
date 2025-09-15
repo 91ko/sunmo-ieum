@@ -3,18 +3,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Brain,
-  Heart,
-  Moon,
-  Pill,
   Users,
-  Shield,
   Sparkles,
-  Stethoscope,
   MapPin,
   Phone,
   Clock,
-  CalendarDays,
   Baby,
   HeartCrack,
   Briefcase,
@@ -79,9 +72,9 @@ export default function ClinicLanding() {
                  />
                </div>
           <div className="hidden md:flex items-center gap-8 text-sm">
-            <a className="hover:text-teal-600 transition" href="/">
+            <Link className="hover:text-teal-600 transition" href="/">
               Home
-            </a>
+            </Link>
             
             <div className="relative group">
               <a className="hover:text-teal-600 transition flex items-center gap-1" href="/about/doctors">
@@ -126,9 +119,9 @@ export default function ClinicLanding() {
           {mobileMenuOpen && (
             <div className="absolute top-full left-0 right-0 bg-white border-t border-slate-200 shadow-lg z-50 md:hidden">
               <div className="px-4 py-4 space-y-4">
-                <a href="/" className="block font-medium text-slate-900 hover:text-teal-600">
+                <Link href="/" className="block font-medium text-slate-900 hover:text-teal-600">
                   Home
-                </a>
+                </Link>
                 
                 <div>
                   <div className="font-medium text-slate-900 mb-2">성모이음 소개</div>
@@ -175,7 +168,7 @@ export default function ClinicLanding() {
                <Badge className="mb-4 inline-flex"><Sparkles className="mr-1 h-3.5 w-3.5"/>마음과 마음을 잇다</Badge>
                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
                  사람과 사람
-                 <span className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-500"> 마음과 마음을 이음</span>
+                 <span className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-500">&nbsp;마음과 마음을 이음</span>
                </h1>
               <p className="mt-5 text-base sm:text-lg text-slate-600 max-w-xl">
                 불안·우울·수면·스트레스부터 일·가정의 균형까지. 전문의가 함께하는 맞춤 진료로

@@ -1,15 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import {
   User,
-  Award,
   GraduationCap,
-  Users,
-  Heart,
-  Shield,
-  Star,
   ChevronLeft,
   ChevronDown,
   Brain,
@@ -17,8 +11,7 @@ import {
   Menu,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 
 export default function PsychologistsPage() {
@@ -124,9 +117,9 @@ export default function PsychologistsPage() {
           {mobileMenuOpen && (
             <div className="absolute top-full left-0 right-0 bg-white border-t border-slate-200 shadow-lg z-50 md:hidden">
               <div className="px-4 py-4 space-y-4">
-                <a href="/" className="block font-medium text-slate-900 hover:text-teal-600">
+                <Link href="/" className="block font-medium text-slate-900 hover:text-teal-600">
                   Home
-                </a>
+                </Link>
                 
                 <div>
                   <div className="font-medium text-slate-900 mb-2">성모이음 소개</div>
