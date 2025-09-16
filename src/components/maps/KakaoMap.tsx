@@ -2,9 +2,48 @@
 
 import { useEffect, useRef } from 'react';
 
+// Kakao Maps API 타입 정의
+interface KakaoLatLng {
+  getLat(): number;
+  getLng(): number;
+}
+
+interface KakaoMap {
+  setCenter(latlng: KakaoLatLng): void;
+  setLevel(level: number): void;
+}
+
+interface KakaoMarker {
+  setMap(map: KakaoMap | null): void;
+}
+
+interface KakaoInfoWindow {
+  open(map: KakaoMap, marker: KakaoMarker): void;
+  close(): void;
+}
+
 declare global {
   interface Window {
-    kakao: any;
+    kakao: {
+      maps: {
+        load: (callback: () => void) => void;
+        Map: new (container: HTMLElement, options: {
+          center: KakaoLatLng;
+          level: number;
+        }) => KakaoMap;
+        LatLng: new (lat: number, lng: number) => KakaoLatLng;
+        Marker: new (options: {
+          position: KakaoLatLng;
+          map: KakaoMap;
+        }) => KakaoMarker;
+        InfoWindow: new (options: {
+          content: string;
+        }) => KakaoInfoWindow;
+        event: {
+          addListener: (target: KakaoMarker, event: string, callback: () => void) => void;
+        };
+      };
+    };
   }
 }
 
