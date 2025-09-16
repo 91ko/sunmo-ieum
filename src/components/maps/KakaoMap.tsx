@@ -70,7 +70,7 @@ export default function KakaoMap({
         window.kakao.maps.load(() => {
           if (mapRef.current) {
             // 병원 위치 좌표 (서울 은평구 진관동 72 드림스퀘어 4층)
-            const hospitalPosition = new window.kakao.maps.LatLng(37.6401, 126.9198);
+            const hospitalPosition = new window.kakao.maps.LatLng(37.6356924, 126.9193269);
             
             // 지도 옵션
             const options = {

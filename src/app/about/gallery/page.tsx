@@ -247,7 +247,7 @@ export default function GalleryPage() {
                     <Users className="h-8 w-8 text-teal-600" />
                   </div>
                   <h3 className="font-semibold text-slate-900 mb-2">전문진</h3>
-                  <p className="text-sm text-slate-600">정신건강의학과 전문의 1명<br />임상심리사 2명</p>
+                  <p className="text-sm text-slate-600">정신건강의학과 전문의 1명<br />임상심리사 3명</p>
                 </div>
               </div>
             </CardContent>
