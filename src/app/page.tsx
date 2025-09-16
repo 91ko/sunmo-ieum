@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import KakaoMap from "@/components/maps/KakaoMap";
 import Link from "next/link";
 
 const services = [
@@ -418,12 +419,11 @@ export default function ClinicLanding() {
               <CardDescription>서울 은평구 진관동 72 드림스퀘어 4층</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="aspect-[4/3] rounded-xl bg-slate-100 grid place-items-center text-slate-400 border">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 mx-auto mb-2 text-slate-300"/>
-                  <p>지도 (KakaoMap API 키 필요)</p>
-                </div>
-              </div>
+              <KakaoMap 
+                width="100%" 
+                height="300px" 
+                className="aspect-[4/3]"
+              />
             </CardContent>
           </Card>
           <Card>
