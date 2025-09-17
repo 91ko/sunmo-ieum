@@ -365,11 +365,11 @@ export default function DoctorsPage() {
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-blue-600 mt-1">•</span>
-                          <span>가톨릭대학교 부천성모병원 정신건강의학과 임상심리 레지던트 (1년)</span>
+                          <span>가톨릭대학교 부천성모병원 정신건강의학과<br className="md:hidden" /> 임상심리 레지던트 (1년)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-blue-600 mt-1">•</span>
-                          <span>가톨릭관동대 국제성모병원 정신건강의학과 임상심리 레지던트 (3년)</span>
+                          <span>가톨릭관동대 국제성모병원 정신건강의학과<br className="md:hidden" /> 임상심리 레지던트 (3년)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-blue-600 mt-1">•</span>
@@ -427,11 +427,11 @@ export default function DoctorsPage() {
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-blue-600 mt-1">•</span>
-                          <span>충북대학교병원 정신건강의학과 임상심리 레지던트 (3년 과정)</span>
+                          <span>충북대학교병원 정신건강의학과<br className="md:hidden" /> 임상심리 레지던트 (3년 과정)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-blue-600 mt-1">•</span>
-                          <span>성신여자대학교 일반대학원 심리학과 임상 및 신경심리학 석사</span>
+                          <span>성신여자대학교 일반대학원<br className="md:hidden" /> 심리학과 임상 및 신경심리학 석사</span>
                         </li>
                       </ul>
                     </div>
@@ -493,11 +493,11 @@ export default function DoctorsPage() {
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-blue-600 mt-1">•</span>
-                          <span>연세대학교 신촌 세브란스병원 소아정신과 임상심리 레지던트 (3년)</span>
+                          <span>연세대학교 신촌 세브란스병원 소아정신과<br className="md:hidden" /> 임상심리 레지던트 (3년)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-blue-600 mt-1">•</span>
-                          <span>덕성여자대학교 일반대학원 임상 및 상담심리학 석사</span>
+                          <span>덕성여자대학교 일반대학원<br className="md:hidden" /> 임상 및 상담심리학 석사</span>
                         </li>
                       </ul>
                     </div>
