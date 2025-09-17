@@ -114,6 +114,8 @@ export default function TreatmentSubjectsPage() {
                 <div className="py-2">
                   <a href="/about/doctors" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">의료진 소개</a>
                   <a href="/about/gallery" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">병원 내부</a>
+                  <a href="/hours" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">진료시간</a>
+                  <a href="/about/location" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">오시는길</a>
                 </div>
               </div>
             </div>
@@ -162,6 +164,8 @@ export default function TreatmentSubjectsPage() {
                   <div className="pl-4 space-y-2">
                     <a href="/about/doctors" className="block text-sm text-slate-600 hover:text-teal-600">의료진 소개</a>
                     <a href="/about/gallery" className="block text-sm text-slate-600 hover:text-teal-600">병원 내부</a>
+                    <a href="/hours" className="block text-sm text-slate-600 hover:text-teal-600">진료시간</a>
+                    <a href="/about/location" className="block text-sm text-slate-600 hover:text-teal-600">오시는길</a>
                   </div>
                 </div>
                 
@@ -221,7 +225,7 @@ export default function TreatmentSubjectsPage() {
                 <img
                   src={subject.image}
                   alt={subject.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-64 object-cover"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                   <div className="text-center text-white">

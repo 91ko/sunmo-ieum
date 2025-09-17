@@ -1,77 +1,84 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import {
+  MapPin,
   ChevronLeft,
   ChevronDown,
-  Menu,
-  Image as ImageIcon,
-  MapPin,
+  Phone,
   Clock,
-  Users,
+  Menu,
+  Car,
+  Bus,
+  Train,
+  Navigation,
+  Star,
+  Info,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import KakaoMap from "@/components/maps/KakaoMap";
 
-export default function GalleryPage() {
+export default function LocationPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
-  const galleryImages = [
+
+  const transportation = [
     {
-      id: 1,
-      src: "/images/gallery/gallery1-exterior.jpg",
-      title: "외관",
-      description: "깔끔하고 현대적인 병원 외관"
+      icon: <Car className="h-6 w-6 text-blue-600" />,
+      title: "자가용 이용시",
+      details: [
+        "주소: 서울 은평구 진관동 72 드림스퀘어 4층",
+        "주차장: 드림스퀘어 지하 주차장 이용",
+        "주차요금: 1시간 무료, 이후 30분당 1,000원",
+        "※ 주차 공간이 제한적이니 대중교통 이용을 권장합니다"
+      ],
+      color: "bg-blue-50 border-blue-200"
     },
     {
-      id: 2,
-      src: "/images/gallery/gallery2-waiting.jpg",
-      title: "대기실",
-      description: "편안하고 쾌적한 대기 공간"
+      icon: <Bus className="h-6 w-6 text-green-600" />,
+      title: "버스 이용시",
+      details: [
+        "간선버스: 701, 702, 703, 704, 705, 706, 707, 708, 709, 710",
+        "지선버스: 7211, 7212, 7213, 7214, 7215",
+        "마을버스: 은평01, 은평02, 은평03",
+        "정류장: 진관동 드림스퀘어 하차 (도보 1분)"
+      ],
+      color: "bg-green-50 border-green-200"
     },
     {
-      id: 3,
-      src: "/images/gallery/gallery3-treatment.jpg",
-      title: "진료실",
-      description: "전문적이고 안전한 진료 환경"
+      icon: <Train className="h-6 w-6 text-purple-600" />,
+      title: "지하철 이용시",
+      details: [
+        "6호선 진관동역 1번 출구 (도보 3분)",
+        "3호선 구파발역 2번 출구 → 버스 환승",
+        "※ 진관동역이 가장 가깝습니다"
+      ],
+      color: "bg-purple-50 border-purple-200"
+    }
+  ];
+
+  const nearbyLandmarks = [
+    {
+      name: "진관동역",
+      distance: "도보 3분",
+      description: "6호선 진관동역 1번 출구"
     },
     {
-      id: 4,
-      src: "/images/gallery/gallery4-counseling.jpg",
-      title: "상담실",
-      description: "사생활이 보호되는 상담 공간"
+      name: "드림스퀘어",
+      distance: "건물 내",
+      description: "4층 성모이음 정신건강의학과"
     },
     {
-      id: 5,
-      src: "/images/gallery/gallery5-examination.jpg",
-      title: "검사실",
-      description: "정확한 진단을 위한 검사 시설"
+      name: "은평구청",
+      distance: "도보 5분",
+      description: "은평구 행정 중심지"
     },
     {
-      id: 6,
-      src: "/images/gallery/gallery6-rest.jpg",
-      title: "휴게실",
-      description: "편안한 휴식 공간"
-    },
-    {
-      id: 7,
-      src: "/images/gallery/gallery7-corridor.jpg",
-      title: "복도",
-      description: "깔끔하고 넓은 병원 내부"
-    },
-    {
-      id: 8,
-      src: "/images/gallery/gallery8-reception.jpg",
-      title: "접수처",
-      description: "친절한 안내 서비스"
-    },
-    {
-      id: 9,
-      src: "/images/gallery/gallery9-overview.jpg",
-      title: "전체 전경",
-      description: "성모이음 정신건강의학과 전체 모습"
+      name: "은평구보건소",
+      distance: "도보 7분",
+      description: "건강검진 및 예방접종"
     }
   ];
 
@@ -85,7 +92,7 @@ export default function GalleryPage() {
               <img 
                 src="/images/logo/logo.png" 
                 alt="성모이음 로고" 
-                className="h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 rounded-2xl object-contain cursor-pointer"
+                className="h-8 w-8 rounded-lg object-contain cursor-pointer"
               />
             </Link>
           </div>
@@ -117,11 +124,16 @@ export default function GalleryPage() {
               </span>
               <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="py-2">
+                  <a href="/treatment/subjects" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">진료과목</a>
                   <a href="/treatment/exam" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">검사 및 치료</a>
                   <a href="/treatment/nonbenefit" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">비급여 내용</a>
                 </div>
               </div>
             </div>
+
+            <a href="/notice" className="hover:text-teal-600 transition">
+              공지사항
+            </a>
           </div>
           
           {/* 모바일 햄버거 메뉴 */}
@@ -157,10 +169,15 @@ export default function GalleryPage() {
                 <div>
                   <div className="font-medium text-slate-900 mb-2">진료내용</div>
                   <div className="pl-4 space-y-2">
+                    <a href="/treatment/subjects" className="block text-sm text-slate-600 hover:text-teal-600">진료과목</a>
                     <a href="/treatment/exam" className="block text-sm text-slate-600 hover:text-teal-600">검사 및 치료</a>
                     <a href="/treatment/nonbenefit" className="block text-sm text-slate-600 hover:text-teal-600">비급여 내용</a>
                   </div>
                 </div>
+
+                <a href="/notice" className="block font-medium text-slate-900 hover:text-teal-600">
+                  공지사항
+                </a>
               </div>
             </div>
           )}
@@ -183,95 +200,133 @@ export default function GalleryPage() {
       <main className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12">
         {/* 뒤로가기 버튼 */}
         <div className="mb-6">
-          <Link href="/about/doctors">
+          <Link href="/">
             <Button variant="ghost" className="flex items-center gap-2 text-slate-600 hover:text-teal-600">
               <ChevronLeft className="h-4 w-4" />
-              의료진 소개로 돌아가기
+              홈으로 돌아가기
             </Button>
           </Link>
         </div>
 
         {/* 페이지 제목 */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">병원 내부 갤러리</h1>
-          <p className="text-lg text-slate-600">깔끔하고 편안한 병원 환경을 미리 확인해보세요</p>
-        </div>
-
-        {/* 갤러리 그리드 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {galleryImages.map((image, index) => (
-            <motion.div
-              key={image.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <div className="aspect-square relative">
-                  <img
-                    src={image.src}
-                    alt={image.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                    <ImageIcon className="h-8 w-8 text-white opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="font-semibold text-slate-900 mb-1">{image.title}</h3>
-                  <p className="text-sm text-slate-600">{image.description}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <MapPin className="h-8 w-8 text-teal-600" />
+            <h1 className="text-3xl sm:text-4xl font-bold text-slate-900">오시는길</h1>
+          </div>
+          <p className="text-lg text-slate-600">편리한 교통편으로 방문해주세요</p>
         </div>
 
         {/* 병원 정보 */}
-        <div className="max-w-4xl mx-auto">
-          <Card className="bg-teal-50 border-teal-200">
+        <div className="max-w-4xl mx-auto mb-12">
+          <Card className="bg-gradient-to-r from-teal-50 to-blue-50 border-teal-200">
             <CardContent className="p-8">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">병원 안내</h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <MapPin className="h-8 w-8 text-teal-600" />
-                  </div>
-                  <h3 className="font-semibold text-slate-900 mb-2">위치</h3>
-                  <p className="text-sm text-slate-600">서울 은평구 진관동 72<br />드림스퀘어 4층</p>
+              <div className="text-center">
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <Star className="h-6 w-6 text-yellow-500" />
+                  <h2 className="text-2xl font-bold text-slate-900">성모이음 정신건강의학과</h2>
                 </div>
-                <div className="text-center">
-                  <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Clock className="h-8 w-8 text-teal-600" />
-                  </div>
-                  <h3 className="font-semibold text-slate-900 mb-2">진료시간</h3>
-                  <p className="text-sm text-slate-600">월/화/수/금: 09:00~19:00<br />목요일: 14:00~20:00<br />토요일: 08:30~14:00</p>
-                </div>
-                <div className="text-center">
-                  <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="h-8 w-8 text-teal-600" />
-                  </div>
-                  <h3 className="font-semibold text-slate-900 mb-2">전문진</h3>
-                  <p className="text-sm text-slate-600">정신건강의학과 전문의 1명<br />임상심리사 3명</p>
+                <div className="space-y-2 text-slate-600 mb-6">
+                  <p className="flex items-center justify-center gap-2">
+                    <MapPin className="h-4 w-4" />
+                    <span>서울 은평구 진관동 72 드림스퀘어 4층</span>
+                  </p>
+                  <p className="flex items-center justify-center gap-2">
+                    <Phone className="h-4 w-4" />
+                    <span>02-2138-1568</span>
+                  </p>
+                  <p className="flex items-center justify-center gap-2">
+                    <Clock className="h-4 w-4" />
+                    <span>월-금 09:00-18:00, 토 09:00-13:00 (일요일 휴진)</span>
+                  </p>
                 </div>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        {/* 상담 예약 CTA */}
-        <div className="max-w-4xl mx-auto mt-12">
-          <Card className="bg-yellow-50 border-yellow-200">
-            <CardContent className="py-8 text-center">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">편안한 병원에서 상담받으세요</h3>
-              <p className="text-slate-600 mb-6">깔끔하고 안전한 환경에서 전문적인 치료를 받으실 수 있습니다</p>
-              <Button asChild size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-black border-0">
-                <a href="https://pf.kakao.com/_ynxoXn" target="_blank" rel="noopener noreferrer">
-                  <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 3C6.5 3 2 6.58 2 11c0 2.13 1.05 4.07 2.75 5.48L4 21l4.75-1.5c1.25.5 2.58.75 4 .75 5.5 0 10-3.58 10-8S17.5 3 12 3z"/>
-                  </svg>
-                  카카오톡 상담하기
-                </a>
-              </Button>
+        {/* 지도 */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-xl">
+                <Navigation className="h-5 w-5 text-teal-600" />
+                위치 안내
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <KakaoMap 
+                width="100%" 
+                height="400px" 
+                className="rounded-lg"
+              />
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* 교통편 안내 */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">교통편 안내</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {transportation.map((transport, index) => (
+              <Card key={index} className={`${transport.color} border-2`}>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    {transport.icon}
+                    <h3 className="font-semibold text-slate-900">{transport.title}</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-slate-600">
+                    {transport.details.map((detail, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="text-teal-600 mt-1">•</span>
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* 주변 주요 시설 */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">주변 주요 시설</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {nearbyLandmarks.map((landmark, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="font-semibold text-slate-900">{landmark.name}</h3>
+                      <p className="text-sm text-slate-600">{landmark.description}</p>
+                    </div>
+                    <Badge variant="outline" className="text-teal-600 border-teal-300">
+                      {landmark.distance}
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* 주차 안내 */}
+        <div className="max-w-4xl mx-auto">
+          <Card className="bg-orange-50 border-orange-200">
+            <CardContent className="p-6">
+              <div className="flex items-start gap-4">
+                <Info className="h-6 w-6 text-orange-600 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-slate-900 mb-2">주차 안내</h3>
+                  <ul className="space-y-1 text-sm text-slate-600">
+                    <li>• 드림스퀘어 지하 주차장 이용 (건물 내)</li>
+                    <li>• 주차 공간이 제한적이니 대중교통 이용을 권장합니다</li>
+                    <li>• 주차요금: 1시간 무료, 이후 30분당 1,000원</li>
+                    <li>• 진료비 영수증 제시 시 주차 할인 가능 (문의 필요)</li>
+                  </ul>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
