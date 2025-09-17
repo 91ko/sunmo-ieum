@@ -65,6 +65,10 @@ export default function DoctorsPage() {
                 </div>
               </div>
             </div>
+
+            <a href="/notice" className="hover:text-teal-600 transition">
+              공지사항
+            </a>
           </div>
           
           {/* 모바일 햄버거 메뉴 */}
@@ -103,6 +107,10 @@ export default function DoctorsPage() {
                     <a href="/treatment/nonbenefit" className="block text-sm text-slate-600 hover:text-teal-600">비급여 내용</a>
                   </div>
                 </div>
+
+                <a href="/notice" className="block font-medium text-slate-900 hover:text-teal-600">
+                  공지사항
+                </a>
               </div>
             </div>
           )}

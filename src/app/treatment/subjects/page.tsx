@@ -225,7 +225,7 @@ export default function TreatmentSubjectsPage() {
                 <img
                   src={subject.image}
                   alt={subject.title}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-80 object-cover"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                   <div className="text-center text-white">
