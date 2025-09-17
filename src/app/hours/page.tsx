@@ -10,7 +10,6 @@ import {
   MapPin,
   Menu,
   Sun,
-  Moon,
   Coffee,
   Heart,
   Star,
