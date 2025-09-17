@@ -95,7 +95,7 @@ export default function TreatmentSubjectsPage() {
               <img 
                 src="/images/logo/logo.png" 
                 alt="성모이음 로고" 
-                className="h-8 w-8 rounded-lg object-contain cursor-pointer"
+                className="h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 rounded-2xl object-contain cursor-pointer"
               />
             </Link>
           </div>
