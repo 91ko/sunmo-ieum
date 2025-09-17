@@ -32,16 +32,6 @@ export default function HoursPage() {
     { day: "일요일", time: "휴진", status: "휴진", color: "text-red-500" },
   ];
 
-  const lunchHours = [
-    { day: "월요일", time: "12:00 - 13:00", status: "점심시간", color: "text-orange-500" },
-    { day: "화요일", time: "12:00 - 13:00", status: "점심시간", color: "text-orange-500" },
-    { day: "수요일", time: "12:00 - 13:00", status: "점심시간", color: "text-orange-500" },
-    { day: "목요일", time: "12:00 - 13:00", status: "점심시간", color: "text-orange-500" },
-    { day: "금요일", time: "12:00 - 13:00", status: "점심시간", color: "text-orange-500" },
-    { day: "토요일", time: "점심시간 없음", status: "진료", color: "text-blue-600" },
-    { day: "일요일", time: "휴진", status: "휴진", color: "text-red-500" },
-  ];
-
   const specialNotes = [
     {
       icon: <Calendar className="h-5 w-5 text-purple-600" />,
@@ -240,39 +230,23 @@ export default function HoursPage() {
           </Card>
         </div>
 
-        {/* 점심시간 테이블 */}
+        {/* 점심시간 안내 */}
         <div className="max-w-4xl mx-auto mb-12">
-          <Card className="overflow-hidden">
-            <CardHeader className="bg-orange-50">
-              <CardTitle className="flex items-center gap-2 text-xl text-orange-800">
-                <Coffee className="h-5 w-5" />
-                점심시간 안내
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-0">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead className="bg-slate-50">
-                    <tr>
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">요일</th>
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">점심시간</th>
-                      <th className="px-6 py-4 text-center text-sm font-semibold text-slate-900">상태</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-200">
-                    {lunchHours.map((hour, index) => (
-                      <tr key={index} className="hover:bg-slate-50 transition-colors">
-                        <td className="px-6 py-4 text-sm font-medium text-slate-900">{hour.day}</td>
-                        <td className="px-6 py-4 text-sm text-slate-600">{hour.time}</td>
-                        <td className="px-6 py-4 text-center">
-                          <Badge className={`${hour.color} bg-opacity-10 border-0`}>
-                            {hour.status}
-                          </Badge>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+          <Card className="bg-orange-50 border-orange-200">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Coffee className="h-6 w-6 text-orange-600" />
+                <h3 className="text-xl font-bold text-orange-800">점심시간 안내</h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white rounded-lg p-4">
+                  <h4 className="font-semibold text-slate-900 mb-2">평일 (월-금)</h4>
+                  <p className="text-slate-600">12:00 - 13:00 (점심시간)</p>
+                </div>
+                <div className="bg-white rounded-lg p-4">
+                  <h4 className="font-semibold text-slate-900 mb-2">토요일</h4>
+                  <p className="text-slate-600">점심시간 없음 (09:00 - 13:00 연속 진료)</p>
+                </div>
               </div>
             </CardContent>
           </Card>
