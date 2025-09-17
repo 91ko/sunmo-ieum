@@ -218,29 +218,28 @@ export default function TreatmentSubjectsPage() {
         {/* 진료과목 목록 */}
         <div className="grid md:grid-cols-2 gap-8">
           {subjects.map((subject, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <div className="relative">
-                <img
-                  src={subject.image}
-                  alt={subject.title}
-                  className="w-full h-80 object-cover"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    {subject.icon}
-                    <h3 className="text-xl font-bold mt-2">{subject.title}</h3>
+            <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105 bg-gradient-to-br from-white to-slate-50 border-2 border-transparent hover:border-teal-200">
+              <CardContent className="p-8">
+                {/* 아이콘과 제목 */}
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-teal-100 to-teal-200 mb-4 shadow-lg">
+                    <div className="text-3xl text-teal-600">
+                      {subject.icon}
+                    </div>
                   </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">{subject.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{subject.description}</p>
                 </div>
-              </div>
-              
-              <CardContent className="p-6">
-                <p className="text-slate-600 mb-4">{subject.description}</p>
                 
-                <div>
-                  <h4 className="font-semibold text-slate-900 mb-3">주요 진료 질환</h4>
+                {/* 주요 진료 질환 */}
+                <div className="bg-slate-50 rounded-xl p-6">
+                  <h4 className="font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                    주요 진료 질환
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {subject.conditions.map((condition, idx) => (
-                      <Badge key={idx} variant="outline" className="text-slate-700 border-slate-300">
+                      <Badge key={idx} variant="outline" className="text-slate-700 border-slate-300 bg-white hover:bg-teal-50 hover:border-teal-300 transition-colors">
                         {condition}
                       </Badge>
                     ))}
