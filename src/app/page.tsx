@@ -98,11 +98,16 @@ export default function ClinicLanding() {
               </span>
               <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="py-2">
+                  <a href="/treatment/subjects" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">진료과목</a>
                   <a href="/treatment/exam" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">검사 및 치료</a>
                   <a href="/treatment/nonbenefit" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">비급여 내용</a>
                 </div>
               </div>
             </div>
+
+            <a href="/notice" className="hover:text-teal-600 transition">
+              공지사항
+            </a>
           </div>
           
           {/* 모바일 햄버거 메뉴 */}
@@ -136,10 +141,15 @@ export default function ClinicLanding() {
                 <div>
                   <div className="font-medium text-slate-900 mb-2">진료내용</div>
                   <div className="pl-4 space-y-2">
+                    <a href="/treatment/subjects" className="block text-sm text-slate-600 hover:text-teal-600">진료과목</a>
                     <a href="/treatment/exam" className="block text-sm text-slate-600 hover:text-teal-600">검사 및 치료</a>
                     <a href="/treatment/nonbenefit" className="block text-sm text-slate-600 hover:text-teal-600">비급여 내용</a>
                   </div>
                 </div>
+
+                <a href="/notice" className="block font-medium text-slate-900 hover:text-teal-600">
+                  공지사항
+                </a>
               </div>
             </div>
           )}
@@ -302,7 +312,9 @@ export default function ClinicLanding() {
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">진료과목</h2>
             <p className="text-slate-600 mt-2">증상별로 쉽고 명확하게 안내드립니다.</p>
           </div>
-          <Button variant="ghost" className="hidden sm:inline-flex">전체 보기</Button>
+          <Button variant="ghost" className="hidden sm:inline-flex" asChild>
+            <a href="/treatment/subjects">전체 보기</a>
+          </Button>
         </div>
         <div className="mt-8 grid sm:grid-cols-2 gap-5">
           {services.map((s, i) => (
