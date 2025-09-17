@@ -27,14 +27,15 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml', sizes: 'any' },
-      { url: '/favicon.ico', sizes: '16x16 32x32 48x48' },
+      { url: '/images/logo/logo.png', type: 'image/png', sizes: '32x32' },
+      { url: '/images/logo/logo.png', type: 'image/png', sizes: '16x16' },
       { url: '/images/logo/logo.png', type: 'image/png', sizes: '192x192' },
       { url: '/images/logo/logo.png', type: 'image/png', sizes: '512x512' }
     ],
     apple: [
       { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }
     ],
-    shortcut: '/favicon.ico'
+    // Remove shortcut ico to avoid cached Vercel icon
   },
   openGraph: {
     title: "성모이음 정신건강의학과 | 마음과 마음을 이음",
@@ -87,9 +88,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
-        <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
-        <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-icon.png?v=2" />
+        <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/logo/logo.png?v=3" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/logo/logo.png?v=3" />
+        <link rel="apple-touch-icon" href="/apple-icon.png?v=3" />
       </head>
       <body className={inter.variable}>
         {children}
