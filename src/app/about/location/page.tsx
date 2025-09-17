@@ -53,8 +53,7 @@ export default function LocationPage() {
       title: "지하철 이용시",
       details: [
         "6호선 응암역 1번 출구 → 버스 환승 (진관동 방향)",
-        "3호선 구파발역 2번 출구 → 버스 환승 (진관동 방향)",
-        "※ 진관동역은 없으니 버스 환승을 이용해주세요"
+        "3호선 구파발역 2번 출구 → 버스 환승 (진관동 방향)"
       ],
       color: "bg-purple-50 border-purple-200"
     }
