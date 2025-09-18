@@ -265,51 +265,51 @@ export default function LocationPage() {
                   <tbody className="divide-y divide-slate-200">
                     <tr className="hover:bg-slate-50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-slate-900">월요일</td>
-                      <td className="px-6 py-4 text-sm text-slate-600">09:00 - 18:00</td>
+                      <td className="px-6 py-4 text-sm text-slate-600">09:00 - 19:00</td>
                       <td className="px-6 py-4 text-center">
                         <Badge className="text-green-600 bg-opacity-10 border-0">진료</Badge>
                       </td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-slate-900">화요일</td>
-                      <td className="px-6 py-4 text-sm text-slate-600">09:00 - 18:00</td>
+                      <td className="px-6 py-4 text-sm text-slate-600">09:00 - 19:00</td>
                       <td className="px-6 py-4 text-center">
                         <Badge className="text-green-600 bg-opacity-10 border-0">진료</Badge>
                       </td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-slate-900">수요일</td>
-                      <td className="px-6 py-4 text-sm text-slate-600">09:00 - 18:00</td>
+                      <td className="px-6 py-4 text-sm text-slate-600">09:00 - 19:00</td>
                       <td className="px-6 py-4 text-center">
                         <Badge className="text-green-600 bg-opacity-10 border-0">진료</Badge>
                       </td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-slate-900">목요일</td>
-                      <td className="px-6 py-4 text-sm text-slate-600">09:00 - 18:00</td>
+                      <td className="px-6 py-4 text-sm text-slate-600">14:00 - 20:00</td>
                       <td className="px-6 py-4 text-center">
-                        <Badge className="text-green-600 bg-opacity-10 border-0">진료</Badge>
+                        <Badge className="text-purple-600 bg-opacity-10 border-0">야간진료</Badge>
                       </td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-slate-900">금요일</td>
-                      <td className="px-6 py-4 text-sm text-slate-600">09:00 - 18:00</td>
+                      <td className="px-6 py-4 text-sm text-slate-600">09:00 - 19:00</td>
                       <td className="px-6 py-4 text-center">
                         <Badge className="text-green-600 bg-opacity-10 border-0">진료</Badge>
                       </td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-slate-900">토요일</td>
-                      <td className="px-6 py-4 text-sm text-slate-600">09:00 - 13:00</td>
+                      <td className="px-6 py-4 text-sm text-slate-600">08:30 - 14:00</td>
                       <td className="px-6 py-4 text-center">
                         <Badge className="text-blue-600 bg-opacity-10 border-0">진료</Badge>
                       </td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-slate-900">일요일</td>
-                      <td className="px-6 py-4 text-sm text-slate-600">휴진</td>
+                      <td className="px-6 py-4 text-sm text-slate-600">휴무</td>
                       <td className="px-6 py-4 text-center">
-                        <Badge className="text-red-500 bg-opacity-10 border-0">휴진</Badge>
+                        <Badge className="text-red-500 bg-opacity-10 border-0">휴무</Badge>
                       </td>
                     </tr>
                   </tbody>
@@ -341,35 +341,35 @@ export default function LocationPage() {
                   <tbody className="divide-y divide-slate-200">
                     <tr className="hover:bg-slate-50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-slate-900">월요일</td>
-                      <td className="px-6 py-4 text-sm text-slate-600">12:00 - 13:00</td>
+                      <td className="px-6 py-4 text-sm text-slate-600">13:00 - 14:00</td>
                       <td className="px-6 py-4 text-center">
                         <Badge className="text-orange-500 bg-opacity-10 border-0">점심시간</Badge>
                       </td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-slate-900">화요일</td>
-                      <td className="px-6 py-4 text-sm text-slate-600">12:00 - 13:00</td>
+                      <td className="px-6 py-4 text-sm text-slate-600">13:00 - 14:00</td>
                       <td className="px-6 py-4 text-center">
                         <Badge className="text-orange-500 bg-opacity-10 border-0">점심시간</Badge>
                       </td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-slate-900">수요일</td>
-                      <td className="px-6 py-4 text-sm text-slate-600">12:00 - 13:00</td>
+                      <td className="px-6 py-4 text-sm text-slate-600">13:00 - 14:00</td>
                       <td className="px-6 py-4 text-center">
                         <Badge className="text-orange-500 bg-opacity-10 border-0">점심시간</Badge>
                       </td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-slate-900">목요일</td>
-                      <td className="px-6 py-4 text-sm text-slate-600">12:00 - 13:00</td>
+                      <td className="px-6 py-4 text-sm text-slate-600">점심시간 없음</td>
                       <td className="px-6 py-4 text-center">
-                        <Badge className="text-orange-500 bg-opacity-10 border-0">점심시간</Badge>
+                        <Badge className="text-purple-600 bg-opacity-10 border-0">야간진료</Badge>
                       </td>
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-slate-900">금요일</td>
-                      <td className="px-6 py-4 text-sm text-slate-600">12:00 - 13:00</td>
+                      <td className="px-6 py-4 text-sm text-slate-600">13:00 - 14:00</td>
                       <td className="px-6 py-4 text-center">
                         <Badge className="text-orange-500 bg-opacity-10 border-0">점심시간</Badge>
                       </td>
@@ -383,9 +383,9 @@ export default function LocationPage() {
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-slate-900">일요일</td>
-                      <td className="px-6 py-4 text-sm text-slate-600">휴진</td>
+                      <td className="px-6 py-4 text-sm text-slate-600">휴무</td>
                       <td className="px-6 py-4 text-center">
-                        <Badge className="text-red-500 bg-opacity-10 border-0">휴진</Badge>
+                        <Badge className="text-red-500 bg-opacity-10 border-0">휴무</Badge>
                       </td>
                     </tr>
                   </tbody>
