@@ -23,20 +23,20 @@ export default function HoursPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const regularHours = [
-    { day: "월요일", time: "09:00 - 18:00", status: "진료", color: "text-green-600" },
-    { day: "화요일", time: "09:00 - 18:00", status: "진료", color: "text-green-600" },
-    { day: "수요일", time: "09:00 - 18:00", status: "진료", color: "text-green-600" },
-    { day: "목요일", time: "09:00 - 18:00", status: "진료", color: "text-green-600" },
-    { day: "금요일", time: "09:00 - 18:00", status: "진료", color: "text-green-600" },
-    { day: "토요일", time: "09:00 - 13:00", status: "진료", color: "text-blue-600" },
-    { day: "일요일", time: "휴진", status: "휴진", color: "text-red-500" },
+    { day: "월요일", time: "09:00 - 19:00", status: "진료", color: "text-green-600" },
+    { day: "화요일", time: "09:00 - 19:00", status: "진료", color: "text-green-600" },
+    { day: "수요일", time: "09:00 - 19:00", status: "진료", color: "text-green-600" },
+    { day: "목요일", time: "14:00 - 20:00", status: "야간진료", color: "text-purple-600" },
+    { day: "금요일", time: "09:00 - 19:00", status: "진료", color: "text-green-600" },
+    { day: "토요일", time: "08:30 - 14:00", status: "진료", color: "text-blue-600" },
+    { day: "일요일", time: "휴무", status: "휴무", color: "text-red-500" },
   ];
 
   const specialNotes = [
     {
       icon: <Calendar className="h-5 w-5 text-purple-600" />,
-      title: "공휴일 진료",
-      description: "공휴일은 휴진입니다. 진료일정은 월별 달력을 확인해주세요.",
+      title: "공휴일 휴무",
+      description: "공휴일은 휴무입니다. 진료일정은 월별 달력을 확인해주세요.",
       color: "bg-purple-50 border-purple-200"
     },
     {
@@ -240,12 +240,20 @@ export default function HoursPage() {
               </div>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white rounded-lg p-4">
-                  <h4 className="font-semibold text-slate-900 mb-2">평일 (월-금)</h4>
-                  <p className="text-slate-600">12:00 - 13:00 (점심시간)</p>
+                  <h4 className="font-semibold text-slate-900 mb-2">평일 (월/화/수/금)</h4>
+                  <p className="text-slate-600">13:00 - 14:00 (점심시간)</p>
+                </div>
+                <div className="bg-white rounded-lg p-4">
+                  <h4 className="font-semibold text-slate-900 mb-2">목요일 (야간진료)</h4>
+                  <p className="text-slate-600">점심시간 없음 (14:00 - 20:00 연속 진료)</p>
                 </div>
                 <div className="bg-white rounded-lg p-4">
                   <h4 className="font-semibold text-slate-900 mb-2">토요일</h4>
-                  <p className="text-slate-600">점심시간 없음 (09:00 - 13:00 연속 진료)</p>
+                  <p className="text-slate-600">점심시간 없음 (08:30 - 14:00 연속 진료)</p>
+                </div>
+                <div className="bg-white rounded-lg p-4">
+                  <h4 className="font-semibold text-slate-900 mb-2">일요일/공휴일</h4>
+                  <p className="text-slate-600">휴무</p>
                 </div>
               </div>
             </CardContent>
