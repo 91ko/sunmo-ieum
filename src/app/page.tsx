@@ -267,10 +267,10 @@ export default function ClinicLanding() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer" onClick={() => setSelectedImage("/uploads/notice/2025-09.jpg")}>
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer" onClick={() => setSelectedImage("/images/schedule/calendar1.jpg")}>
               <div className="aspect-[4/3] relative">
                 <img
-                  src="/uploads/notice/2025-09.jpg"
+                  src="/images/schedule/calendar1.jpg"
                   alt="9월 진료일정 달력"
                   className="w-full h-full object-cover"
                 />
@@ -289,10 +289,10 @@ export default function ClinicLanding() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer" onClick={() => setSelectedImage("/uploads/notice/2025-10.jpg")}>
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer" onClick={() => setSelectedImage("/images/schedule/calendar2.jpg")}>
               <div className="aspect-[4/3] relative">
                 <img
-                  src="/uploads/notice/2025-10.jpg"
+                  src="/images/schedule/calendar2.jpg"
                   alt="10월 진료일정 달력"
                   className="w-full h-full object-cover"
                 />
