@@ -267,16 +267,16 @@ export default function ClinicLanding() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer" onClick={() => setSelectedImage("/uploads/notice/2025-07.jpg")}>
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer" onClick={() => setSelectedImage("/uploads/notice/2025-09.jpg")}>
               <div className="aspect-[4/3] relative">
                 <img
-                  src="/uploads/notice/2025-07.jpg"
-                  alt="월별 진료일정 달력"
+                  src="/uploads/notice/2025-09.jpg"
+                  alt="9월 진료일정 달력"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-10"></div>
                 <div className="absolute top-4 left-4 right-4">
-                  <h3 className="text-white font-semibold text-lg mb-1 drop-shadow-lg">월별 진료일정</h3>
+                  <h3 className="text-white font-semibold text-lg mb-1 drop-shadow-lg">9월 진료일정</h3>
                   <p className="text-white/90 text-sm drop-shadow-lg">휴진일 및 특별 진료일 안내</p>
                 </div>
               </div>
@@ -289,17 +289,17 @@ export default function ClinicLanding() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer" onClick={() => setSelectedImage("/uploads/notice/2025-08.png")}>
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer" onClick={() => setSelectedImage("/uploads/notice/2025-10.jpg")}>
               <div className="aspect-[4/3] relative">
                 <img
-                  src="/uploads/notice/2025-08.png"
-                  alt="월별 휴진일 달력"
+                  src="/uploads/notice/2025-10.jpg"
+                  alt="10월 진료일정 달력"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-10"></div>
                 <div className="absolute top-4 left-4 right-4">
-                  <h3 className="text-white font-semibold text-lg mb-1 drop-shadow-lg">휴진일 달력</h3>
-                  <p className="text-white/90 text-sm drop-shadow-lg">월별 휴진일 및 공휴일 안내</p>
+                  <h3 className="text-white font-semibold text-lg mb-1 drop-shadow-lg">10월 진료일정</h3>
+                  <p className="text-white/90 text-sm drop-shadow-lg">휴진일 및 공휴일 안내</p>
                 </div>
               </div>
             </Card>
