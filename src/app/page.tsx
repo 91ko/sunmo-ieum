@@ -217,26 +217,48 @@ export default function ClinicLanding() {
                 </motion.div>
                 
                 <motion.h1 
-                  initial={{opacity:0, y:30}}
-                  whileInView={{opacity:1, y:0}}
+                  initial={{opacity:0, y:30, scale:0.9}}
+                  whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
-                  transition={{duration:1, delay:0.3}}
-                  className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6"
+                  transition={{duration:1.2, delay:0.3, ease:"easeOut"}}
+                  className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-tight tracking-tight mb-6"
                 >
-                  <span className="block text-slate-800">사람과 사람</span>
-                  <span className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700">
+                  <motion.span 
+                    initial={{opacity:0, x:-50}}
+                    whileInView={{opacity:1, x:0}}
+                    viewport={{once:true}}
+                    transition={{duration:1, delay:0.5}}
+                    className="block text-slate-800"
+                  >
+                    사람과 사람
+                  </motion.span>
+                  <motion.span 
+                    initial={{opacity:0, x:50}}
+                    whileInView={{opacity:1, x:0}}
+                    viewport={{once:true}}
+                    transition={{duration:1, delay:0.7}}
+                    className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700"
+                  >
                     마음과 마음을 이음
-                  </span>
+                  </motion.span>
                 </motion.h1>
                 
                 <motion.div 
-                  initial={{opacity:0, y:20}}
-                  whileInView={{opacity:1, y:0}}
+                  initial={{opacity:0, y:20, scale:0.95}}
+                  whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
-                  transition={{duration:0.8, delay:0.5}}
-                  className="text-2xl sm:text-3xl font-bold text-slate-700 mb-12"
+                  transition={{duration:1, delay:0.8, ease:"easeOut"}}
+                  className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-700 mb-12"
                 >
-                  성모이음 정신건강 의학과
+                  <motion.span
+                    initial={{opacity:0, y:20}}
+                    whileInView={{opacity:1, y:0}}
+                    viewport={{once:true}}
+                    transition={{duration:0.8, delay:1}}
+                    className="inline-block"
+                  >
+                    성모이음 정신건강 의학과
+                  </motion.span>
                 </motion.div>
                 
               </div>
@@ -258,23 +280,24 @@ export default function ClinicLanding() {
                   transition={{duration:1, delay:0.6}}
                   className="relative z-10 overflow-hidden rounded-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"
                 >
-                  <div className="relative w-full max-w-lg ml-auto mr-0 h-96">
+                  <div className="relative w-full max-w-2xl ml-auto mr-0 h-[28rem]">
                     {heroImages.map((image, index) => (
                       <motion.img
                         key={index}
                         src={image}
                         alt={`성모이음 정신건강의학과 ${index === 0 ? '이미지1' : '이미지2'}`}
                         className="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl"
-                        initial={{ opacity: 0, scale: 1.1, rotate: index === 0 ? -5 : 5 }}
+                        initial={{ opacity: 0, scale: 1.2, rotate: index === 0 ? -8 : 8, y: 30 }}
                         animate={{ 
                           opacity: index === currentImageIndex ? 1 : 0,
-                          scale: index === currentImageIndex ? 1 : 1.1,
-                          rotate: index === currentImageIndex ? 0 : (index === 0 ? -5 : 5)
+                          scale: index === currentImageIndex ? 1 : 1.2,
+                          rotate: index === currentImageIndex ? 0 : (index === 0 ? -8 : 8),
+                          y: index === currentImageIndex ? 0 : 30
                         }}
                         transition={{ 
-                          duration: 1.2, 
+                          duration: 1.5, 
                           ease: "easeInOut",
-                          delay: index === currentImageIndex ? 0.2 : 0
+                          delay: index === currentImageIndex ? 0.3 : 0
                         }}
                       />
                     ))}
