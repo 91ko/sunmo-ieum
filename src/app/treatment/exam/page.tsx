@@ -29,7 +29,7 @@ export default function ExamPage() {
         "정확한 진단 및 치료 방향 설정",
         "보다 깊은 심리적 이해가 필요한 경우 활용"
       ],
-      image: "/images/종합심리검사.png"
+      image: "/images/gallery/gallery2-waiting.jpg"
     },
     {
       icon: User,
