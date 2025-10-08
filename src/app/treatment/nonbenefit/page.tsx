@@ -6,10 +6,6 @@ import {
   ChevronLeft,
   ChevronDown,
   Menu,
-  DollarSign,
-  Clock,
-  Shield,
-  AlertCircle,
   Info,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -194,38 +190,6 @@ export default function NonBenefitPage() {
     }
   ];
 
-  const paymentInfo = [
-    {
-      icon: DollarSign,
-      title: "결제 방법",
-      details: [
-        "현금 결제",
-        "카드 결제 (신용카드, 체크카드)",
-        "계좌이체",
-        "간편결제 (카카오페이, 네이버페이)"
-      ]
-    },
-    {
-      icon: Clock,
-      title: "결제 시기",
-      details: [
-        "검사/상담 당일 결제",
-        "치료 시작 전 선불 결제",
-        "월 단위 정기 결제 (장기 치료 시)",
-        "할부 결제 가능 (상담 후 결정)"
-      ]
-    },
-    {
-      icon: Shield,
-      title: "영수증 발급",
-      details: [
-        "세무서 신고용 영수증 발급",
-        "의료비 소득공제용 영수증",
-        "보험 청구용 영수증",
-        "기업 복리후생용 영수증"
-      ]
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f6f8fb] to-white text-slate-900">
@@ -522,68 +486,6 @@ export default function NonBenefitPage() {
           </div>
         </section>
 
-        {/* 결제 안내 */}
-        <section className="mb-16">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">결제 안내</h2>
-            <p className="text-slate-600">편리한 결제 방법과 안내사항</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {paymentInfo.map((info, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="h-full">
-                  <CardHeader>
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="bg-teal-100 p-2 rounded-lg">
-                        <info.icon className="h-6 w-6 text-teal-600" />
-                      </div>
-                      <CardTitle className="text-lg">{info.title}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {info.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-teal-600 rounded-full"></div>
-                          <span className="text-sm text-slate-600">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
-        {/* 주의사항 */}
-        <section className="mb-16">
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-red-50 border-red-200">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <AlertCircle className="h-6 w-6 text-red-600 mt-0.5" />
-                  <div>
-                    <h3 className="font-semibold text-red-900 mb-2">주의사항</h3>
-                    <ul className="space-y-2 text-red-800 text-sm">
-                      <li>• 비급여 진료비는 건강보험 적용이 되지 않습니다.</li>
-                      <li>• 모든 비용은 환자 본인이 부담하셔야 합니다.</li>
-                      <li>• 치료 전 상세한 설명과 동의서 작성이 필요합니다.</li>
-                      <li>• 영수증은 세무서 신고용으로만 발급 가능합니다.</li>
-                      <li>• 개인정보보호를 위해 신분증 확인이 필요할 수 있습니다.</li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
 
         {/* 상담 예약 CTA */}
         <div className="max-w-4xl mx-auto">
