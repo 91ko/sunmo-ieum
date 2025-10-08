@@ -197,6 +197,43 @@ export default function ExamPage() {
         {/* 검사 안내 */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">검사 안내</h2>
+          
+          {/* 검사 개요 */}
+          <div className="mb-12">
+            <Card className="bg-gradient-to-r from-teal-50 to-blue-50 border-teal-200">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">전문적인 심리검사</h3>
+                <p className="text-slate-700 mb-4">
+                  성모이음 정신건강의학과에서는 정신건강임상심리사 1급과 정신건강의학과 전문의가 함께 
+                  다양한 심리검사를 실시하여 정확한 진단과 치료 방향을 제시합니다.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <Brain className="h-6 w-6 text-teal-600" />
+                    </div>
+                    <h4 className="font-semibold text-slate-900">전문성</h4>
+                    <p className="text-sm text-slate-600">임상심리사 1급 직접 검사</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <User className="h-6 w-6 text-teal-600" />
+                    </div>
+                    <h4 className="font-semibold text-slate-900">맞춤형</h4>
+                    <p className="text-sm text-slate-600">개인별 특성에 맞는 검사</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <Activity className="h-6 w-6 text-teal-600" />
+                    </div>
+                    <h4 className="font-semibold text-slate-900">정확성</h4>
+                    <p className="text-sm text-slate-600">객관적이고 과학적인 평가</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
           <div className="grid grid-cols-1 gap-8">
             {examTypes.map((exam, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-white">
@@ -237,6 +274,56 @@ export default function ExamPage() {
         {/* 치료 방법 */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">치료 방법</h2>
+          
+          {/* 치료 개요 */}
+          <div className="mb-12">
+            <Card className="bg-gradient-to-r from-emerald-50 to-teal-50 border-emerald-200">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">통합적 치료 접근</h3>
+                <p className="text-slate-700 mb-4">
+                  성모이음 정신건강의학과에서는 검사 결과를 바탕으로 개인에게 맞는 
+                  통합적인 치료 계획을 수립하여 근본적인 문제 해결을 도모합니다.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                  <div className="space-y-4">
+                    <h4 className="text-lg font-semibold text-slate-900">치료 원칙</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2">
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-slate-700 text-sm">개인 맞춤형 치료 계획</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-slate-700 text-sm">근본 원인 파악 및 해결</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-slate-700 text-sm">지속적인 치료 효과 모니터링</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-lg font-semibold text-slate-900">치료 과정</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2">
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-slate-700 text-sm">초기 상담 및 평가</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-slate-700 text-sm">치료 목표 설정</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-slate-700 text-sm">정기적인 치료 세션</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
           <div className="grid grid-cols-1 gap-8">
             {treatmentMethods.map((treatment, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-white">

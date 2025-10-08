@@ -60,23 +60,7 @@ const HomePage = () => {
     }
   };
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
-  const heroImages = [
-    "/images/hero/sungmo-ieum1.png",
-    "/images/hero/sungmo-ieum2.png"
-  ];
-  
-  // 이미지 자동 슬라이드 효과
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 4000); // 4초마다 변경
-    
-    return () => clearInterval(interval);
-  }, [heroImages.length]);
+  const heroImage = "/images/hero/sungmo-ieum1.png";
 
   // 페이지 진입 시 진료일정 팝업 자동 표시
   useEffect(() => {
@@ -441,42 +425,14 @@ const HomePage = () => {
                 React.createElement('div', {
                   className: "relative w-full max-w-2xl ml-auto mr-0 h-[32rem]"
                 },
-                  heroImages.map((image, index) => 
-                    React.createElement(motion.img, {
-                      key: index,
-                      src: image,
-                      alt: `성모이음 정신건강의학과 ${index === 0 ? '이미지1' : '이미지2'}`,
-                      className: "absolute inset-0 w-full h-full object-cover",
-                      initial: { opacity: 0, scale: 1.1, rotate: index === 0 ? -5 : 5 },
-                      animate: { 
-                        opacity: index === currentImageIndex ? 1 : 0,
-                        scale: index === currentImageIndex ? 1 : 1.1,
-                        rotate: index === currentImageIndex ? 0 : (index === 0 ? -5 : 5)
-                      },
-                      transition: { 
-                        duration: 1.2, 
-                        ease: "easeInOut",
-                        delay: index === currentImageIndex ? 0.2 : 0
-                      }
-                    })
-                  ),
-                  
-                  // 이미지 인디케이터
-                  React.createElement('div', {
-                    className: "absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2"
-                  },
-                    heroImages.map((_, index) => 
-                      React.createElement('button', {
-                        key: index,
-                        onClick: () => setCurrentImageIndex(index),
-                        className: `w-2 h-2 rounded-full transition-all duration-300 ${
-                          index === currentImageIndex 
-                            ? 'bg-white shadow-lg' 
-                            : 'bg-white/50 hover:bg-white/75'
-                        }`
-                      })
-                    )
-                  )
+                  React.createElement(motion.img, {
+                    src: heroImage,
+                    alt: "성모이음 정신건강의학과",
+                    className: "w-full h-full object-cover",
+                    initial: { opacity: 0, scale: 1.1, rotate: -5 },
+                    animate: { opacity: 1, scale: 1, rotate: 0 },
+                    transition: { duration: 1.2, ease: "easeInOut", delay: 0.2 }
+                  })
                 )
               ),
               
