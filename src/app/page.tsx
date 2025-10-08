@@ -171,6 +171,15 @@ export default function ClinicLanding() {
           )}
           
                <div className="flex items-center gap-3">
+                 <Button asChild variant="outline" className="border-green-500 text-green-600 hover:bg-green-50">
+                   <a href="https://blog.naver.com/sungmo-ieum" target="_blank" rel="noopener noreferrer">
+                     <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                     </svg>
+                     <span className="hidden sm:inline">네이버 블로그</span>
+                     <span className="sm:hidden">블로그</span>
+                   </a>
+                 </Button>
                  <Button asChild className="bg-yellow-400 hover:bg-yellow-500 text-black border-0">
                    <a href="https://pf.kakao.com/_ynxoXn" target="_blank" rel="noopener noreferrer">
                      <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
