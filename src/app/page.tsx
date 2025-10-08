@@ -553,55 +553,80 @@ export default function ClinicLanding() {
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">대표원장</h2>
         </div>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="text-center md:text-left">
-            <div className="aspect-[3/4] max-w-sm mx-auto md:mx-0 rounded-2xl overflow-hidden shadow-lg">
-              <img 
-                src="/images/doctor.jpg" 
-                alt="김태형 원장"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">김태형 원장</h3>
-              <p className="text-lg text-slate-600 mb-4">정신건강의학과 전문의</p>
-            </div>
-            
-            <div className="space-y-4">
-              <div>
-                <h4 className="text-lg font-semibold text-slate-900 mb-2">진료 철학</h4>
-                <p className="text-slate-600">&ldquo;환자분의 속도에 맞춰, 충분히 듣고 함께 해결책을 찾습니다.&rdquo;</p>
+        
+        <div className="max-w-4xl mx-auto">
+          <Card className="overflow-hidden shadow-xl border-0 bg-white">
+            <div className="grid md:grid-cols-2 gap-0">
+              {/* 사진 부분 */}
+              <div className="relative">
+                <img 
+                  src="/images/doctor.jpg" 
+                  alt="김태형 원장"
+                  className="w-full h-96 md:h-full object-cover"
+                />
+                <div className="absolute bottom-4 right-4">
+                  <div className="bg-teal-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    정신과전문의
+                  </div>
+                </div>
               </div>
               
-              <div>
-                <h4 className="text-lg font-semibold text-slate-900 mb-2">전문 분야</h4>
-                <p className="text-slate-600">불안·공황, 수면장애, 청소년 정신건강, 직장인 스트레스, 우울증</p>
-              </div>
-              
-              <div>
-                <h4 className="text-lg font-semibold text-slate-900 mb-2">약력</h4>
-                <ul className="text-slate-600 space-y-1">
-                  <li>• 정신건강의학과 전문의</li>
-                  <li>• 서울대학교병원 정신건강의학과 수료</li>
-                  <li>• 대한정신건강의학회 정회원</li>
-                  <li>• 한국수면의학회 정회원</li>
-                </ul>
+              {/* 정보 부분 */}
+              <div className="p-8">
+                <div className="mb-6">
+                  <h3 className="text-3xl font-bold text-slate-900 mb-2">김태형 원장</h3>
+                  <div className="space-y-1">
+                    <p className="text-lg text-slate-700">정신건강의학과 전문의</p>
+                    <p className="text-lg text-slate-700">소아청소년 정신건강의학과 전문의</p>
+                  </div>
+                </div>
+                
+                <div className="mb-6">
+                  <div className="flex items-center mb-3">
+                    <div className="w-6 h-6 bg-teal-100 rounded-full flex items-center justify-center mr-3">
+                      <svg className="w-4 h-4 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                    </div>
+                    <h4 className="text-lg font-semibold text-slate-900">주요 약력</h4>
+                  </div>
+                  <ul className="text-slate-600 space-y-2">
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span>가톨릭대학교 의과대학 정신건강의학교실 외래교수</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span>가톨릭대학교 은평성모병원 정신건강의학과 임상진료조교수</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span>가톨릭대학교 은평성모병원 정신건강의학과 전임의</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span>가톨릭중앙의료원 정신건강의학과 레지던트 수료</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span>가톨릭중앙의료원 인턴 수료</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="pt-4">
+                  <Button size="lg" asChild className="bg-yellow-400 hover:bg-yellow-500 text-black border-0 w-full">
+                    <a href="https://pf.kakao.com/_ynxoXn" target="_blank" rel="noopener noreferrer">
+                      <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3C6.5 3 2 6.58 2 11c0 2.13 1.05 4.07 2.75 5.48L4 21l4.75-1.5c1.25.5 2.58.75 4 .75 5.5 0 10-3.58 10-8S17.5 3 12 3z"/>
+                      </svg>
+                      카카오톡 상담하기
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
-            
-            <div className="pt-4">
-              <Button size="lg" asChild className="bg-yellow-400 hover:bg-yellow-500 text-black border-0">
-                <a href="https://pf.kakao.com/_ynxoXn" target="_blank" rel="noopener noreferrer">
-                  <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 3C6.5 3 2 6.58 2 11c0 2.13 1.05 4.07 2.75 5.48L4 21l4.75-1.5c1.25.5 2.58.75 4 .75 5.5 0 10-3.58 10-8S17.5 3 12 3z"/>
-                  </svg>
-                  카카오톡 상담하기
-                </a>
-              </Button>
-            </div>
-          </div>
+          </Card>
         </div>
       </section>
 
