@@ -65,8 +65,8 @@ export default function ClinicLanding() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const heroImages = [
-    "/images/hero/성모이음1.png",
-    "/images/hero/성모이음2.png"
+    "/images/hero/sungmo-ieum1.png",
+    "/images/hero/sungmo-ieum2.png"
   ];
   
   // 이미지 자동 슬라이드 효과
@@ -203,7 +203,6 @@ export default function ClinicLanding() {
               whileInView={{opacity:1, y:0}} 
               viewport={{once:true}} 
               transition={{duration:1, ease:"easeOut"}}
-              className="lg:absolute lg:top-8 lg:left-8 lg:z-10 lg:max-w-lg"
             >
               <div className="text-center lg:text-left">
                 <motion.div
@@ -248,7 +247,7 @@ export default function ClinicLanding() {
               whileInView={{opacity:1, scale:1, rotate:0}} 
               viewport={{once:true}} 
               transition={{duration:1.2, delay:0.4, ease:"easeOut"}} 
-              className="lg:absolute lg:bottom-8 lg:right-8 lg:z-10"
+              className="lg:pl-16 xl:pl-24"
             >
               <div className="relative">
                 {/* 대각선 이미지 배치 - 슬라이드 효과 */}
