@@ -206,10 +206,10 @@ export default function ClinicLanding() {
             >
               <div className="text-center lg:text-left">
                 <motion.div
-                  key={`badge-${currentImageIndex}`}
-                  initial={{opacity:0, y:20, scale:0.9}}
-                  animate={{opacity:1, y:0, scale:1}}
-                  transition={{duration:0.8, delay:0.2, ease:"easeOut"}}
+                  initial={{opacity:0, y:20}}
+                  whileInView={{opacity:1, y:0}}
+                  viewport={{once:true}}
+                  transition={{duration:0.8, delay:0.2}}
                 >
                   <Badge className="mb-6 inline-flex bg-teal-100 text-teal-700 border-teal-200">
                     <Sparkles className="mr-2 h-4 w-4"/>마음과 마음을 잇다
@@ -217,26 +217,26 @@ export default function ClinicLanding() {
                 </motion.div>
                 
                 <motion.h1 
-                  key={currentImageIndex}
                   initial={{opacity:0, y:30, scale:0.9}}
-                  animate={{opacity:1, y:0, scale:1}}
+                  whileInView={{opacity:1, y:0, scale:1}}
+                  viewport={{once:true}}
                   transition={{duration:1.2, delay:0.3, ease:"easeOut"}}
                   className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-tight tracking-widest mb-6"
                 >
                   <motion.div 
-                    key={`line1-${currentImageIndex}`}
-                    initial={{opacity:0, x:-50, scale:0.9}}
-                    animate={{opacity:1, x:0, scale:1}}
-                    transition={{duration:1, delay:0.5, ease:"easeOut"}}
+                    initial={{opacity:0, x:-50}}
+                    whileInView={{opacity:1, x:0}}
+                    viewport={{once:true}}
+                    transition={{duration:1, delay:0.5}}
                     className="block text-slate-800 tracking-[0.2em]"
                   >
                     사람과 사람
                   </motion.div>
                   <motion.div 
-                    key={`line2-${currentImageIndex}`}
-                    initial={{opacity:0, x:50, scale:0.9}}
-                    animate={{opacity:1, x:0, scale:1}}
-                    transition={{duration:1, delay:0.7, ease:"easeOut"}}
+                    initial={{opacity:0, x:50}}
+                    whileInView={{opacity:1, x:0}}
+                    viewport={{once:true}}
+                    transition={{duration:1, delay:0.7}}
                     className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 tracking-[0.2em]"
                   >
                     마음과 마음을 이음
@@ -244,17 +244,17 @@ export default function ClinicLanding() {
                 </motion.h1>
                 
                 <motion.div 
-                  key={`subtitle-${currentImageIndex}`}
                   initial={{opacity:0, y:20, scale:0.95}}
-                  animate={{opacity:1, y:0, scale:1}}
+                  whileInView={{opacity:1, y:0, scale:1}}
+                  viewport={{once:true}}
                   transition={{duration:1, delay:0.8, ease:"easeOut"}}
                   className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-700 mb-12"
                 >
                   <motion.span
-                    key={`subtitle-text-${currentImageIndex}`}
-                    initial={{opacity:0, y:20, scale:0.9}}
-                    animate={{opacity:1, y:0, scale:1}}
-                    transition={{duration:0.8, delay:1, ease:"easeOut"}}
+                    initial={{opacity:0, y:20}}
+                    whileInView={{opacity:1, y:0}}
+                    viewport={{once:true}}
+                    transition={{duration:0.8, delay:1}}
                     className="inline-block"
                   >
                     성모이음 정신건강 의학과
