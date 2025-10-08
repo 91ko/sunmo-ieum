@@ -61,12 +61,6 @@ export default function ClinicLanding() {
     }
   };
 
-  // 일주일간 보지않기 기능
-  const handleHideForWeek = () => {
-    const hideUntil = new Date();
-    hideUntil.setDate(hideUntil.getDate() + 7);
-    localStorage.setItem('scheduleModalHidden', hideUntil.toISOString());
-  };
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const heroImages = [
