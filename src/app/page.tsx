@@ -62,6 +62,23 @@ export default function ClinicLanding() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [scheduleModalOpen, setScheduleModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const heroImages = [
+    "/images/gallery/gallery2-waiting.jpg",
+    "/images/gallery/gallery3-treatment.jpg"
+  ];
+  
+  // 이미지 자동 슬라이드 효과
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // 4초마다 변경
+    
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
   
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f6f8fb] to-white text-slate-900">
@@ -172,8 +189,8 @@ export default function ClinicLanding() {
         </div>
       </header>
 
-      {/* 히어로 - 새로운 디자인 */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-teal-50 via-white to-emerald-50">
+      {/* 히어로 - 깔끔한 디자인 */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-teal-50 via-white to-emerald-50 min-h-screen flex items-center">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-teal-200/30 blur-3xl"/>
           <div className="absolute top-40 -left-24 h-96 w-96 rounded-full bg-emerald-200/40 blur-3xl"/>
@@ -181,34 +198,54 @@ export default function ClinicLanding() {
         </div>
         <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.8}}>
+            <motion.div 
+              initial={{opacity:0, y:30}} 
+              whileInView={{opacity:1, y:0}} 
+              viewport={{once:true}} 
+              transition={{duration:1, ease:"easeOut"}}
+            >
               <div className="text-center lg:text-left">
-                <Badge className="mb-6 inline-flex bg-teal-100 text-teal-700 border-teal-200">
-                  <Sparkles className="mr-2 h-4 w-4"/>마음과 마음을 잇다
-                </Badge>
+                <motion.div
+                  initial={{opacity:0, y:20}}
+                  whileInView={{opacity:1, y:0}}
+                  viewport={{once:true}}
+                  transition={{duration:0.8, delay:0.2}}
+                >
+                  <Badge className="mb-6 inline-flex bg-teal-100 text-teal-700 border-teal-200">
+                    <Sparkles className="mr-2 h-4 w-4"/>마음과 마음을 잇다
+                  </Badge>
+                </motion.div>
                 
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6">
+                <motion.h1 
+                  initial={{opacity:0, y:30}}
+                  whileInView={{opacity:1, y:0}}
+                  viewport={{once:true}}
+                  transition={{duration:1, delay:0.3}}
+                  className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6"
+                >
                   <span className="block text-slate-800">사람과 사람</span>
                   <span className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700">
                     마음과 마음을 이음
                   </span>
-                </h1>
+                </motion.h1>
                 
-                <div className="text-2xl sm:text-3xl font-bold text-slate-700 mb-8">
+                <motion.div 
+                  initial={{opacity:0, y:20}}
+                  whileInView={{opacity:1, y:0}}
+                  viewport={{once:true}}
+                  transition={{duration:0.8, delay:0.5}}
+                  className="text-2xl sm:text-3xl font-bold text-slate-700 mb-12"
+                >
                   성모이음 정신건강 의학과
-                </div>
+                </motion.div>
                 
-                <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
-                  그림을 그리듯 시간과 정성을 들여<br/>
-                  당신의 마음을 함께 챙기고 돌보고자 합니다.
-                </p>
-                
-                <div className="text-base text-slate-500 mb-10 max-w-xl">
-                  당신의 마음을 그려나가는 그 여정에<br/>
-                  저희가 든든한 동반자가 될 수 있기를 바랍니다.
-                </div>
-                
-                <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <motion.div 
+                  initial={{opacity:0, y:20}}
+                  whileInView={{opacity:1, y:0}}
+                  viewport={{once:true}}
+                  transition={{duration:0.8, delay:0.7}}
+                  className="flex flex-col sm:flex-row gap-4"
+                >
                   <Button size="lg" asChild className="bg-yellow-400 hover:bg-yellow-500 text-black border-0 text-lg px-8 py-4">
                     <a href="https://pf.kakao.com/_ynxoXn" target="_blank" rel="noopener noreferrer">
                       <svg className="mr-3 h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
@@ -220,39 +257,94 @@ export default function ClinicLanding() {
                   <Button size="lg" variant="outline" asChild className="text-lg px-8 py-4">
                     <a href="#services">진료과목 보기</a>
                   </Button>
-                </div>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
-                  {[
-                    {k:"전문의 직접 진료", v:"상담·치료 전 과정"},
-                    {k:"개인정보 보호", v:"안전한 관리"},
-                    {k:"온라인 간편 예약", v:"대기시간 최소화"},
-                  ].map((item, i) => (
-                    <div key={i} className="rounded-2xl border border-slate-200 bg-white/80 backdrop-blur-sm p-6 hover:shadow-lg transition-all duration-300">
-                      <div className="font-semibold text-slate-900 text-base mb-2">{item.k}</div>
-                      <div className="text-slate-600">{item.v}</div>
-                    </div>
-                  ))}
-                </div>
+                </motion.div>
               </div>
             </motion.div>
             
-            <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.8, delay:0.2}} className="lg:pl-8">
+            <motion.div 
+              initial={{opacity:0, scale:0.8, rotate:5}} 
+              whileInView={{opacity:1, scale:1, rotate:0}} 
+              viewport={{once:true}} 
+              transition={{duration:1.2, delay:0.4, ease:"easeOut"}} 
+              className="lg:pl-8"
+            >
               <div className="relative">
-                <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-white to-slate-50 border-2 border-slate-200 shadow-2xl p-6">
-                  <div className="h-full w-full rounded-2xl overflow-hidden relative">
-                    <img 
-                      src="/images/gallery/gallery2-waiting.jpg" 
-                      alt="성모이음 정신건강의학과 대기실"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                {/* 자유로운 이미지 배치 - 슬라이드 효과 */}
+                <motion.div
+                  initial={{opacity:0, y:50, rotate:-5}}
+                  whileInView={{opacity:1, y:0, rotate:0}}
+                  viewport={{once:true}}
+                  transition={{duration:1, delay:0.6}}
+                  className="relative z-10 overflow-hidden rounded-2xl"
+                >
+                  <div className="relative w-full max-w-md mx-auto h-80">
+                    {heroImages.map((image, index) => (
+                      <motion.img
+                        key={index}
+                        src={image}
+                        alt={`성모이음 정신건강의학과 ${index === 0 ? '대기실' : '진료실'}`}
+                        className="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl"
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ 
+                          opacity: index === currentImageIndex ? 1 : 0,
+                          scale: index === currentImageIndex ? 1 : 1.1
+                        }}
+                        transition={{ 
+                          duration: 0.8, 
+                          ease: "easeInOut" 
+                        }}
+                      />
+                    ))}
+                    
+                    {/* 이미지 인디케이터 */}
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                      {heroImages.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                            index === currentImageIndex 
+                              ? 'bg-white shadow-lg' 
+                              : 'bg-white/50 hover:bg-white/75'
+                          }`}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
-                {/* 장식 요소들 */}
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-teal-400 rounded-full opacity-80"></div>
-                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-emerald-400 rounded-full opacity-60"></div>
-                <div className="absolute top-1/2 -right-8 w-4 h-4 bg-blue-400 rounded-full opacity-70"></div>
+                </motion.div>
+                
+                {/* 자유로운 장식 요소들 */}
+                <motion.div 
+                  initial={{opacity:0, scale:0}}
+                  whileInView={{opacity:1, scale:1}}
+                  viewport={{once:true}}
+                  transition={{duration:0.8, delay:0.8}}
+                  className="absolute -top-6 -right-6 w-12 h-12 bg-teal-400 rounded-full opacity-80 shadow-lg"
+                ></motion.div>
+                
+                <motion.div 
+                  initial={{opacity:0, scale:0}}
+                  whileInView={{opacity:1, scale:1}}
+                  viewport={{once:true}}
+                  transition={{duration:0.8, delay:1}}
+                  className="absolute -bottom-6 -left-6 w-8 h-8 bg-emerald-400 rounded-full opacity-60 shadow-lg"
+                ></motion.div>
+                
+                <motion.div 
+                  initial={{opacity:0, scale:0}}
+                  whileInView={{opacity:1, scale:1}}
+                  viewport={{once:true}}
+                  transition={{duration:0.8, delay:1.2}}
+                  className="absolute top-1/3 -right-8 w-6 h-6 bg-blue-400 rounded-full opacity-70 shadow-lg"
+                ></motion.div>
+                
+                <motion.div 
+                  initial={{opacity:0, scale:0}}
+                  whileInView={{opacity:1, scale:1}}
+                  viewport={{once:true}}
+                  transition={{duration:0.8, delay:1.4}}
+                  className="absolute bottom-1/3 -left-8 w-4 h-4 bg-pink-400 rounded-full opacity-60 shadow-lg"
+                ></motion.div>
               </div>
             </motion.div>
           </div>
