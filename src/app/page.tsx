@@ -19,7 +19,6 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import KakaoMap from "@/components/maps/KakaoMap";
-import ScheduleModal from "@/components/ScheduleModal";
 import Link from "next/link";
 
 const services = [
@@ -49,14 +48,24 @@ const services = [
 export default function ClinicLanding() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [scheduleModalOpen, setScheduleModalOpen] = useState(false);
+
+  // 팝업창 열기 기능
+  const openSchedulePopup = () => {
+    const popup = window.open(
+      '/schedule-popup',
+      'schedulePopup',
+      'width=800,height=600,scrollbars=yes,resizable=yes,menubar=no,toolbar=no,location=no,status=no'
+    );
+    if (popup) {
+      popup.focus();
+    }
+  };
 
   // 일주일간 보지않기 기능
   const handleHideForWeek = () => {
     const hideUntil = new Date();
     hideUntil.setDate(hideUntil.getDate() + 7);
     localStorage.setItem('scheduleModalHidden', hideUntil.toISOString());
-    setScheduleModalOpen(false);
   };
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
@@ -88,7 +97,7 @@ export default function ClinicLanding() {
     }
 
     const timer = setTimeout(() => {
-      setScheduleModalOpen(true);
+      openSchedulePopup();
     }, 2000); // 2초 후 팝업 표시
     
     return () => clearTimeout(timer);
@@ -765,12 +774,6 @@ export default function ClinicLanding() {
         </div>
       </section>
 
-      {/* 진료일정 모달 */}
-      <ScheduleModal 
-        isOpen={scheduleModalOpen} 
-        onClose={() => setScheduleModalOpen(false)}
-        onHideForWeek={handleHideForWeek}
-      />
 
       {/* 이미지 확대 모달 */}
       {selectedImage && (

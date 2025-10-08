@@ -81,7 +81,7 @@ export default function ScheduleModal({ isOpen, onClose, onHideForWeek }: Schedu
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="relative max-w-2xl max-h-[60vh] w-full mx-4 bg-white rounded-2xl shadow-2xl overflow-hidden"
+            className="relative max-w-2xl max-h-[80vh] w-full mx-4 bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* 헤더 */}
@@ -127,7 +127,7 @@ export default function ScheduleModal({ isOpen, onClose, onHideForWeek }: Schedu
             </div>
 
             {/* 진료일정 이미지 */}
-            <div className="p-4">
+            <div className="p-4 flex-1 overflow-auto">
               <img
                 src={getCurrentImage()}
                 alt={`${currentYear}년 ${getMonthName(currentMonth)} 진료일정`}
