@@ -8,9 +8,10 @@ import { Button } from "@/components/ui/button";
 interface ScheduleModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onHideForWeek?: () => void;
 }
 
-export default function ScheduleModal({ isOpen, onClose }: ScheduleModalProps) {
+export default function ScheduleModal({ isOpen, onClose, onHideForWeek }: ScheduleModalProps) {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth() + 1);
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [scheduleImages, setScheduleImages] = useState<{[key: string]: string}>({});
@@ -80,7 +81,7 @@ export default function ScheduleModal({ isOpen, onClose }: ScheduleModalProps) {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="relative max-w-4xl max-h-[90vh] w-full mx-4 bg-white rounded-2xl shadow-2xl overflow-hidden"
+            className="relative max-w-2xl max-h-[60vh] w-full mx-4 bg-white rounded-2xl shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* 헤더 */}
@@ -134,9 +135,18 @@ export default function ScheduleModal({ isOpen, onClose }: ScheduleModalProps) {
               />
             </div>
 
-            {/* 하단 닫기 버튼 */}
+            {/* 하단 버튼들 */}
             <div className="p-4 border-t border-slate-200">
-              <div className="text-center">
+              <div className="flex gap-3 justify-center">
+                {onHideForWeek && (
+                  <Button
+                    onClick={onHideForWeek}
+                    variant="outline"
+                    className="border-slate-300 text-slate-600 hover:bg-slate-50"
+                  >
+                    일주일간 보지않기
+                  </Button>
+                )}
                 <Button
                   onClick={onClose}
                   className="bg-teal-600 hover:bg-teal-700 text-white"

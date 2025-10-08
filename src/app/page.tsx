@@ -50,6 +50,14 @@ export default function ClinicLanding() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [scheduleModalOpen, setScheduleModalOpen] = useState(false);
+
+  // 일주일간 보지않기 기능
+  const handleHideForWeek = () => {
+    const hideUntil = new Date();
+    hideUntil.setDate(hideUntil.getDate() + 7);
+    localStorage.setItem('scheduleModalHidden', hideUntil.toISOString());
+    setScheduleModalOpen(false);
+  };
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const heroImages = [
@@ -70,6 +78,15 @@ export default function ClinicLanding() {
 
   // 페이지 진입 시 진료일정 팝업 자동 표시
   React.useEffect(() => {
+    // 일주일간 보지않기 체크
+    const hiddenUntil = localStorage.getItem('scheduleModalHidden');
+    if (hiddenUntil) {
+      const hideDate = new Date(hiddenUntil);
+      if (hideDate > new Date()) {
+        return; // 아직 숨김 기간이면 팝업 표시하지 않음
+      }
+    }
+
     const timer = setTimeout(() => {
       setScheduleModalOpen(true);
     }, 2000); // 2초 후 팝업 표시
@@ -751,7 +768,8 @@ export default function ClinicLanding() {
       {/* 진료일정 모달 */}
       <ScheduleModal 
         isOpen={scheduleModalOpen} 
-        onClose={() => setScheduleModalOpen(false)} 
+        onClose={() => setScheduleModalOpen(false)}
+        onHideForWeek={handleHideForWeek}
       />
 
       {/* 이미지 확대 모달 */}
