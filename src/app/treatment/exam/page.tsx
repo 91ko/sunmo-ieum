@@ -180,7 +180,7 @@ export default function ExamPage() {
         {/* 검사 안내 */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">검사 안내</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8">
             {examTypes.map((exam, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-white">
                 <div className="flex flex-col lg:flex-row">
@@ -221,7 +221,7 @@ export default function ExamPage() {
         {/* 치료 방법 */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">치료 방법</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8">
             {treatmentMethods.map((treatment, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-white">
                 <div className="flex flex-col lg:flex-row">
