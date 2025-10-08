@@ -66,7 +66,7 @@ const HomePage = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentGalleryIndex((prev) => (prev + 1) % galleryImages.length);
-    }, 3000); // 3초마다 변경
+    }, 5000); // 5초마다 변경 (더 천천히)
 
     return () => clearInterval(interval);
   }, [galleryImages.length]);
@@ -384,34 +384,34 @@ const HomePage = () => {
               className: "text-center lg:text-left"
             },
               React.createElement(motion.h1, {
+                key: `title-${currentGalleryIndex}`,
                 initial: {opacity:0, y:30, scale:0.9},
-                whileInView: {opacity:1, y:0, scale:1},
-                viewport: {once:true},
-                transition: {duration:1.2, delay:0.3, ease:"easeOut"},
+                animate: {opacity:1, y:0, scale:1},
+                transition: {duration:2, delay:0.3, ease:"easeOut"},
                 className: "text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight tracking-wide mb-8",
                 style: { fontFamily: '"Noto Sans KR", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif', fontWeight: '300', letterSpacing: '0.08em', lineHeight: '1.2' }
               },
                 React.createElement(motion.div, {
+                  key: `line1-${currentGalleryIndex}`,
                   initial: {opacity:0, x:-50, scale:0.9},
-                  whileInView: {opacity:1, x:0, scale:1},
-                  viewport: {once:true},
-                  transition: {duration:1, delay:0.5, ease:"easeOut"},
+                  animate: {opacity:1, x:0, scale:1},
+                  transition: {duration:2, delay:0.5, ease:"easeOut"},
                   className: "block text-slate-800 tracking-[0.1em] hover:text-teal-700 transition-colors duration-500 mb-2 whitespace-nowrap"
                 }, "사람과 사람"),
                 React.createElement(motion.div, {
+                  key: `line2-${currentGalleryIndex}`,
                   initial: {opacity:0, x:50, scale:0.9},
-                  whileInView: {opacity:1, x:0, scale:1},
-                  viewport: {once:true},
-                  transition: {duration:1, delay:0.7, ease:"easeOut"},
+                  animate: {opacity:1, x:0, scale:1},
+                  transition: {duration:2, delay:0.7, ease:"easeOut"},
                   className: "block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 tracking-[0.1em] hover:from-teal-500 hover:via-emerald-500 hover:to-teal-600 transition-all duration-500 whitespace-nowrap"
                 }, "마음과 마음을 이음")
               ),
               
               React.createElement(motion.div, {
+                key: `subtitle-${currentGalleryIndex}`,
                 initial: {opacity:0, y:20, scale:0.95},
-                whileInView: {opacity:1, y:0, scale:1},
-                viewport: {once:true},
-                transition: {duration:1, delay:0.8, ease:"easeOut"},
+                animate: {opacity:1, y:0, scale:1},
+                transition: {duration:2, delay:0.8, ease:"easeOut"},
                 className: "text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-700 mb-12 tracking-wide hover:text-teal-600 transition-colors duration-500",
                 style: { fontFamily: '"Noto Sans KR", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif', fontWeight: '400', letterSpacing: '0.05em', lineHeight: '1.3' }
               },
@@ -452,9 +452,13 @@ const HomePage = () => {
                     src: galleryImages[currentGalleryIndex],
                     alt: "성모이음 정신건강의학과",
                     className: "w-full h-64 lg:h-80 object-cover",
-                    initial: { opacity: 0, scale: 1.1 },
-                    animate: { opacity: 1, scale: 1 },
-                    transition: { duration: 0.8, ease: "easeInOut" }
+                    initial: { opacity: 0, scale: 0.9, y: 30 },
+                    animate: { opacity: 1, scale: 1, y: 0 },
+                    transition: { 
+                      duration: 2, 
+                      ease: "easeOut",
+                      delay: 0.3
+                    }
                   }),
                   // 그라데이션 오버레이
                   React.createElement('div', {
