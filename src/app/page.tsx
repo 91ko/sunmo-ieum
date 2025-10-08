@@ -247,7 +247,7 @@ export default function ClinicLanding() {
               whileInView={{opacity:1, scale:1, rotate:0}} 
               viewport={{once:true}} 
               transition={{duration:1.2, delay:0.4, ease:"easeOut"}} 
-              className="lg:pl-8"
+              className="lg:pl-16 xl:pl-24"
             >
               <div className="relative">
                 {/* 대각선 이미지 배치 - 슬라이드 효과 */}
@@ -258,21 +258,23 @@ export default function ClinicLanding() {
                   transition={{duration:1, delay:0.6}}
                   className="relative z-10 overflow-hidden rounded-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"
                 >
-                  <div className="relative w-full max-w-lg mx-auto h-96">
+                  <div className="relative w-full max-w-lg ml-auto mr-0 h-96">
                     {heroImages.map((image, index) => (
                       <motion.img
                         key={index}
                         src={image}
                         alt={`성모이음 정신건강의학과 ${index === 0 ? '이미지1' : '이미지2'}`}
                         className="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl"
-                        initial={{ opacity: 0, scale: 1.1 }}
+                        initial={{ opacity: 0, scale: 1.1, rotate: index === 0 ? -5 : 5 }}
                         animate={{ 
                           opacity: index === currentImageIndex ? 1 : 0,
-                          scale: index === currentImageIndex ? 1 : 1.1
+                          scale: index === currentImageIndex ? 1 : 1.1,
+                          rotate: index === currentImageIndex ? 0 : (index === 0 ? -5 : 5)
                         }}
                         transition={{ 
-                          duration: 0.8, 
-                          ease: "easeInOut" 
+                          duration: 1.2, 
+                          ease: "easeInOut",
+                          delay: index === currentImageIndex ? 0.2 : 0
                         }}
                       />
                     ))}
