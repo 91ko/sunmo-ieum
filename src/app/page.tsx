@@ -203,7 +203,7 @@ export default function ClinicLanding() {
               whileInView={{opacity:1, y:0}} 
               viewport={{once:true}} 
               transition={{duration:1, ease:"easeOut"}}
-              className="absolute top-0 right-0 z-10 lg:relative lg:top-auto lg:right-auto"
+              className="lg:absolute lg:top-0 lg:left-0 lg:z-10"
             >
               <div className="text-center lg:text-left">
                 <motion.div
