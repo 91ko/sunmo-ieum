@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -69,7 +69,7 @@ export default function HomePage() {
   ];
   
   // 이미지 자동 슬라이드 효과
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
@@ -80,7 +80,7 @@ export default function HomePage() {
   }, [heroImages.length]);
 
   // 페이지 진입 시 진료일정 팝업 자동 표시
-  React.useEffect(() => {
+  useEffect(() => {
     // 일주일간 보지않기 체크
     const hiddenUntil = localStorage.getItem('scheduleModalHidden');
     if (hiddenUntil) {
