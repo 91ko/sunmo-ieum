@@ -203,7 +203,7 @@ export default function ClinicLanding() {
               whileInView={{opacity:1, y:0}} 
               viewport={{once:true}} 
               transition={{duration:1, ease:"easeOut"}}
-              className="lg:absolute lg:top-0 lg:left-0 lg:z-10"
+              className="lg:absolute lg:top-8 lg:left-8 lg:z-10 lg:max-w-lg"
             >
               <div className="text-center lg:text-left">
                 <motion.div
@@ -248,7 +248,7 @@ export default function ClinicLanding() {
               whileInView={{opacity:1, scale:1, rotate:0}} 
               viewport={{once:true}} 
               transition={{duration:1.2, delay:0.4, ease:"easeOut"}} 
-              className="lg:pl-16 xl:pl-24"
+              className="lg:absolute lg:bottom-8 lg:right-8 lg:z-10"
             >
               <div className="relative">
                 {/* 대각선 이미지 배치 - 슬라이드 효과 */}
