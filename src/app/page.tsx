@@ -25,6 +25,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import KakaoMap from "@/components/maps/KakaoMap";
+import ScheduleModal from "@/components/ScheduleModal";
 import Link from "next/link";
 
 const services = [
@@ -60,6 +61,7 @@ const steps = [
 export default function ClinicLanding() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [scheduleModalOpen, setScheduleModalOpen] = useState(false);
   
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f6f8fb] to-white text-slate-900">
@@ -170,59 +172,87 @@ export default function ClinicLanding() {
         </div>
       </header>
 
-      {/* 히어로 */}
-      <section className="relative overflow-hidden">
+      {/* 히어로 - 새로운 디자인 */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-teal-50 via-white to-emerald-50">
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-teal-200/40 blur-3xl"/>
-          <div className="absolute top-40 -left-24 h-72 w-72 rounded-full bg-emerald-200/50 blur-3xl"/>
+          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-teal-200/30 blur-3xl"/>
+          <div className="absolute top-40 -left-24 h-96 w-96 rounded-full bg-emerald-200/40 blur-3xl"/>
+          <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-blue-200/20 blur-3xl"/>
         </div>
-        <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <motion.div initial={{opacity:0, y:12}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.6}}>
-               <Badge className="mb-4 inline-flex"><Sparkles className="mr-1 h-3.5 w-3.5"/>마음과 마음을 잇다</Badge>
-               <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
-                 사람과 사람
-                 <span className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-500">&nbsp;마음과 마음을 이음</span>
-               </h1>
-              <p className="mt-5 text-base sm:text-lg text-slate-600 max-w-xl">
-                불안·우울·수면·스트레스부터 일·가정의 균형까지. 전문의가 함께하는 맞춤 진료로
-                오늘보다 편안한 내일을 설계하세요.
-              </p>
-               <div className="mt-8 flex flex-wrap gap-3">
-                 <Button size="lg" asChild className="bg-yellow-400 hover:bg-yellow-500 text-black border-0">
-                   <a href="https://pf.kakao.com/_ynxoXn" target="_blank" rel="noopener noreferrer">
-                     <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                       <path d="M12 3C6.5 3 2 6.58 2 11c0 2.13 1.05 4.07 2.75 5.48L4 21l4.75-1.5c1.25.5 2.58.75 4 .75 5.5 0 10-3.58 10-8S17.5 3 12 3z"/>
-                     </svg>
-                     카카오톡 상담하기
-                   </a>
-                 </Button>
-                 <Button size="lg" variant="outline" asChild>
-                   <a href="#services">진료과목 보기</a>
-                 </Button>
-               </div>
-              <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm text-slate-600">
-                {[
-                  {k:"전문의 직접 진료", v:"상담·치료 전 과정"},
-                  {k:"개인정보 보호", v:"안전한 관리"},
-                  {k:"온라인 간편 예약", v:"대기시간 최소화"},
-                ].map((item, i) => (
-                  <div key={i} className="rounded-xl border border-slate-200 bg-white/70 p-4">
-                    <div className="font-medium text-slate-900">{item.k}</div>
-                    <div className="text-slate-500 mt-0.5">{item.v}</div>
-                  </div>
-                ))}
+        <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.8}}>
+              <div className="text-center lg:text-left">
+                <Badge className="mb-6 inline-flex bg-teal-100 text-teal-700 border-teal-200">
+                  <Sparkles className="mr-2 h-4 w-4"/>마음과 마음을 잇다
+                </Badge>
+                
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6">
+                  <span className="block text-slate-800">사람과 사람</span>
+                  <span className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700">
+                    마음과 마음을 이음
+                  </span>
+                </h1>
+                
+                <div className="text-2xl sm:text-3xl font-bold text-slate-700 mb-8">
+                  성모이음 정신건강 의학과
+                </div>
+                
+                <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
+                  그림을 그리듯 시간과 정성을 들여<br/>
+                  당신의 마음을 함께 챙기고 돌보고자 합니다.
+                </p>
+                
+                <div className="text-base text-slate-500 mb-10 max-w-xl">
+                  당신의 마음을 그려나가는 그 여정에<br/>
+                  저희가 든든한 동반자가 될 수 있기를 바랍니다.
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                  <Button size="lg" asChild className="bg-yellow-400 hover:bg-yellow-500 text-black border-0 text-lg px-8 py-4">
+                    <a href="https://pf.kakao.com/_ynxoXn" target="_blank" rel="noopener noreferrer">
+                      <svg className="mr-3 h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3C6.5 3 2 6.58 2 11c0 2.13 1.05 4.07 2.75 5.48L4 21l4.75-1.5c1.25.5 2.58.75 4 .75 5.5 0 10-3.58 10-8S17.5 3 12 3z"/>
+                      </svg>
+                      카카오톡 상담하기
+                    </a>
+                  </Button>
+                  <Button size="lg" variant="outline" asChild className="text-lg px-8 py-4">
+                    <a href="#services">진료과목 보기</a>
+                  </Button>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
+                  {[
+                    {k:"전문의 직접 진료", v:"상담·치료 전 과정"},
+                    {k:"개인정보 보호", v:"안전한 관리"},
+                    {k:"온라인 간편 예약", v:"대기시간 최소화"},
+                  ].map((item, i) => (
+                    <div key={i} className="rounded-2xl border border-slate-200 bg-white/80 backdrop-blur-sm p-6 hover:shadow-lg transition-all duration-300">
+                      <div className="font-semibold text-slate-900 text-base mb-2">{item.k}</div>
+                      <div className="text-slate-600">{item.v}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
-            <motion.div initial={{opacity:0, y:12}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.6, delay:0.1}} className="lg:pl-8">
-              <div className="aspect-[4/3] rounded-3xl bg-gradient-to-br from-white to-slate-50 border border-slate-200 shadow-xl p-4">
-                <div className="h-full w-full rounded-2xl overflow-hidden">
-                  <img 
-                    src="/images/gallery/gallery2-waiting.jpg" 
-                    alt="성모이음 정신건강의학과 대기실"
-                    className="w-full h-full object-cover"
-                  />
+            
+            <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.8, delay:0.2}} className="lg:pl-8">
+              <div className="relative">
+                <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-white to-slate-50 border-2 border-slate-200 shadow-2xl p-6">
+                  <div className="h-full w-full rounded-2xl overflow-hidden relative">
+                    <img 
+                      src="/images/gallery/gallery2-waiting.jpg" 
+                      alt="성모이음 정신건강의학과 대기실"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  </div>
                 </div>
+                {/* 장식 요소들 */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-teal-400 rounded-full opacity-80"></div>
+                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-emerald-400 rounded-full opacity-60"></div>
+                <div className="absolute top-1/2 -right-8 w-4 h-4 bg-blue-400 rounded-full opacity-70"></div>
               </div>
             </motion.div>
           </div>
@@ -253,57 +283,35 @@ export default function ClinicLanding() {
         </Card>
       </section>
 
-      {/* 진료일정 */}
+      {/* 진료일정 - 팝업 버튼으로 변경 */}
       <section id="schedule" className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-16 sm:py-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">진료일정</h2>
           <p className="text-lg text-slate-600">월별 휴진일과 진료일정을 확인하세요</p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="flex justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6 }}
           >
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer" onClick={() => setSelectedImage("/images/schedule/calendar1.jpg")}>
-              <div className="aspect-[4/3] relative">
-                <img
-                  src="/images/schedule/calendar1.jpg"
-                  alt="9월 진료일정 달력"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-10"></div>
-                <div className="absolute top-4 left-4 right-4">
-                  <h3 className="text-white font-semibold text-lg mb-1 drop-shadow-lg">9월 진료일정</h3>
-                  <p className="text-white/90 text-sm drop-shadow-lg">휴진일 및 특별 진료일 안내</p>
-                </div>
-              </div>
-            </Card>
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white text-lg px-12 py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={() => setScheduleModalOpen(true)}
+            >
+              <Clock className="mr-3 h-6 w-6" />
+              진료일정 확인하기
+            </Button>
           </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer" onClick={() => setSelectedImage("/images/schedule/calendar2.jpg")}>
-              <div className="aspect-[4/3] relative">
-                <img
-                  src="/images/schedule/calendar2.jpg"
-                  alt="10월 진료일정 달력"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-10"></div>
-                <div className="absolute top-4 left-4 right-4">
-                  <h3 className="text-white font-semibold text-lg mb-1 drop-shadow-lg">10월 진료일정</h3>
-                  <p className="text-white/90 text-sm drop-shadow-lg">휴진일 및 공휴일 안내</p>
-                </div>
-              </div>
-            </Card>
-          </motion.div>
+        </div>
+        
+        <div className="mt-8 text-center">
+          <p className="text-slate-500 text-sm">
+            클릭하시면 현재 월의 진료일정을 확인하실 수 있습니다
+          </p>
         </div>
       </section>
 
@@ -467,6 +475,12 @@ export default function ClinicLanding() {
           </Card>
         </div>
       </section>
+
+      {/* 진료일정 모달 */}
+      <ScheduleModal 
+        isOpen={scheduleModalOpen} 
+        onClose={() => setScheduleModalOpen(false)} 
+      />
 
       {/* 이미지 확대 모달 */}
       {selectedImage && (
