@@ -210,7 +210,7 @@ export default function ClinicLanding() {
                   whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
                   transition={{duration:1.2, delay:0.3, ease:"easeOut"}}
-                  className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-black leading-tight tracking-widest mb-8"
+                  className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-widest mb-8"
                   style={{ fontFamily: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif' }}
                 >
                   <motion.div 
@@ -238,7 +238,7 @@ export default function ClinicLanding() {
                   whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
                   transition={{duration:1, delay:0.8, ease:"easeOut"}}
-                  className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-700 mb-16 tracking-wide hover:text-teal-600 transition-colors duration-500"
+                  className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-700 mb-12 tracking-wide hover:text-teal-600 transition-colors duration-500"
                 >
                   <motion.span
                     initial={{opacity:0, y:20, scale:0.9}}
