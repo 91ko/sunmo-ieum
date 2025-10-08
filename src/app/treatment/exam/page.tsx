@@ -28,7 +28,7 @@ export default function ExamPage() {
         "정확한 진단 및 치료 방향 설정",
         "보다 깊은 심리적 이해가 필요한 경우 활용"
       ],
-      image: "/images/exam/psychology-test.jpg" // 사진 넣을 자리
+      image: "/images/종합심리검사.png"
     },
     {
       icon: User,
@@ -40,7 +40,7 @@ export default function ExamPage() {
         "보호자 면담 병행으로 정확한 병력 파악",
         "치매 조기 발견 및 예방"
       ],
-      image: "/images/exam/cognitive-test.jpg" // 사진 넣을 자리
+      image: "/images/노인인지기능검사.png"
     },
     {
       icon: Activity,
@@ -51,7 +51,7 @@ export default function ExamPage() {
         "치료 효과 모니터링",
         "객관적인 주의력 평가"
       ],
-      image: "/images/exam/attention-test.jpg" // 사진 넣을 자리
+      image: "/images/주의집중력검사.png"
     },
     {
       icon: Zap,
@@ -62,7 +62,7 @@ export default function ExamPage() {
         "주의력 저하, 불안, 우울, 수면장애 평가",
         "치료 보조 자료로 활용"
       ],
-      image: "/images/exam/eeg-test.jpg" // 사진 넣을 자리
+      image: "/images/정량뇌파검사.png"
     }
   ];
 
@@ -77,7 +77,7 @@ export default function ExamPage() {
         "스스로를 이해하고 감정 조절 능력 향상",
         "문제 해결 능력을 키우며 삶의 균형 회복"
       ],
-      image: "/images/exam/counseling.jpg" // 사진 넣을 자리
+      image: "/images/치료방법.png"
     }
   ];
 
