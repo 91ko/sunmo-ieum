@@ -86,7 +86,7 @@ export default function ClinicLanding() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f6f8fb] to-white text-slate-900 relative overflow-hidden">
       {/* 반딧불이 효과 */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-20">
         {[...Array(25)].map((_, i) => (
           <motion.div
             key={i}
@@ -254,7 +254,7 @@ export default function ClinicLanding() {
         }
       `}</style>
       {/* 헤더 */}
-      <header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b border-slate-200/60 relative">
+      <header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b border-slate-200/60 relative z-50">
         <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 h-16 flex items-center justify-between">
                <div className="flex items-center gap-3">
                  <img 
@@ -370,13 +370,23 @@ export default function ClinicLanding() {
       </header>
 
       {/* 히어로 - 깔끔한 디자인 */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-teal-50 via-white to-emerald-50 min-h-screen flex items-center">
+      <section 
+        className="relative overflow-hidden min-h-screen flex items-center"
+        style={{
+          backgroundImage: 'url(/images/hero/hero-bg.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* 배경 오버레이 */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/80 to-white/85 z-10"></div>
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-teal-200/30 blur-3xl"/>
           <div className="absolute top-40 -left-24 h-96 w-96 rounded-full bg-emerald-200/40 blur-3xl"/>
           <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-blue-200/20 blur-3xl"/>
         </div>
-        <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
+        <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-24 sm:py-32 lg:py-40 relative z-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div 
               initial={{opacity:0, y:30}} 
