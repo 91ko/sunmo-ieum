@@ -205,23 +205,13 @@ export default function ClinicLanding() {
               transition={{duration:1, ease:"easeOut"}}
             >
               <div className="text-center lg:text-left">
-                <motion.div
-                  initial={{opacity:0, y:20}}
-                  whileInView={{opacity:1, y:0}}
-                  viewport={{once:true}}
-                  transition={{duration:0.8, delay:0.2}}
-                >
-                  <Badge className="mb-6 inline-flex bg-teal-100 text-teal-700 border-teal-200">
-                    <Sparkles className="mr-2 h-4 w-4"/>마음과 마음을 잇다
-                  </Badge>
-                </motion.div>
                 
                 <motion.h1 
                   initial={{opacity:0, y:30, scale:0.9}}
                   whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
                   transition={{duration:1.2, delay:0.3, ease:"easeOut"}}
-                  className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-widest mb-6"
+                  className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-tight tracking-widest mb-8"
                 >
                   <motion.span 
                     initial={{opacity:0, x:-50, scale:0.9}}
@@ -248,7 +238,7 @@ export default function ClinicLanding() {
                   whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
                   transition={{duration:1, delay:0.8, ease:"easeOut"}}
-                  className="text-2xl sm:text-3xl font-bold text-slate-700 mb-12 tracking-wide hover:text-teal-600 transition-colors duration-500"
+                  className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-700 mb-16 tracking-wide hover:text-teal-600 transition-colors duration-500"
                 >
                   <motion.span
                     initial={{opacity:0, y:20, scale:0.9}}
@@ -269,7 +259,7 @@ export default function ClinicLanding() {
               whileInView={{opacity:1, scale:1, rotate:0}} 
               viewport={{once:true}} 
               transition={{duration:1.2, delay:0.4, ease:"easeOut"}} 
-              className="lg:pl-16 xl:pl-24"
+              className="lg:pl-16 xl:pl-24 mt-8 lg:mt-16"
             >
               <div className="relative">
                 {/* 대각선 이미지 배치 - 슬라이드 효과 */}
@@ -278,15 +268,15 @@ export default function ClinicLanding() {
                   whileInView={{opacity:1, y:0, rotate:0}}
                   viewport={{once:true}}
                   transition={{duration:1, delay:0.6}}
-                  className="relative z-10 overflow-hidden rounded-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"
+                  className="relative z-10 transform hover:scale-105 transition-transform duration-500"
                 >
-                  <div className="relative w-full max-w-lg ml-auto mr-0 h-96">
+                  <div className="relative w-full max-w-2xl ml-auto mr-0 h-[32rem]">
                     {heroImages.map((image, index) => (
                       <motion.img
                         key={index}
                         src={image}
                         alt={`성모이음 정신건강의학과 ${index === 0 ? '이미지1' : '이미지2'}`}
-                        className="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl"
+                        className="absolute inset-0 w-full h-full object-cover"
                         initial={{ opacity: 0, scale: 1.1, rotate: index === 0 ? -5 : 5 }}
                         animate={{ 
                           opacity: index === currentImageIndex ? 1 : 0,
