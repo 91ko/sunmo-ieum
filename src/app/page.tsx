@@ -98,52 +98,6 @@ const HomePage = () => {
   
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f6f8fb] to-white text-slate-900 relative overflow-hidden">
-      {/* 반딧불이 효과 */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-20">
-        {[...Array(25)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-yellow-300 rounded-full shadow-lg"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              opacity: [0.2, 1, 0.2],
-              scale: [0.3, 1.5, 0.3],
-              y: [0, -20, 0],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 4,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={`glow-${i}`}
-            className="absolute w-2 h-2 bg-yellow-200 rounded-full shadow-lg"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              opacity: [0.1, 0.8, 0.1],
-              scale: [0.5, 2, 0.5],
-              x: [0, Math.random() * 50 - 25, 0],
-              y: [0, Math.random() * 30 - 15, 0],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 3,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
       
       {/* 헤더 */}
       <header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b border-slate-200/60 relative z-50">
