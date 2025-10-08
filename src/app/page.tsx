@@ -65,8 +65,8 @@ export default function ClinicLanding() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const heroImages = [
-    "/images/gallery/gallery2-waiting.jpg",
-    "/images/gallery/gallery3-treatment.jpg"
+    "/images/hero/성모이음1.jpg",
+    "/images/hero/성모이음2.jpg"
   ];
   
   // 이미지 자동 슬라이드 효과
@@ -282,7 +282,7 @@ export default function ClinicLanding() {
                       <motion.img
                         key={index}
                         src={image}
-                        alt={`성모이음 정신건강의학과 ${index === 0 ? '대기실' : '진료실'}`}
+                        alt={`성모이음 정신건강의학과 ${index === 0 ? '이미지1' : '이미지2'}`}
                         className="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl"
                         initial={{ opacity: 0, scale: 1.1 }}
                         animate={{ 
