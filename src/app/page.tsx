@@ -65,8 +65,8 @@ export default function ClinicLanding() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const heroImages = [
-    "/images/hero/성모이음1.jpg",
-    "/images/hero/성모이음2.jpg"
+    "/images/hero/성모이음1.png",
+    "/images/hero/성모이음2.png"
   ];
   
   // 이미지 자동 슬라이드 효과
@@ -92,7 +92,7 @@ export default function ClinicLanding() {
                    className="h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 rounded-2xl object-contain"
                  />
                </div>
-          <div className="hidden md:flex items-center gap-8 text-sm">
+          <div className="hidden md:flex items-center gap-8 text-base font-medium">
             <Link className="hover:text-teal-600 transition" href="/">
               Home
             </Link>
@@ -239,45 +239,26 @@ export default function ClinicLanding() {
                   성모이음 정신건강 의학과
                 </motion.div>
                 
-                <motion.div 
-                  initial={{opacity:0, y:20}}
-                  whileInView={{opacity:1, y:0}}
-                  viewport={{once:true}}
-                  transition={{duration:0.8, delay:0.7}}
-                  className="flex flex-col sm:flex-row gap-4"
-                >
-                  <Button size="lg" asChild className="bg-yellow-400 hover:bg-yellow-500 text-black border-0 text-lg px-8 py-4">
-                    <a href="https://pf.kakao.com/_ynxoXn" target="_blank" rel="noopener noreferrer">
-                      <svg className="mr-3 h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 3C6.5 3 2 6.58 2 11c0 2.13 1.05 4.07 2.75 5.48L4 21l4.75-1.5c1.25.5 2.58.75 4 .75 5.5 0 10-3.58 10-8S17.5 3 12 3z"/>
-                      </svg>
-                      카카오톡 상담하기
-                    </a>
-                  </Button>
-                  <Button size="lg" variant="outline" asChild className="text-lg px-8 py-4">
-                    <a href="#services">진료과목 보기</a>
-                  </Button>
-                </motion.div>
               </div>
             </motion.div>
             
             <motion.div 
-              initial={{opacity:0, scale:0.8, rotate:5}} 
+              initial={{opacity:0, scale:0.8, rotate:15}} 
               whileInView={{opacity:1, scale:1, rotate:0}} 
               viewport={{once:true}} 
               transition={{duration:1.2, delay:0.4, ease:"easeOut"}} 
               className="lg:pl-8"
             >
               <div className="relative">
-                {/* 자유로운 이미지 배치 - 슬라이드 효과 */}
+                {/* 대각선 이미지 배치 - 슬라이드 효과 */}
                 <motion.div
-                  initial={{opacity:0, y:50, rotate:-5}}
+                  initial={{opacity:0, y:50, rotate:-15}}
                   whileInView={{opacity:1, y:0, rotate:0}}
                   viewport={{once:true}}
                   transition={{duration:1, delay:0.6}}
-                  className="relative z-10 overflow-hidden rounded-2xl"
+                  className="relative z-10 overflow-hidden rounded-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"
                 >
-                  <div className="relative w-full max-w-md mx-auto h-80">
+                  <div className="relative w-full max-w-lg mx-auto h-96">
                     {heroImages.map((image, index) => (
                       <motion.img
                         key={index}
