@@ -85,11 +85,8 @@ export default function ScheduleModal({ isOpen, onClose }: ScheduleModalProps) {
             onClick={(e) => e.stopPropagation()}
           >
             {/* 헤더 */}
-            <div className="flex items-center justify-between p-6 border-b border-slate-200 bg-gradient-to-r from-teal-50 to-emerald-50">
-              <div className="flex items-center gap-3">
-                <Calendar className="h-6 w-6 text-teal-600" />
-                <h2 className="text-2xl font-bold text-slate-900">진료일정</h2>
-              </div>
+            <div className="flex items-center justify-between p-4 border-b border-slate-200">
+              <h2 className="text-xl font-bold text-slate-900">진료일정</h2>
               <Button
                 variant="ghost"
                 size="sm"
@@ -101,7 +98,7 @@ export default function ScheduleModal({ isOpen, onClose }: ScheduleModalProps) {
             </div>
 
             {/* 월 선택 네비게이션 */}
-            <div className="flex items-center justify-between p-6 border-b border-slate-200">
+            <div className="flex items-center justify-between p-4 border-b border-slate-200">
               <Button
                 variant="outline"
                 size="sm"
@@ -113,10 +110,9 @@ export default function ScheduleModal({ isOpen, onClose }: ScheduleModalProps) {
               </Button>
               
               <div className="text-center">
-                <h3 className="text-3xl font-bold text-slate-900">
+                <h3 className="text-2xl font-bold text-slate-900">
                   {currentYear}년 {getMonthName(currentMonth)}
                 </h3>
-                <p className="text-slate-600 mt-1">진료일정 및 휴진일 안내</p>
               </div>
               
               <Button
@@ -131,40 +127,19 @@ export default function ScheduleModal({ isOpen, onClose }: ScheduleModalProps) {
             </div>
 
             {/* 진료일정 이미지 */}
-            <div className="p-6">
-              <Card className="overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="aspect-[4/3] relative">
-                    <img
-                      src={getCurrentImage()}
-                      alt={`${currentYear}년 ${getMonthName(currentMonth)} 진료일정`}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
-                        <h4 className="font-semibold text-slate-900 text-lg">
-                          {currentYear}년 {getMonthName(currentMonth)} 진료일정
-                        </h4>
-                        <p className="text-slate-600 text-sm mt-1">
-                          휴진일 및 특별 진료일 안내
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="p-4">
+              <div className="relative">
+                <img
+                  src={getCurrentImage()}
+                  alt={`${currentYear}년 ${getMonthName(currentMonth)} 진료일정`}
+                  className="w-full h-auto object-contain rounded-lg"
+                />
+              </div>
             </div>
 
-            {/* 하단 정보 */}
-            <div className="p-6 bg-slate-50 border-t border-slate-200">
-              <div className="flex items-center justify-center gap-6 text-sm text-slate-600">
-                <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-teal-600" />
-                  <span>진료시간: 월-금 09:00-19:00, 목 14:00-20:00, 토 08:30-14:00</span>
-                </div>
-              </div>
-              <div className="text-center mt-4">
+            {/* 하단 닫기 버튼 */}
+            <div className="p-4 border-t border-slate-200">
+              <div className="text-center">
                 <Button
                   onClick={onClose}
                   className="bg-teal-600 hover:bg-teal-700 text-white"
