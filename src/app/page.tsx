@@ -187,7 +187,7 @@ const HomePage = () => {
                 React.createElement('a', {
                   href: "/treatment/exam",
                   className: "block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600"
-                }, "검사 및 치료"),
+                }, "검사및치료"),
                 React.createElement('a', {
                   href: "/treatment/nonbenefit",
                   className: "block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600"
@@ -266,7 +266,7 @@ const HomePage = () => {
                 React.createElement('a', {
                   href: "/treatment/exam",
                   className: "block text-sm text-slate-600 hover:text-teal-600"
-                }, "검사 및 치료"),
+                }, "검사및치료"),
                 React.createElement('a', {
                   href: "/treatment/nonbenefit",
                   className: "block text-sm text-slate-600 hover:text-teal-600"

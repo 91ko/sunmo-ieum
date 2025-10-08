@@ -365,7 +365,7 @@ export default function ExamPage() {
         <div className="text-center">
           <Card className="max-w-2xl mx-auto bg-gradient-to-r from-teal-50 to-blue-50 border-teal-200">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">검사 및 치료 예약 안내</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">검사및치료 예약 안내</h3>
               <p className="text-slate-600 mb-6">
                 전문의가 직접 검사하고 치료하며, 개인별 맞춤 치료를 제공합니다.<br />
                 예약은 전화 또는 카카오톡으로 문의해주세요.
