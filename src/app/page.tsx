@@ -202,23 +202,12 @@ export default function ClinicLanding() {
         </div>
       </header>
 
-      {/* 히어로 - 센스 있는 배경 디자인 */}
-      <section className="relative overflow-hidden min-h-screen flex items-center">
-        {/* 배경 이미지 */}
-        <div className="absolute inset-0 -z-20">
-          <img 
-            src="/images/hero/hero-bg.jpg" 
-            alt="성모이음 정신건강의학과 배경"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/60 to-white/70"></div>
-        </div>
-        
-        {/* 장식 요소들 */}
+      {/* 히어로 - 깔끔한 디자인 */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-teal-50 via-white to-emerald-50 min-h-screen flex items-center">
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-teal-200/20 blur-3xl"/>
-          <div className="absolute top-40 -left-24 h-96 w-96 rounded-full bg-emerald-200/25 blur-3xl"/>
-          <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-blue-200/15 blur-3xl"/>
+          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-teal-200/30 blur-3xl"/>
+          <div className="absolute top-40 -left-24 h-96 w-96 rounded-full bg-emerald-200/40 blur-3xl"/>
+          <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-blue-200/20 blur-3xl"/>
         </div>
         <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
