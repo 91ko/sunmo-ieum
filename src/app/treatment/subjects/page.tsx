@@ -118,7 +118,7 @@ export default function TreatmentSubjectsPage() {
                     진료과목
                   </Link>
                   <Link href="/treatment/exam" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">
-                    검사및치료
+                    검사 및 치료
                   </Link>
                   <Link href="/treatment/nonbenefit" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">
                     비급여 진료
