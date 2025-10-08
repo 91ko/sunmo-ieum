@@ -374,79 +374,76 @@ export default function ClinicLanding() {
                 <img 
                   src={s.image} 
                   alt={s.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <h3 className="text-xl font-bold text-white text-center">{s.title}</h3>
                 </div>
               </div>
+              <CardContent className="p-4">
+                <h3 className="text-lg font-bold text-center text-slate-900">{s.title}</h3>
+              </CardContent>
             </Card>
           ))}
         </div>
       </section>
 
-      {/* 의료진 */}
+      {/* 대표원장 */}
       <section id="doctor" className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 pb-8 sm:pb-12">
-        <Card className="overflow-hidden">
-          <div className="grid md:grid-cols-2">
-            <div className="p-8 sm:p-10">
-              <Badge className="mb-3">의료진</Badge>
-              <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">대표원장 김태형</h3>
-              <p className="text-slate-600 mt-3">
-                &ldquo;환자분의 속도에 맞춰, 충분히 듣고 함께 해결책을 찾습니다.&rdquo;
-              </p>
-              <div className="mt-6 grid sm:grid-cols-2 gap-4 text-sm">
-                <div className="rounded-xl border p-4">
-                  <div className="font-medium">진료 철학</div>
-                  <div className="text-slate-600 mt-1">과잉치료보다 정확한 진단과 꾸준한 케어</div>
-                </div>
-                <div className="rounded-xl border p-4">
-                  <div className="font-medium">전문 분야</div>
-                  <div className="text-slate-600 mt-1">불안·공황, 수면, 청소년, 직장 번아웃</div>
-                </div>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-2">
-                <Badge variant="secondary">정신건강의학과 전문의</Badge>
-                <Badge variant="secondary">심리치료 협진</Badge>
-                <Badge variant="secondary">1:1 맞춤상담</Badge>
-              </div>
-                   <div className="mt-8">
-                     <Button size="lg" asChild className="bg-yellow-400 hover:bg-yellow-500 text-black border-0">
-                       <a href="https://pf.kakao.com/_ynxoXn" target="_blank" rel="noopener noreferrer">
-                         <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                           <path d="M12 3C6.5 3 2 6.58 2 11c0 2.13 1.05 4.07 2.75 5.48L4 21l4.75-1.5c1.25.5 2.58.75 4 .75 5.5 0 10-3.58 10-8S17.5 3 12 3z"/>
-                         </svg>
-                         카카오톡 상담하기
-                       </a>
-                     </Button>
-                   </div>
-            </div>
-            <div className="p-6 sm:p-8 bg-slate-50 border-t md:border-t-0 md:border-l">
-              <div className="aspect-[3/4] max-w-xs mx-auto rounded-2xl bg-white border overflow-hidden">
-                <img 
-                  src="/images/doctor.jpg" 
-                  alt="김태형 원장"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="mt-6 grid grid-cols-3 gap-3 text-center text-sm">
-                <div className="rounded-xl border p-3">
-                  <div className="font-semibold">상담실</div>
-                  <div className="text-slate-600 mt-0.5">프라이버시 보장</div>
-                </div>
-                <div className="rounded-xl border p-3">
-                  <div className="font-semibold">초진 30분±</div>
-                  <div className="text-slate-600 mt-0.5">충분히 듣습니다</div>
-                </div>
-                <div className="rounded-xl border p-3">
-                  <div className="font-semibold">협진</div>
-                  <div className="text-slate-600 mt-0.5">심리·약물 조화</div>
-                </div>
-              </div>
+        <div className="text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">대표원장</h2>
+        </div>
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="text-center md:text-left">
+            <div className="aspect-[3/4] max-w-sm mx-auto md:mx-0 rounded-2xl overflow-hidden shadow-lg">
+              <img 
+                src="/images/doctor.jpg" 
+                alt="김태형 원장"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
-        </Card>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">김태형 원장</h3>
+              <p className="text-lg text-slate-600 mb-4">정신건강의학과 전문의</p>
+            </div>
+            
+            <div className="space-y-4">
+              <div>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">진료 철학</h4>
+                <p className="text-slate-600">"환자분의 속도에 맞춰, 충분히 듣고 함께 해결책을 찾습니다."</p>
+              </div>
+              
+              <div>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">전문 분야</h4>
+                <p className="text-slate-600">불안·공황, 수면장애, 청소년 정신건강, 직장인 스트레스, 우울증</p>
+              </div>
+              
+              <div>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">약력</h4>
+                <ul className="text-slate-600 space-y-1">
+                  <li>• 정신건강의학과 전문의</li>
+                  <li>• 서울대학교병원 정신건강의학과 수료</li>
+                  <li>• 대한정신건강의학회 정회원</li>
+                  <li>• 한국수면의학회 정회원</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="pt-4">
+              <Button size="lg" asChild className="bg-yellow-400 hover:bg-yellow-500 text-black border-0">
+                <a href="https://pf.kakao.com/_ynxoXn" target="_blank" rel="noopener noreferrer">
+                  <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 3C6.5 3 2 6.58 2 11c0 2.13 1.05 4.07 2.75 5.48L4 21l4.75-1.5c1.25.5 2.58.75 4 .75 5.5 0 10-3.58 10-8S17.5 3 12 3z"/>
+                  </svg>
+                  카카오톡 상담하기
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* 이용 안내 */}
