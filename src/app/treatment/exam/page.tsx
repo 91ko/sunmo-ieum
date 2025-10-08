@@ -14,6 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ExamPage() {
   
@@ -200,15 +201,14 @@ export default function ExamPage() {
             {examTypes.map((exam, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-white">
                 <div className="flex flex-col lg:flex-row">
-                  {/* 사진 넣을 자리 */}
-                  <div className="lg:w-1/2 h-64 lg:h-auto bg-slate-100 flex items-center justify-center">
-                    <div className="text-slate-400 text-center">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-slate-200 rounded-lg flex items-center justify-center">
-                        <exam.icon className="h-8 w-8" />
-                      </div>
-                      <p className="text-sm">사진 넣을 자리</p>
-                      <p className="text-xs">{exam.image}</p>
-                    </div>
+                  {/* 이미지 */}
+                  <div className="lg:w-1/2 h-64 lg:h-auto relative">
+                    <Image
+                      src={exam.image}
+                      alt={exam.title}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   
                   <div className="lg:w-1/2 p-6">
@@ -241,15 +241,14 @@ export default function ExamPage() {
             {treatmentMethods.map((treatment, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-white">
                 <div className="flex flex-col lg:flex-row">
-                  {/* 사진 넣을 자리 */}
-                  <div className="lg:w-1/2 h-64 lg:h-auto bg-slate-100 flex items-center justify-center">
-                    <div className="text-slate-400 text-center">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-slate-200 rounded-lg flex items-center justify-center">
-                        <treatment.icon className="h-8 w-8" />
-                      </div>
-                      <p className="text-sm">사진 넣을 자리</p>
-                      <p className="text-xs">{treatment.image}</p>
-                    </div>
+                  {/* 이미지 */}
+                  <div className="lg:w-1/2 h-64 lg:h-auto relative">
+                    <Image
+                      src={treatment.image}
+                      alt={treatment.title}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   
                   <div className="lg:w-1/2 p-6">
