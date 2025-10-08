@@ -155,33 +155,6 @@ export default function LocationPage() {
           <p className="text-lg text-slate-600">진료시간과 편리한 교통편으로 방문해주세요</p>
         </div>
 
-        {/* 병원 정보 */}
-        <div className="max-w-4xl mx-auto mb-12">
-          <Card className="bg-gradient-to-r from-teal-50 to-blue-50 border-teal-200">
-            <CardContent className="p-8">
-              <div className="text-center">
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  <Star className="h-6 w-6 text-yellow-500" />
-                  <h2 className="text-2xl font-bold text-slate-900">성모이음 정신건강의학과</h2>
-                </div>
-                <div className="space-y-2 text-slate-600 mb-6">
-                  <p className="flex items-center justify-center gap-2">
-                    <MapPin className="h-4 w-4" />
-                    <span>서울 은평구 진관동 72 드림스퀘어 4층</span>
-                  </p>
-                  <p className="flex items-center justify-center gap-2">
-                    <Phone className="h-4 w-4" />
-                    <span>02-2138-1568</span>
-                  </p>
-                  <p className="flex items-center justify-center gap-2">
-                    <Clock className="h-4 w-4" />
-                    <span>월-금 09:00-18:00, 토 09:00-13:00 (일요일 휴진)</span>
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
 
         {/* 진료시간 안내 */}
         <div className="max-w-4xl mx-auto mb-12">
