@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -86,91 +86,162 @@ export default function ClinicLanding() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f6f8fb] to-white text-slate-900 relative overflow-hidden">
       {/* 반딧불이 효과 */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {[...Array(25)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-yellow-300 rounded-full shadow-lg"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              opacity: [0.2, 1, 0.2],
+              scale: [0.3, 1.5, 0.3],
+              y: [0, -20, 0],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 4,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+        {[...Array(15)].map((_, i) => (
+          <motion.div
+            key={`glow-${i}`}
+            className="absolute w-2 h-2 bg-yellow-200 rounded-full shadow-lg"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              opacity: [0.1, 0.8, 0.1],
+              scale: [0.5, 2, 0.5],
+              x: [0, Math.random() * 50 - 25, 0],
+              y: [0, Math.random() * 30 - 15, 0],
+            }}
+            transition={{
+              duration: 4 + Math.random() * 3,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
       </div>
       
       <style jsx>{`
         .firefly {
           position: absolute;
-          width: 4px;
-          height: 4px;
-          background: #10b981;
+          width: 6px;
+          height: 6px;
+          background: linear-gradient(45deg, #10b981, #34d399);
           border-radius: 50%;
-          box-shadow: 0 0 6px #10b981, 0 0 12px #10b981;
-          animation: fly 15s infinite linear;
+          box-shadow: 
+            0 0 8px #10b981,
+            0 0 16px #10b981,
+            0 0 24px #34d399;
+          animation: fly 20s infinite ease-in-out;
           opacity: 0;
         }
         
-        .firefly:nth-child(1) {
-          left: 10%;
+        .firefly-1 {
+          left: 5%;
           animation-delay: 0s;
-          animation-duration: 12s;
+          animation-duration: 15s;
         }
         
-        .firefly:nth-child(2) {
-          left: 20%;
+        .firefly-2 {
+          left: 15%;
           animation-delay: 2s;
           animation-duration: 18s;
         }
         
-        .firefly:nth-child(3) {
-          left: 30%;
+        .firefly-3 {
+          left: 25%;
           animation-delay: 4s;
-          animation-duration: 14s;
-        }
-        
-        .firefly:nth-child(4) {
-          left: 40%;
-          animation-delay: 6s;
           animation-duration: 16s;
         }
         
-        .firefly:nth-child(5) {
-          left: 50%;
-          animation-delay: 8s;
-          animation-duration: 13s;
+        .firefly-4 {
+          left: 35%;
+          animation-delay: 6s;
+          animation-duration: 20s;
         }
         
-        .firefly:nth-child(6) {
-          left: 60%;
+        .firefly-5 {
+          left: 45%;
+          animation-delay: 8s;
+          animation-duration: 14s;
+        }
+        
+        .firefly-6 {
+          left: 55%;
           animation-delay: 10s;
           animation-duration: 17s;
         }
         
-        .firefly:nth-child(7) {
-          left: 70%;
+        .firefly-7 {
+          left: 65%;
           animation-delay: 12s;
-          animation-duration: 15s;
+          animation-duration: 19s;
         }
         
-        .firefly:nth-child(8) {
-          left: 80%;
+        .firefly-8 {
+          left: 75%;
           animation-delay: 14s;
-          animation-duration: 19s;
+          animation-duration: 13s;
+        }
+        
+        .firefly-9 {
+          left: 85%;
+          animation-delay: 16s;
+          animation-duration: 21s;
+        }
+        
+        .firefly-10 {
+          left: 95%;
+          animation-delay: 18s;
+          animation-duration: 15s;
         }
         
         @keyframes fly {
           0% {
-            transform: translateY(100vh) translateX(0);
+            transform: translateY(100vh) translateX(0px) scale(0);
             opacity: 0;
           }
-          10% {
+          5% {
             opacity: 1;
+            transform: translateY(90vh) translateX(10px) scale(1);
           }
-          90% {
+          25% {
+            transform: translateY(70vh) translateX(-20px) scale(1.2);
+          }
+          50% {
+            transform: translateY(40vh) translateX(30px) scale(0.8);
+          }
+          75% {
+            transform: translateY(20vh) translateX(-15px) scale(1.1);
+          }
+          95% {
             opacity: 1;
+            transform: translateY(10vh) translateX(20px) scale(0.9);
           }
           100% {
-            transform: translateY(-100px) translateX(100px);
+            transform: translateY(-50px) translateX(50px) scale(0);
             opacity: 0;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .firefly {
+            width: 4px;
+            height: 4px;
+            box-shadow: 
+              0 0 4px #10b981,
+              0 0 8px #10b981;
           }
         }
       `}</style>
