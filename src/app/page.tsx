@@ -98,7 +98,12 @@ export default function ClinicLanding() {
   }, []);
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#f6f8fb] to-white text-slate-900 relative overflow-hidden">
+    <motion.div 
+      className="min-h-screen bg-gradient-to-b from-[#f6f8fb] to-white text-slate-900 relative overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* 반딧불이 효과 */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-20">
         {[...Array(25)].map((_, i) => (
@@ -862,6 +867,6 @@ export default function ClinicLanding() {
           <div className="mt-4">© {new Date().getFullYear()} SeongmoIeum. All rights reserved.</div>
         </div>
       </footer>
-    </div>
+    </motion.div>
   );
 }
