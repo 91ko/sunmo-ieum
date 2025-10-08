@@ -44,7 +44,7 @@ const services = [
   },
 ];
 
-export default function HomePage() {
+const HomePage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -738,4 +738,6 @@ export default function HomePage() {
       </footer>
     </div>
   );
-}
+};
+
+export default HomePage;
