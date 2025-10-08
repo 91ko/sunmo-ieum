@@ -3,13 +3,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Users,
   MapPin,
   Phone,
   Clock,
-  Baby,
-  HeartCrack,
-  Briefcase,
   ChevronDown,
   Menu,
   X,
@@ -188,12 +184,23 @@ export default function ClinicLanding() {
         </div>
       </header>
 
-      {/* 히어로 - 깔끔한 디자인 */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-teal-50 via-white to-emerald-50 min-h-screen flex items-center">
+      {/* 히어로 - 센스 있는 배경 디자인 */}
+      <section className="relative overflow-hidden min-h-screen flex items-center">
+        {/* 배경 이미지 */}
+        <div className="absolute inset-0 -z-20">
+          <img 
+            src="/images/hero/hero-bg.jpg" 
+            alt="성모이음 정신건강의학과 배경"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-teal-900/20 via-emerald-800/15 to-teal-700/25"></div>
+        </div>
+        
+        {/* 장식 요소들 */}
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-teal-200/30 blur-3xl"/>
-          <div className="absolute top-40 -left-24 h-96 w-96 rounded-full bg-emerald-200/40 blur-3xl"/>
-          <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-blue-200/20 blur-3xl"/>
+          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-teal-200/20 blur-3xl"/>
+          <div className="absolute top-40 -left-24 h-96 w-96 rounded-full bg-emerald-200/25 blur-3xl"/>
+          <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-blue-200/15 blur-3xl"/>
         </div>
         <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -218,7 +225,7 @@ export default function ClinicLanding() {
                     whileInView={{opacity:1, x:0, scale:1}}
                     viewport={{once:true}}
                     transition={{duration:1, delay:0.5, ease:"easeOut"}}
-                    className="block text-slate-800 tracking-[0.1em] hover:text-teal-700 transition-colors duration-500 mb-2 whitespace-nowrap"
+                    className="block text-white tracking-[0.1em] hover:text-teal-200 transition-colors duration-500 mb-2 whitespace-nowrap drop-shadow-lg"
                   >
                     사람과 사람
                   </motion.div>
@@ -227,7 +234,7 @@ export default function ClinicLanding() {
                     whileInView={{opacity:1, x:0, scale:1}}
                     viewport={{once:true}}
                     transition={{duration:1, delay:0.7, ease:"easeOut"}}
-                    className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 tracking-[0.1em] hover:from-teal-500 hover:via-emerald-500 hover:to-teal-600 transition-all duration-500 whitespace-nowrap"
+                    className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-200 via-emerald-200 to-teal-300 tracking-[0.1em] hover:from-teal-100 hover:via-emerald-100 hover:to-teal-200 transition-all duration-500 whitespace-nowrap drop-shadow-lg"
                   >
                     마음과 마음을 이음
                   </motion.div>
@@ -238,7 +245,7 @@ export default function ClinicLanding() {
                   whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
                   transition={{duration:1, delay:0.8, ease:"easeOut"}}
-                  className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-700 mb-12 tracking-wide hover:text-teal-600 transition-colors duration-500"
+                  className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-12 tracking-wide hover:text-teal-200 transition-colors duration-500 drop-shadow-lg"
                 >
                   <motion.span
                     initial={{opacity:0, y:20, scale:0.9}}
