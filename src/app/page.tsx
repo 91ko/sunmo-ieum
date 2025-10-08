@@ -47,6 +47,29 @@ const services = [
 const HomePage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
+
+  // 갤러리 이미지들
+  const galleryImages = [
+    "/images/gallery/gallery1-exterior.jpg",
+    "/images/gallery/gallery2-waiting.jpg", 
+    "/images/gallery/gallery3-treatment.jpg",
+    "/images/gallery/gallery4-counseling.jpg",
+    "/images/gallery/gallery5-examination.jpg",
+    "/images/gallery/gallery6-rest.jpg",
+    "/images/gallery/gallery7-corridor.jpg",
+    "/images/gallery/gallery8-reception.jpg",
+    "/images/gallery/gallery9-overview.jpg"
+  ];
+
+  // 갤러리 이미지 자동 슬라이드
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentGalleryIndex((prev) => (prev + 1) % galleryImages.length);
+    }, 3000); // 3초마다 변경
+
+    return () => clearInterval(interval);
+  }, [galleryImages.length]);
 
   // 팝업창 열기 기능
   const openSchedulePopup = () => {
@@ -408,50 +431,37 @@ const HomePage = () => {
             whileInView: {opacity:1, scale:1, rotate:0},
             viewport: {once:true},
             transition: {duration:1.2, delay:0.4, ease:"easeOut"},
-            className: "lg:pl-16 xl:pl-24 mt-8 lg:mt-16"
+            className: "lg:pl-8 xl:pl-12 mt-8 lg:mt-16"
           },
             React.createElement('div', {
               className: "relative"
             },
-              // 병원 전체전경 이미지
+              // 갤러리 이미지 슬라이드
               React.createElement(motion.div, {
                 initial: {opacity:0, scale:0.9, y:20},
                 whileInView: {opacity:1, scale:1, y:0},
                 viewport: {once:true},
                 transition: {duration:1, delay:0.6},
-                className: "w-full max-w-md mx-auto lg:max-w-lg mb-8"
+                className: "w-full max-w-sm mx-auto lg:max-w-md"
               },
-                React.createElement('img', {
-                  src: "/images/gallery/gallery9-overview.jpg",
-                  alt: "성모이음 정신건강의학과 전체전경",
-                  className: "w-full h-64 lg:h-80 object-cover rounded-2xl shadow-xl"
-                })
+                React.createElement('div', {
+                  className: "relative overflow-hidden rounded-2xl shadow-2xl"
+                },
+                  React.createElement(motion.img, {
+                    key: currentGalleryIndex,
+                    src: galleryImages[currentGalleryIndex],
+                    alt: "성모이음 정신건강의학과",
+                    className: "w-full h-64 lg:h-80 object-cover",
+                    initial: { opacity: 0, scale: 1.1 },
+                    animate: { opacity: 1, scale: 1 },
+                    transition: { duration: 0.8, ease: "easeInOut" }
+                  }),
+                  // 그라데이션 오버레이
+                  React.createElement('div', {
+                    className: "absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"
+                  })
+                )
               ),
-              
-              // 자유로운 장식 요소들
-              React.createElement(motion.div, {
-                initial: {opacity:0, scale:0},
-                whileInView: {opacity:1, scale:1},
-                viewport: {once:true},
-                transition: {duration:0.8, delay:0.8},
-                className: "absolute -top-6 -right-6 w-12 h-12 bg-teal-400 rounded-full opacity-80 shadow-lg"
-              }),
-              
-              React.createElement(motion.div, {
-                initial: {opacity:0, scale:0},
-                whileInView: {opacity:1, scale:1},
-                viewport: {once:true},
-                transition: {duration:0.8, delay:1},
-                className: "absolute -bottom-6 -left-6 w-8 h-8 bg-emerald-400 rounded-full opacity-60 shadow-lg"
-              }),
-              
-              React.createElement(motion.div, {
-                initial: {opacity:0, scale:0},
-                whileInView: {opacity:1, scale:1},
-                viewport: {once:true},
-                transition: {duration:0.8, delay:1.2},
-                className: "absolute top-1/3 -right-8 w-6 h-6 bg-blue-400 rounded-full opacity-70 shadow-lg"
-              }),
               
               React.createElement(motion.div, {
                 initial: {opacity:0, scale:0},
