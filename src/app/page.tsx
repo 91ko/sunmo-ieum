@@ -654,7 +654,7 @@ export default function ClinicLanding() {
                       <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                       <span>
                         <span className="md:hidden">가톨릭대학교 의과대학<br />정신건강의학교실 외래교수</span>
-                        <span className="hidden md:inline">가톨릭대학교 의과대학<br />정신건강의학교실 외래교수</span>
+                        <span className="hidden md:inline">가톨릭대학교 의과대학 정신건강의학교실 외래교수</span>
                       </span>
                     </li>
                     <li className="flex items-start">
