@@ -5,7 +5,6 @@ import {
   ChevronLeft,
   ChevronDown,
   Menu,
-  Info,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -466,23 +465,6 @@ export default function NonBenefitPage() {
         </section>
 
 
-        {/* 상담 예약 CTA */}
-        <div className="max-w-4xl mx-auto">
-          <Card className="bg-teal-50 border-teal-200">
-            <CardContent className="py-8 text-center">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">비급여 진료 상담</h3>
-              <p className="text-slate-600 mb-6">필요한 검사나 치료에 대해 자세히 상담받으세요</p>
-              <Button asChild size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-black border-0">
-                <a href="https://pf.kakao.com/_ynxoXn" target="_blank" rel="noopener noreferrer">
-                  <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 3C6.5 3 2 6.58 2 11c0 2.13 1.05 4.07 2.75 5.48L4 21l4.75-1.5c1.25.5 2.58.75 4 .75 5.5 0 10-3.58 10-8S17.5 3 12 3z"/>
-                  </svg>
-                  카카오톡 상담하기
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
       </main>
 
       {/* 푸터 */}

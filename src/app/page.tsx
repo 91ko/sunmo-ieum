@@ -556,64 +556,110 @@ export default function ClinicLanding() {
 
       {/* 진료과목 */}
       <section id="services" className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-16 sm:py-20">
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">진료과목</h2>
-        </div>
+        </motion.div>
         
         {/* 모바일: 가로 스크롤, 데스크톱: 그리드 */}
-        <div className="block md:hidden">
+        <motion.div 
+          className="block md:hidden"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
             {services.map((s, i) => (
-              <Card key={i} className="hover:shadow-lg transition-shadow overflow-hidden group flex-shrink-0 w-64">
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="hover:shadow-lg transition-shadow overflow-hidden group flex-shrink-0 w-64">
+                  <div className="relative">
+                    <img 
+                      src={s.image} 
+                      alt={s.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <h3 className="text-lg font-bold text-white text-center px-2">{s.title}</h3>
+                    </div>
+                  </div>
+                  <CardContent className="p-4">
+                    <h3 className="text-base font-bold text-center text-slate-900">{s.title}</h3>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+        
+        {/* 데스크톱: 그리드 */}
+        <motion.div 
+          className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          {services.map((s, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="hover:shadow-lg transition-shadow overflow-hidden group">
                 <div className="relative">
                   <img 
                     src={s.image} 
                     alt={s.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 className="text-lg font-bold text-white text-center px-2">{s.title}</h3>
+                    <h3 className="text-xl font-bold text-white text-center">{s.title}</h3>
                   </div>
                 </div>
                 <CardContent className="p-4">
-                  <h3 className="text-base font-bold text-center text-slate-900">{s.title}</h3>
+                  <h3 className="text-lg font-bold text-center text-slate-900">{s.title}</h3>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        </div>
-        
-        {/* 데스크톱: 그리드 */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((s, i) => (
-            <Card key={i} className="hover:shadow-lg transition-shadow overflow-hidden group">
-              <div className="relative">
-                <img 
-                  src={s.image} 
-                  alt={s.title}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-xl font-bold text-white text-center">{s.title}</h3>
-                </div>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="text-lg font-bold text-center text-slate-900">{s.title}</h3>
-              </CardContent>
-            </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* 대표원장 */}
       <section id="doctor" className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 pb-8 sm:pb-12">
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">대표원장</h2>
-        </div>
+        </motion.div>
         
-        <div className="max-w-4xl mx-auto">
+        <motion.div 
+          className="max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <Card className="overflow-hidden shadow-xl border-0 bg-white">
             <div className="grid md:grid-cols-2 gap-0">
               {/* 사진 부분 */}
@@ -704,7 +750,13 @@ export default function ClinicLanding() {
 
       {/* 위치/진료시간 */}
       <section id="location" className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <motion.div 
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <Card className="overflow-hidden">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-lg"><MapPin className="h-5 w-5"/>오시는 길</CardTitle>
