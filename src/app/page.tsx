@@ -84,7 +84,96 @@ export default function ClinicLanding() {
   }, []);
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#f6f8fb] to-white text-slate-900">
+    <div className="min-h-screen bg-gradient-to-b from-[#f6f8fb] to-white text-slate-900 relative overflow-hidden">
+      {/* 반딧불이 효과 */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+      </div>
+      
+      <style jsx>{`
+        .firefly {
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          background: #10b981;
+          border-radius: 50%;
+          box-shadow: 0 0 6px #10b981, 0 0 12px #10b981;
+          animation: fly 15s infinite linear;
+          opacity: 0;
+        }
+        
+        .firefly:nth-child(1) {
+          left: 10%;
+          animation-delay: 0s;
+          animation-duration: 12s;
+        }
+        
+        .firefly:nth-child(2) {
+          left: 20%;
+          animation-delay: 2s;
+          animation-duration: 18s;
+        }
+        
+        .firefly:nth-child(3) {
+          left: 30%;
+          animation-delay: 4s;
+          animation-duration: 14s;
+        }
+        
+        .firefly:nth-child(4) {
+          left: 40%;
+          animation-delay: 6s;
+          animation-duration: 16s;
+        }
+        
+        .firefly:nth-child(5) {
+          left: 50%;
+          animation-delay: 8s;
+          animation-duration: 13s;
+        }
+        
+        .firefly:nth-child(6) {
+          left: 60%;
+          animation-delay: 10s;
+          animation-duration: 17s;
+        }
+        
+        .firefly:nth-child(7) {
+          left: 70%;
+          animation-delay: 12s;
+          animation-duration: 15s;
+        }
+        
+        .firefly:nth-child(8) {
+          left: 80%;
+          animation-delay: 14s;
+          animation-duration: 19s;
+        }
+        
+        @keyframes fly {
+          0% {
+            transform: translateY(100vh) translateX(0);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-100px) translateX(100px);
+            opacity: 0;
+          }
+        }
+      `}</style>
       {/* 헤더 */}
       <header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b border-slate-200/60 relative">
         <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 h-16 flex items-center justify-between">
