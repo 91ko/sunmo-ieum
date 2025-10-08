@@ -45,7 +45,7 @@ const services = [
 ];
 
 
-export default function ClinicLanding() {
+export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
