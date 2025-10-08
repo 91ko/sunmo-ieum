@@ -413,6 +413,20 @@ const HomePage = () => {
             React.createElement('div', {
               className: "relative"
             },
+              // 병원 전체전경 이미지
+              React.createElement(motion.div, {
+                initial: {opacity:0, scale:0.9, y:20},
+                whileInView: {opacity:1, scale:1, y:0},
+                viewport: {once:true},
+                transition: {duration:1, delay:0.6},
+                className: "w-full max-w-md mx-auto lg:max-w-lg mb-8"
+              },
+                React.createElement('img', {
+                  src: "/images/gallery/gallery9-overview.jpg",
+                  alt: "성모이음 정신건강의학과 전체전경",
+                  className: "w-full h-64 lg:h-80 object-cover rounded-2xl shadow-xl"
+                })
+              ),
               
               // 자유로운 장식 요소들
               React.createElement(motion.div, {
