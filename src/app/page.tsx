@@ -147,6 +147,14 @@ export default function ClinicLanding() {
           opacity: 0;
         }
         
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        
         .firefly-1 {
           left: 5%;
           animation-delay: 0s;
@@ -526,7 +534,33 @@ export default function ClinicLanding() {
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">진료과목</h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        {/* 모바일: 가로 스크롤, 데스크톱: 그리드 */}
+        <div className="block md:hidden">
+          <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+            {services.map((s, i) => (
+              <Card key={i} className="hover:shadow-lg transition-shadow overflow-hidden group flex-shrink-0 w-64">
+                <div className="relative">
+                  <img 
+                    src={s.image} 
+                    alt={s.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-lg font-bold text-white text-center px-2">{s.title}</h3>
+                  </div>
+                </div>
+                <CardContent className="p-4">
+                  <h3 className="text-base font-bold text-center text-slate-900">{s.title}</h3>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+        
+        {/* 데스크톱: 그리드 */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s, i) => (
             <Card key={i} className="hover:shadow-lg transition-shadow overflow-hidden group">
               <div className="relative">
@@ -562,7 +596,7 @@ export default function ClinicLanding() {
                 <img 
                   src="/images/doctor.jpg" 
                   alt="김태형 원장"
-                  className="w-full h-96 md:h-full object-cover"
+                  className="w-full h-80 md:h-full object-cover object-top"
                 />
                 <div className="absolute bottom-4 right-4">
                   <div className="bg-teal-500 text-white px-3 py-1 rounded-full text-sm font-medium">
