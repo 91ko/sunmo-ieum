@@ -29,22 +29,22 @@ import Link from "next/link";
 
 const services = [
   { 
-    icon: Baby, 
+    image: "/images/subjects/소아청소년.png",
     title: "소아청소년 클리닉", 
     desc: "발달지연, ADHD, 틱장애, 불안장애, 청소년 우울증, 학습 부진, 또래 관계 문제" 
   },
   { 
-    icon: Users, 
+    image: "/images/subjects/성인클리닉.png",
     title: "성인 클리닉", 
     desc: "우울증, 불안장애, 수면장애, 강박장애, 공황장애, 성인 ADHD, PTSD, 조현병" 
   },
   { 
-    icon: HeartCrack, 
+    image: "/images/subjects/노인클리닉.png",
     title: "노인 클리닉", 
     desc: "노인 우울증, 건망증, 경도인지장애, 치매" 
   },
   { 
-    icon: Briefcase, 
+    image: "/images/subjects/기타진료.png",
     title: "기타 진료", 
     desc: "비만, 경두개직류자극치료, 부부/가족 상담, 직장인 스트레스" 
   },
@@ -390,24 +390,26 @@ export default function ClinicLanding() {
             <a href="/treatment/subjects">전체 보기</a>
           </Button>
         </div>
-        <div className="mt-8 grid sm:grid-cols-2 gap-5">
+        <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s, i) => (
-            <Card key={i} className="hover:shadow-lg transition-shadow">
-              <CardHeader className="flex flex-row items-center gap-4 pb-2">
-                <div className="h-12 w-12 rounded-2xl bg-teal-100 grid place-items-center">
-                  <s.icon className="h-6 w-6 text-teal-700"/>
+            <Card key={i} className="hover:shadow-lg transition-shadow overflow-hidden group">
+              <div className="relative">
+                <img 
+                  src={s.image} 
+                  alt={s.title}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-lg font-bold mb-2">{s.title}</h3>
+                  <p className="text-sm text-white/90">{s.desc}</p>
                 </div>
-                <div>
-                  <CardTitle className="text-lg">{s.title}</CardTitle>
-                  <CardDescription>{s.desc}</CardDescription>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-0 text-sm text-slate-600">
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>초기 평가 · 자가점검</li>
-                  <li>생활습관/수면 위생 코칭</li>
-                  <li>필요 시 약물/심리치료 연계</li>
-                </ul>
+              </div>
+              <CardContent className="p-4">
+                <CardTitle className="text-lg mb-2">{s.title}</CardTitle>
+                <CardDescription className="text-sm text-slate-600 line-clamp-3">
+                  {s.desc}
+                </CardDescription>
               </CardContent>
             </Card>
           ))}
