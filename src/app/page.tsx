@@ -74,6 +74,15 @@ export default function ClinicLanding() {
     
     return () => clearInterval(interval);
   }, [heroImages.length]);
+
+  // 페이지 진입 시 진료일정 팝업 자동 표시
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setScheduleModalOpen(true);
+    }, 2000); // 2초 후 팝업 표시
+    
+    return () => clearTimeout(timer);
+  }, []);
   
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f6f8fb] to-white text-slate-900">
@@ -363,50 +372,13 @@ export default function ClinicLanding() {
       </section>
 
 
-      {/* 진료일정 - 팝업 버튼으로 변경 */}
-      <section id="schedule" className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-16 sm:py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">진료일정</h2>
-          <p className="text-lg text-slate-600">월별 휴진일과 진료일정을 확인하세요</p>
-        </div>
-        
-        <div className="flex justify-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white text-lg px-12 py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-              onClick={() => setScheduleModalOpen(true)}
-            >
-              <Clock className="mr-3 h-6 w-6" />
-              진료일정 확인하기
-            </Button>
-          </motion.div>
-        </div>
-        
-        <div className="mt-8 text-center">
-          <p className="text-slate-500 text-sm">
-            클릭하시면 현재 월의 진료일정을 확인하실 수 있습니다
-          </p>
-        </div>
-      </section>
 
       {/* 진료과목 */}
       <section id="services" className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-16 sm:py-20">
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">진료과목</h2>
-            <p className="text-slate-600 mt-2">증상별로 쉽고 명확하게 안내드립니다.</p>
-          </div>
-          <Button variant="ghost" className="hidden sm:inline-flex" asChild>
-            <a href="/treatment/subjects">전체 보기</a>
-          </Button>
+        <div className="text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">진료과목</h2>
         </div>
-        <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s, i) => (
             <Card key={i} className="hover:shadow-lg transition-shadow overflow-hidden group">
               <div className="relative">
@@ -416,17 +388,10 @@ export default function ClinicLanding() {
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-lg font-bold mb-2">{s.title}</h3>
-                  <p className="text-sm text-white/90">{s.desc}</p>
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-xl font-bold text-white text-center">{s.title}</h3>
                 </div>
               </div>
-              <CardContent className="p-4">
-                <CardTitle className="text-lg mb-2">{s.title}</CardTitle>
-                <CardDescription className="text-sm text-slate-600 line-clamp-3">
-                  {s.desc}
-                </CardDescription>
-              </CardContent>
             </Card>
           ))}
         </div>
