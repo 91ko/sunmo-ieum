@@ -5,11 +5,9 @@ import {
   MapPin,
   ChevronLeft,
   ChevronDown,
-  Phone,
   Clock,
   Menu,
   Navigation,
-  Star,
   Coffee,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
