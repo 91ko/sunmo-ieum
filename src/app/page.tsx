@@ -202,7 +202,7 @@ export default function ClinicLanding() {
             alt="성모이음 정신건강의학과 배경"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-teal-900/20 via-emerald-800/15 to-teal-700/25"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/60 to-white/70"></div>
         </div>
         
         {/* 장식 요소들 */}
@@ -234,7 +234,7 @@ export default function ClinicLanding() {
                     whileInView={{opacity:1, x:0, scale:1}}
                     viewport={{once:true}}
                     transition={{duration:1, delay:0.5, ease:"easeOut"}}
-                    className="block text-white tracking-[0.1em] hover:text-teal-200 transition-colors duration-500 mb-2 whitespace-nowrap drop-shadow-lg"
+                    className="block text-slate-800 tracking-[0.1em] hover:text-teal-700 transition-colors duration-500 mb-2 whitespace-nowrap"
                   >
                     사람과 사람
                   </motion.div>
@@ -243,7 +243,7 @@ export default function ClinicLanding() {
                     whileInView={{opacity:1, x:0, scale:1}}
                     viewport={{once:true}}
                     transition={{duration:1, delay:0.7, ease:"easeOut"}}
-                    className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-200 via-emerald-200 to-teal-300 tracking-[0.1em] hover:from-teal-100 hover:via-emerald-100 hover:to-teal-200 transition-all duration-500 whitespace-nowrap drop-shadow-lg"
+                    className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 tracking-[0.1em] hover:from-teal-500 hover:via-emerald-500 hover:to-teal-600 transition-all duration-500 whitespace-nowrap"
                   >
                     마음과 마음을 이음
                   </motion.div>
@@ -254,7 +254,7 @@ export default function ClinicLanding() {
                   whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
                   transition={{duration:1, delay:0.8, ease:"easeOut"}}
-                  className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-12 tracking-wide hover:text-teal-200 transition-colors duration-500 drop-shadow-lg"
+                  className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-700 mb-12 tracking-wide hover:text-teal-600 transition-colors duration-500"
                 >
                   <motion.span
                     initial={{opacity:0, y:20, scale:0.9}}
