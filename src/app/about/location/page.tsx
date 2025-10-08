@@ -8,13 +8,8 @@ import {
   Phone,
   Clock,
   Menu,
-  Car,
-  Bus,
-  Train,
   Navigation,
   Star,
-  Info,
-  Coffee,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -25,62 +20,6 @@ import KakaoMap from "@/components/maps/KakaoMap";
 export default function LocationPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const transportation = [
-    {
-      icon: <Car className="h-6 w-6 text-blue-600" />,
-      title: "자가용 이용시",
-      details: [
-        "주소: 서울 은평구 진관동 72 드림스퀘어 4층",
-        "주차장: 드림스퀘어 지하 주차장 이용",
-        "주차요금: 1시간 무료, 이후 30분당 1,000원",
-        "※ 주차 공간이 제한적이니 대중교통 이용을 권장합니다"
-      ],
-      color: "bg-blue-50 border-blue-200"
-    },
-    {
-      icon: <Bus className="h-6 w-6 text-green-600" />,
-      title: "버스 이용시",
-      details: [
-        "간선버스: 701, 702, 703, 704, 705, 706, 707, 708, 709, 710",
-        "지선버스: 7211, 7212, 7213, 7214, 7215",
-        "마을버스: 은평01, 은평02, 은평03",
-        "정류장: 진관동 드림스퀘어 하차 (도보 1분)"
-      ],
-      color: "bg-green-50 border-green-200"
-    },
-    {
-      icon: <Train className="h-6 w-6 text-purple-600" />,
-      title: "지하철 이용시",
-      details: [
-        "6호선 응암역 1번 출구 → 버스 환승 (진관동 방향)",
-        "3호선 구파발역 2번 출구 → 버스 환승 (진관동 방향)"
-      ],
-      color: "bg-purple-50 border-purple-200"
-    }
-  ];
-
-  const nearbyLandmarks = [
-    {
-      name: "응암역",
-      distance: "버스 10분",
-      description: "6호선 응암역 1번 출구"
-    },
-    {
-      name: "드림스퀘어",
-      distance: "건물 내",
-      description: "4층 성모이음 정신건강의학과"
-    },
-    {
-      name: "은평구청",
-      distance: "도보 5분",
-      description: "은평구 행정 중심지"
-    },
-    {
-      name: "은평구보건소",
-      distance: "도보 7분",
-      description: "건강검진 및 예방접종"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f6f8fb] to-white text-slate-900">
@@ -414,72 +353,8 @@ export default function LocationPage() {
           </Card>
         </div>
 
-        {/* 교통편 안내 */}
-        <div className="max-w-4xl mx-auto mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">교통편 안내</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {transportation.map((transport, index) => (
-              <Card key={index} className={`${transport.color} border-2`}>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    {transport.icon}
-                    <h3 className="font-semibold text-slate-900">{transport.title}</h3>
-                  </div>
-                  <ul className="space-y-2 text-sm text-slate-600">
-                    {transport.details.map((detail, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className="text-teal-600 mt-1">•</span>
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
 
-        {/* 주변 주요 시설 */}
-        <div className="max-w-4xl mx-auto mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">주변 주요 시설</h2>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {nearbyLandmarks.map((landmark, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-4">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-semibold text-slate-900">{landmark.name}</h3>
-                      <p className="text-sm text-slate-600">{landmark.description}</p>
-                    </div>
-                    <Badge variant="outline" className="text-teal-600 border-teal-300">
-                      {landmark.distance}
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
 
-        {/* 주차 안내 */}
-        <div className="max-w-4xl mx-auto">
-          <Card className="bg-orange-50 border-orange-200">
-            <CardContent className="p-6">
-              <div className="flex items-start gap-4">
-                <Info className="h-6 w-6 text-orange-600 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-slate-900 mb-2">주차 안내</h3>
-                  <ul className="space-y-1 text-sm text-slate-600">
-                    <li>• 드림스퀘어 지하 주차장 이용 (건물 내)</li>
-                    <li>• 주차 공간이 제한적이니 대중교통 이용을 권장합니다</li>
-                    <li>• 주차요금: 1시간 무료, 이후 30분당 1,000원</li>
-                    <li>• 진료비 영수증 제시 시 주차 할인 가능 (문의 필요)</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
       </main>
 
       {/* 푸터 */}

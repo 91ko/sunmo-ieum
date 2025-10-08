@@ -45,12 +45,6 @@ const services = [
   },
 ];
 
-const steps = [
-  { num: 1, title: "간편 예약", desc: "원하는 날짜·시간을 온라인으로 예약" },
-  { num: 2, title: "전문의 상담", desc: "증상/상황을 충분히 듣고 상담" },
-  { num: 3, title: "맞춤 진료", desc: "약물·심리치료 포함 치료계획 수립" },
-  { num: 4, title: "꾸준한 케어", desc: "경과 확인 및 생활관리 코칭" },
-];
 
 export default function ClinicLanding() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -675,24 +669,6 @@ export default function ClinicLanding() {
         </div>
       </section>
 
-      {/* 이용 안내 */}
-      <section id="process" className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">이용 안내</h3>
-          <p className="text-slate-600 mt-2">첫 방문부터 치료까지 4단계로 간단하게</p>
-        </div>
-        <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {steps.map((s) => (
-            <Card key={s.num}>
-              <CardHeader>
-                <div className="text-teal-700 font-semibold">STEP {s.num}</div>
-                <CardTitle className="text-lg">{s.title}</CardTitle>
-                <CardDescription>{s.desc}</CardDescription>
-              </CardHeader>
-            </Card>
-          ))}
-        </div>
-      </section>
 
       {/* 위치/진료시간 */}
       <section id="location" className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 pb-20">
