@@ -8,9 +8,10 @@ import { Button } from "@/components/ui/button";
 interface ScheduleModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onHideForWeek?: () => void;
 }
 
-export default function ScheduleModal({ isOpen, onClose }: ScheduleModalProps) {
+export default function ScheduleModal({ isOpen, onClose, onHideForWeek }: ScheduleModalProps) {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth() + 1);
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [scheduleImages, setScheduleImages] = useState<{[key: string]: string}>({});

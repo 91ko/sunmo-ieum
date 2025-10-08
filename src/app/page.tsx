@@ -632,19 +632,31 @@ export default function ClinicLanding() {
                   <ul className="text-slate-600 space-y-2">
                     <li className="flex items-start">
                       <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span>가톨릭대학교 의과대학 정신건강의학교실 외래교수</span>
+                      <span>
+                        가톨릭대학교 의과대학<br className="md:hidden" />
+                        <span className="md:hidden">/ </span>정신건강의학교실 외래교수
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span>가톨릭대학교 은평성모병원 정신건강의학과 임상진료조교수</span>
+                      <span>
+                        가톨릭대학교 은평성모병원<br className="md:hidden" />
+                        <span className="md:hidden">/ </span>정신건강의학과 임상진료조교수
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span>가톨릭대학교 은평성모병원 정신건강의학과 전임의</span>
+                      <span>
+                        가톨릭대학교 은평성모병원<br className="md:hidden" />
+                        <span className="md:hidden">/ </span>정신건강의학과 전임의
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span>가톨릭중앙의료원 정신건강의학과 레지던트 수료</span>
+                      <span>
+                        가톨릭중앙의료원 정신건강의학과<br className="md:hidden" />
+                        <span className="md:hidden">/ </span>레지던트 수료
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
@@ -672,42 +684,64 @@ export default function ClinicLanding() {
 
       {/* 위치/진료시간 */}
       <section id="location" className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 pb-20">
-        <div className="grid lg:grid-cols-2 gap-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2"><MapPin className="h-5 w-5"/>오시는 길</CardTitle>
-              <CardDescription>서울 은평구 진관동 72 드림스퀘어 4층</CardDescription>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          <Card className="overflow-hidden">
+            <CardHeader className="pb-3">
+              <CardTitle className="flex items-center gap-2 text-lg"><MapPin className="h-5 w-5"/>오시는 길</CardTitle>
+              <CardDescription className="text-sm">서울 은평구 진관동 72 드림스퀘어 4층</CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-3">
               <KakaoMap 
                 width="100%" 
-                height="300px" 
-                className="aspect-[4/3]"
+                height="250px" 
+                className="rounded-lg"
               />
             </CardContent>
           </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2"><Clock className="h-5 w-5"/>진료시간</CardTitle>
-              <CardDescription>성모이음 정신건강의학과 진료시간</CardDescription>
+          <Card className="overflow-hidden">
+            <CardHeader className="pb-3">
+              <CardTitle className="flex items-center gap-2 text-lg"><Clock className="h-5 w-5"/>진료시간</CardTitle>
+              <CardDescription className="text-sm">성모이음 정신건강의학과 진료시간</CardDescription>
             </CardHeader>
-            <CardContent className="text-sm">
-              <div className="grid grid-cols-2 gap-x-6 gap-y-3">
-                <div className="text-slate-500">월/화/수/금</div><div className="font-medium">09:00 ~ 19:00</div>
-                <div className="text-slate-500">목요일(야간진료)</div><div className="font-medium">14:00 ~ 20:00</div>
-                <div className="text-slate-500">토요일</div><div className="font-medium">08:30 ~ 14:00</div>
-                <div className="text-slate-500">점심시간</div><div className="font-medium">13:00 ~ 14:00</div>
-                <div className="text-slate-500">일/공휴일</div><div className="font-medium">휴무</div>
+            <CardContent className="p-3 text-sm">
+              <div className="space-y-2">
+                <div className="flex justify-between items-center py-1">
+                  <span className="text-slate-500">월/화/수/금</span>
+                  <span className="font-medium">09:00 ~ 19:00</span>
+                </div>
+                <div className="flex justify-between items-center py-1">
+                  <span className="text-slate-500">목요일(야간진료)</span>
+                  <span className="font-medium">14:00 ~ 20:00</span>
+                </div>
+                <div className="flex justify-between items-center py-1">
+                  <span className="text-slate-500">토요일</span>
+                  <span className="font-medium">08:30 ~ 14:00</span>
+                </div>
+                <div className="flex justify-between items-center py-1">
+                  <span className="text-slate-500">점심시간</span>
+                  <span className="font-medium">13:00 ~ 14:00</span>
+                </div>
+                <div className="flex justify-between items-center py-1">
+                  <span className="text-slate-500">일/공휴일</span>
+                  <span className="font-medium text-red-500">휴무</span>
+                </div>
               </div>
               <div className="mt-3 text-xs text-slate-500">
                 ※ 목요일, 토요일은 점심시간 없음
               </div>
-              <div className="mt-4 rounded-lg bg-slate-50 border p-3 flex items-center justify-between">
-                <div>
-                  <div className="text-slate-500 text-xs">대표번호</div>
-                  <div className="text-lg font-semibold">02-2138-1568</div>
+              <div className="mt-4 rounded-lg bg-slate-50 border p-3">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                  <div>
+                    <div className="text-slate-500 text-xs">대표번호</div>
+                    <div className="text-lg font-semibold">02-2138-1568</div>
+                  </div>
+                  <Button asChild size="sm" className="w-full sm:w-auto">
+                    <a href="tel:02-2138-1568">
+                      <Phone className="mr-2 h-4 w-4"/>
+                      전화하기
+                    </a>
+                  </Button>
                 </div>
-                <Button asChild><a href="tel:02-2138-1568"><Phone className="mr-2 h-4 w-4"/>전화하기</a></Button>
               </div>
             </CardContent>
           </Card>
