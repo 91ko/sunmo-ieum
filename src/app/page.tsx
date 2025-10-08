@@ -401,8 +401,8 @@ export default function ClinicLanding() {
                   whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
                   transition={{duration:1.2, delay:0.3, ease:"easeOut"}}
-                  className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black leading-tight tracking-wide mb-8"
-                  style={{ fontFamily: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif' }}
+                  className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight tracking-wide mb-8"
+                  style={{ fontFamily: '"Noto Sans KR", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif', fontWeight: '300', letterSpacing: '0.08em', lineHeight: '1.2' }}
                 >
                   <motion.div 
                     initial={{opacity:0, x:-50, scale:0.9}}
@@ -429,7 +429,8 @@ export default function ClinicLanding() {
                   whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
                   transition={{duration:1, delay:0.8, ease:"easeOut"}}
-                  className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-700 mb-12 tracking-wide hover:text-teal-600 transition-colors duration-500"
+                  className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-700 mb-12 tracking-wide hover:text-teal-600 transition-colors duration-500"
+                  style={{ fontFamily: '"Noto Sans KR", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif', fontWeight: '400', letterSpacing: '0.05em', lineHeight: '1.3' }}
                 >
                   <motion.span
                     initial={{opacity:0, y:20, scale:0.9}}
