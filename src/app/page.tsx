@@ -633,29 +633,29 @@ export default function ClinicLanding() {
                     <li className="flex items-start">
                       <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                       <span>
-                        가톨릭대학교 의과대학<br className="md:hidden" />
-                        <span className="md:hidden">/ </span>정신건강의학교실 외래교수
+                        <span className="md:hidden">가톨릭대학교 의과대학<br />정신건강의학교실 외래교수</span>
+                        <span className="hidden md:inline">가톨릭대학교 의과대학 정신건강의학교실 외래교수</span>
                       </span>
                     </li>
                     <li className="flex items-start">
                       <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                       <span>
-                        가톨릭대학교 은평성모병원<br className="md:hidden" />
-                        <span className="md:hidden">/ </span>정신건강의학과 임상진료조교수
+                        <span className="md:hidden">가톨릭대학교 은평성모병원<br />정신건강의학과 임상진료조교수</span>
+                        <span className="hidden md:inline">가톨릭대학교 은평성모병원<br />정신건강의학과 임상진료조교수</span>
                       </span>
                     </li>
                     <li className="flex items-start">
                       <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                       <span>
-                        가톨릭대학교 은평성모병원<br className="md:hidden" />
-                        <span className="md:hidden">/ </span>정신건강의학과 전임의
+                        <span className="md:hidden">가톨릭대학교 은평성모병원<br />정신건강의학과 전임의</span>
+                        <span className="hidden md:inline">가톨릭대학교 은평성모병원<br />정신건강의학과 전임의</span>
                       </span>
                     </li>
                     <li className="flex items-start">
                       <div className="w-2 h-2 bg-teal-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                       <span>
-                        가톨릭중앙의료원 정신건강의학과<br className="md:hidden" />
-                        <span className="md:hidden">/ </span>레지던트 수료
+                        <span className="md:hidden">가톨릭중앙의료원 정신건강의학과<br />레지던트 수료</span>
+                        <span className="hidden md:inline">가톨릭중앙의료원 정신건강의학과<br />레지던트 수료</span>
                       </span>
                     </li>
                     <li className="flex items-start">
