@@ -217,26 +217,48 @@ export default function ClinicLanding() {
                 </motion.div>
                 
                 <motion.h1 
-                  initial={{opacity:0, y:30}}
-                  whileInView={{opacity:1, y:0}}
+                  initial={{opacity:0, y:30, scale:0.9}}
+                  whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
-                  transition={{duration:1, delay:0.3}}
-                  className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6"
+                  transition={{duration:1.2, delay:0.3, ease:"easeOut"}}
+                  className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-widest mb-6"
                 >
-                  <span className="block text-slate-800">사람과 사람</span>
-                  <span className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700">
+                  <motion.span 
+                    initial={{opacity:0, x:-50, scale:0.9}}
+                    whileInView={{opacity:1, x:0, scale:1}}
+                    viewport={{once:true}}
+                    transition={{duration:1, delay:0.5, ease:"easeOut"}}
+                    className="block text-slate-800 tracking-[0.2em] hover:text-teal-700 transition-colors duration-500"
+                  >
+                    사람과 사람
+                  </motion.span>
+                  <motion.span 
+                    initial={{opacity:0, x:50, scale:0.9}}
+                    whileInView={{opacity:1, x:0, scale:1}}
+                    viewport={{once:true}}
+                    transition={{duration:1, delay:0.7, ease:"easeOut"}}
+                    className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 tracking-[0.2em] hover:from-teal-500 hover:via-emerald-500 hover:to-teal-600 transition-all duration-500"
+                  >
                     마음과 마음을 이음
-                  </span>
+                  </motion.span>
                 </motion.h1>
                 
                 <motion.div 
-                  initial={{opacity:0, y:20}}
-                  whileInView={{opacity:1, y:0}}
+                  initial={{opacity:0, y:20, scale:0.95}}
+                  whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
-                  transition={{duration:0.8, delay:0.5}}
-                  className="text-2xl sm:text-3xl font-bold text-slate-700 mb-12"
+                  transition={{duration:1, delay:0.8, ease:"easeOut"}}
+                  className="text-2xl sm:text-3xl font-bold text-slate-700 mb-12 tracking-wide hover:text-teal-600 transition-colors duration-500"
                 >
-                  성모이음 정신건강 의학과
+                  <motion.span
+                    initial={{opacity:0, y:20, scale:0.9}}
+                    whileInView={{opacity:1, y:0, scale:1}}
+                    viewport={{once:true}}
+                    transition={{duration:0.8, delay:1, ease:"easeOut"}}
+                    className="inline-block"
+                  >
+                    성모이음 정신건강 의학과
+                  </motion.span>
                 </motion.div>
                 
               </div>
