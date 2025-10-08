@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Users,
-  Sparkles,
   MapPin,
   Phone,
   Clock,
@@ -211,14 +210,15 @@ export default function ClinicLanding() {
                   whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
                   transition={{duration:1.2, delay:0.3, ease:"easeOut"}}
-                  className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-tight tracking-widest mb-8"
+                  className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-black leading-tight tracking-widest mb-8"
+                  style={{ fontFamily: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif' }}
                 >
                   <motion.span 
                     initial={{opacity:0, x:-50, scale:0.9}}
                     whileInView={{opacity:1, x:0, scale:1}}
                     viewport={{once:true}}
                     transition={{duration:1, delay:0.5, ease:"easeOut"}}
-                    className="block text-slate-800 tracking-[0.2em] hover:text-teal-700 transition-colors duration-500"
+                    className="block text-slate-800 tracking-[0.3em] hover:text-teal-700 transition-colors duration-500"
                   >
                     사람과 사람
                   </motion.span>
@@ -227,7 +227,7 @@ export default function ClinicLanding() {
                     whileInView={{opacity:1, x:0, scale:1}}
                     viewport={{once:true}}
                     transition={{duration:1, delay:0.7, ease:"easeOut"}}
-                    className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 tracking-[0.2em] hover:from-teal-500 hover:via-emerald-500 hover:to-teal-600 transition-all duration-500"
+                    className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 tracking-[0.3em] hover:from-teal-500 hover:via-emerald-500 hover:to-teal-600 transition-all duration-500"
                   >
                     마음과 마음을 이음
                   </motion.span>
