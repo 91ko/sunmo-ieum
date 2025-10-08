@@ -97,7 +97,7 @@ export default function NoticePage() {
             </Link>
           </div>
           
-          <div className="hidden md:flex items-center gap-8 text-sm">
+          <div className="hidden md:flex items-center gap-8 text-base font-medium">
             <Link href="/" className="hover:text-teal-600 transition">
               Home
             </Link>
