@@ -34,7 +34,7 @@ export default function DoctorsPage() {
             </Link>
           </div>
           
-          <div className="hidden md:flex items-center gap-8 text-sm">
+          <div className="hidden md:flex items-center gap-8 text-base font-medium">
             <Link href="/" className="hover:text-teal-600 transition">
               Home
             </Link>
@@ -60,8 +60,9 @@ export default function DoctorsPage() {
               </span>
               <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="py-2">
+                  <a href="/treatment/subjects" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">진료과목</a>
                   <a href="/treatment/exam" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">검사및치료</a>
-                  <a href="/treatment/nonbenefit" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">비급여 내용</a>
+                  <a href="/treatment/nonbenefit" className="block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-600">비급여 진료</a>
                 </div>
               </div>
             </div>
@@ -123,6 +124,15 @@ export default function DoctorsPage() {
                 </svg>
                 <span className="hidden sm:inline">카카오톡 상담하기</span>
                 <span className="sm:hidden">상담</span>
+              </a>
+            </Button>
+            <Button asChild className="bg-green-500 hover:bg-green-600 text-white border-0">
+              <a href="https://blog.naver.com/sungmo-ieum" target="_blank" rel="noopener noreferrer">
+                <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span className="hidden sm:inline">네이버 블로그</span>
+                <span className="sm:hidden">블로그</span>
               </a>
             </Button>
           </div>
