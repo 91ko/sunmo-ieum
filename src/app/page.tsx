@@ -210,7 +210,7 @@ export default function ClinicLanding() {
                   whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
                   transition={{duration:1.2, delay:0.3, ease:"easeOut"}}
-                  className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-widest mb-8"
+                  className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black leading-tight tracking-wide mb-8"
                   style={{ fontFamily: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif' }}
                 >
                   <motion.div 
@@ -218,7 +218,7 @@ export default function ClinicLanding() {
                     whileInView={{opacity:1, x:0, scale:1}}
                     viewport={{once:true}}
                     transition={{duration:1, delay:0.5, ease:"easeOut"}}
-                    className="block text-slate-800 tracking-[0.2em] hover:text-teal-700 transition-colors duration-500 mb-2 whitespace-nowrap"
+                    className="block text-slate-800 tracking-[0.1em] hover:text-teal-700 transition-colors duration-500 mb-2 whitespace-nowrap"
                   >
                     사람과 사람
                   </motion.div>
@@ -227,7 +227,7 @@ export default function ClinicLanding() {
                     whileInView={{opacity:1, x:0, scale:1}}
                     viewport={{once:true}}
                     transition={{duration:1, delay:0.7, ease:"easeOut"}}
-                    className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 tracking-[0.2em] hover:from-teal-500 hover:via-emerald-500 hover:to-teal-600 transition-all duration-500 whitespace-nowrap"
+                    className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 tracking-[0.1em] hover:from-teal-500 hover:via-emerald-500 hover:to-teal-600 transition-all duration-500 whitespace-nowrap"
                   >
                     마음과 마음을 이음
                   </motion.div>
@@ -247,7 +247,7 @@ export default function ClinicLanding() {
                     transition={{duration:0.8, delay:1, ease:"easeOut"}}
                     className="inline-block"
                   >
-                    성모이음 정신건강 의학과
+                    성모이음 정신건강의학과
                   </motion.span>
                 </motion.div>
                 
@@ -346,29 +346,6 @@ export default function ClinicLanding() {
         </div>
       </section>
 
-      {/* 예약 CTA */}
-      <section id="booking" className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8">
-        <Card className="border-teal-200/70 bg-teal-50/60">
-          <CardContent className="py-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-between">
-            <div>
-              <div className="text-sm text-teal-700 font-medium">상담 예약</div>
-              <div className="text-xl sm:text-2xl font-semibold">지금 가장 편한 시간으로 예약하세요</div>
-              <p className="text-slate-600 mt-1">전화 또는 온라인 예약이 가능합니다.</p>
-            </div>
-                 <div className="flex items-center gap-3">
-                   <Button asChild size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-black border-0">
-                     <a href="https://pf.kakao.com/_ynxoXn" target="_blank" rel="noopener noreferrer">
-                       <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
-                         <path d="M12 3C6.5 3 2 6.58 2 11c0 2.13 1.05 4.07 2.75 5.48L4 21l4.75-1.5c1.25.5 2.58.75 4 .75 5.5 0 10-3.58 10-8S17.5 3 12 3z"/>
-                       </svg>
-                       카카오톡 상담하기
-                     </a>
-                   </Button>
-                   <Button asChild size="lg" variant="outline"><a href="tel:02-2138-1568"><Phone className="mr-2 h-4 w-4"/>02-2138-1568</a></Button>
-                 </div>
-          </CardContent>
-        </Card>
-      </section>
 
       {/* 진료일정 - 팝업 버튼으로 변경 */}
       <section id="schedule" className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-16 sm:py-20">
