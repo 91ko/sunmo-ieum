@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import {
   Bell,
   ChevronLeft,
@@ -189,6 +190,15 @@ export default function NoticePage() {
                 <span className="sm:hidden">상담</span>
               </a>
             </Button>
+            <Button asChild className="bg-green-500 hover:bg-green-600 text-white border-0">
+              <a href="https://blog.naver.com/sungmo-ieum" target="_blank" rel="noopener noreferrer">
+                <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span className="hidden sm:inline">네이버 블로그</span>
+                <span className="sm:hidden">블로그</span>
+              </a>
+            </Button>
           </div>
         </div>
       </header>
@@ -206,18 +216,37 @@ export default function NoticePage() {
         </div>
 
         {/* 페이지 제목 */}
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <div className="flex items-center justify-center gap-3 mb-4">
             <Bell className="h-8 w-8 text-teal-600" />
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900">공지사항</h1>
           </div>
           <p className="text-lg text-slate-600">진료 관련 중요한 안내사항을 확인해주세요</p>
-        </div>
+        </motion.div>
 
         {/* 공지사항 목록 */}
-        <div className="max-w-4xl mx-auto space-y-6">
+        <motion.div 
+          className="max-w-4xl mx-auto space-y-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           {notices.map((notice, index) => (
-            <Card key={index} className={`${notice.color} border-2 hover:shadow-lg transition-shadow duration-300`}>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className={`${notice.color} border-2 hover:shadow-lg transition-shadow duration-300`}>
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-xl">
                   {notice.icon}
@@ -234,8 +263,9 @@ export default function NoticePage() {
                 </div>
               </CardContent>
             </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* 연락처 정보 */}
         <div className="max-w-4xl mx-auto mt-12">

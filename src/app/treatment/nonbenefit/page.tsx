@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import {
   ChevronLeft,
   ChevronDown,
@@ -297,6 +298,15 @@ export default function NonBenefitPage() {
                 <span className="sm:hidden">상담</span>
               </a>
             </Button>
+            <Button asChild className="bg-green-500 hover:bg-green-600 text-white border-0">
+              <a href="https://blog.naver.com/sungmo-ieum" target="_blank" rel="noopener noreferrer">
+                <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span className="hidden sm:inline">네이버 블로그</span>
+                <span className="sm:hidden">블로그</span>
+              </a>
+            </Button>
           </div>
         </div>
       </header>
@@ -314,9 +324,15 @@ export default function NonBenefitPage() {
         </div>
 
         {/* 페이지 제목 */}
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">비급여 진료</h1>
-        </div>
+        </motion.div>
 
         {/* 진단서/서류 */}
         <section className="mb-16">
