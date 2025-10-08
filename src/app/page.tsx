@@ -18,7 +18,6 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import KakaoMap from "@/components/maps/KakaoMap";
 import ScheduleModal from "@/components/ScheduleModal";
 import Link from "next/link";
@@ -413,7 +412,7 @@ export default function ClinicLanding() {
             <div className="space-y-4">
               <div>
                 <h4 className="text-lg font-semibold text-slate-900 mb-2">진료 철학</h4>
-                <p className="text-slate-600">"환자분의 속도에 맞춰, 충분히 듣고 함께 해결책을 찾습니다."</p>
+                <p className="text-slate-600">&ldquo;환자분의 속도에 맞춰, 충분히 듣고 함께 해결책을 찾습니다.&rdquo;</p>
               </div>
               
               <div>
