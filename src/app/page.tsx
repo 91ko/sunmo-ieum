@@ -197,13 +197,13 @@ export default function ClinicLanding() {
           <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-blue-200/20 blur-3xl"/>
         </div>
         <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
-          <div className="grid lg:grid-cols-2 gap-12 items-center relative min-h-screen">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div 
               initial={{opacity:0, y:30}} 
               whileInView={{opacity:1, y:0}} 
               viewport={{once:true}} 
               transition={{duration:1, ease:"easeOut"}}
-              className="absolute top-0 left-0 z-10 lg:absolute lg:top-0 lg:left-0 lg:z-10"
+              className="lg:absolute lg:top-0 lg:left-0 lg:z-10"
             >
               <div className="text-center lg:text-left">
                 <motion.div
@@ -218,48 +218,26 @@ export default function ClinicLanding() {
                 </motion.div>
                 
                 <motion.h1 
-                  initial={{opacity:0, y:30, scale:0.9}}
-                  whileInView={{opacity:1, y:0, scale:1}}
+                  initial={{opacity:0, y:30}}
+                  whileInView={{opacity:1, y:0}}
                   viewport={{once:true}}
-                  transition={{duration:1.2, delay:0.3, ease:"easeOut"}}
-                  className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-widest mb-6"
+                  transition={{duration:1, delay:0.3}}
+                  className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6"
                 >
-                  <motion.span 
-                    initial={{opacity:0, x:-50, scale:0.9}}
-                    whileInView={{opacity:1, x:0, scale:1}}
-                    viewport={{once:true}}
-                    transition={{duration:1, delay:0.5, ease:"easeOut"}}
-                    className="block text-slate-800 tracking-[0.2em]"
-                  >
-                    사람과 사람
-                  </motion.span>
-                  <motion.span 
-                    initial={{opacity:0, x:50, scale:0.9}}
-                    whileInView={{opacity:1, x:0, scale:1}}
-                    viewport={{once:true}}
-                    transition={{duration:1, delay:0.7, ease:"easeOut"}}
-                    className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 tracking-[0.2em]"
-                  >
+                  <span className="block text-slate-800">사람과 사람</span>
+                  <span className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700">
                     마음과 마음을 이음
-                  </motion.span>
+                  </span>
                 </motion.h1>
                 
                 <motion.div 
-                  initial={{opacity:0, y:20, scale:0.95}}
-                  whileInView={{opacity:1, y:0, scale:1}}
+                  initial={{opacity:0, y:20}}
+                  whileInView={{opacity:1, y:0}}
                   viewport={{once:true}}
-                  transition={{duration:1, delay:0.8, ease:"easeOut"}}
+                  transition={{duration:0.8, delay:0.5}}
                   className="text-2xl sm:text-3xl font-bold text-slate-700 mb-12"
                 >
-                  <motion.span
-                    initial={{opacity:0, y:20, scale:0.9}}
-                    whileInView={{opacity:1, y:0, scale:1}}
-                    viewport={{once:true}}
-                    transition={{duration:0.8, delay:1, ease:"easeOut"}}
-                    className="inline-block"
-                  >
-                    성모이음 정신건강 의학과
-                  </motion.span>
+                  성모이음 정신건강 의학과
                 </motion.div>
                 
               </div>
