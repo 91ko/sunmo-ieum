@@ -197,7 +197,7 @@ export default function ClinicLanding() {
           <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-blue-200/20 blur-3xl"/>
         </div>
         <div className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center relative">
             <motion.div 
               initial={{opacity:0, y:30}} 
               whileInView={{opacity:1, y:0}} 
@@ -221,26 +221,26 @@ export default function ClinicLanding() {
                   whileInView={{opacity:1, y:0, scale:1}}
                   viewport={{once:true}}
                   transition={{duration:1.2, delay:0.3, ease:"easeOut"}}
-                  className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-tight tracking-tight mb-6"
+                  className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-tight tracking-widest mb-6"
                 >
-                  <motion.span 
+                  <motion.div 
                     initial={{opacity:0, x:-50}}
                     whileInView={{opacity:1, x:0}}
                     viewport={{once:true}}
                     transition={{duration:1, delay:0.5}}
-                    className="block text-slate-800"
+                    className="block text-slate-800 tracking-[0.2em]"
                   >
                     사람과 사람
-                  </motion.span>
-                  <motion.span 
+                  </motion.div>
+                  <motion.div 
                     initial={{opacity:0, x:50}}
                     whileInView={{opacity:1, x:0}}
                     viewport={{once:true}}
                     transition={{duration:1, delay:0.7}}
-                    className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700"
+                    className="block bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 tracking-[0.2em]"
                   >
                     마음과 마음을 이음
-                  </motion.span>
+                  </motion.div>
                 </motion.h1>
                 
                 <motion.div 
@@ -264,15 +264,16 @@ export default function ClinicLanding() {
               </div>
             </motion.div>
             
+            {/* 왼쪽 상단 이미지 */}
             <motion.div 
               initial={{opacity:0, scale:0.8, rotate:15}} 
               whileInView={{opacity:1, scale:1, rotate:0}} 
               viewport={{once:true}} 
               transition={{duration:1.2, delay:0.4, ease:"easeOut"}} 
-              className="lg:pl-16 xl:pl-24"
+              className="absolute top-0 left-0 z-10"
             >
               <div className="relative">
-                {/* 대각선 이미지 배치 - 슬라이드 효과 */}
+                {/* 왼쪽 상단 이미지 */}
                 <motion.div
                   initial={{opacity:0, y:50, rotate:-15}}
                   whileInView={{opacity:1, y:0, rotate:0}}
@@ -280,7 +281,7 @@ export default function ClinicLanding() {
                   transition={{duration:1, delay:0.6}}
                   className="relative z-10 overflow-hidden rounded-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"
                 >
-                  <div className="relative w-full max-w-2xl ml-auto mr-0 h-[28rem]">
+                  <div className="relative w-64 h-80">
                     {heroImages.map((image, index) => (
                       <motion.img
                         key={index}
@@ -318,6 +319,66 @@ export default function ClinicLanding() {
                     </div>
                   </div>
                 </motion.div>
+              </div>
+            </motion.div>
+
+            {/* 오른쪽 하단 이미지 */}
+            <motion.div 
+              initial={{opacity:0, scale:0.8, rotate:-15}} 
+              whileInView={{opacity:1, scale:1, rotate:0}} 
+              viewport={{once:true}} 
+              transition={{duration:1.2, delay:0.8, ease:"easeOut"}} 
+              className="absolute bottom-0 right-0 z-10"
+            >
+              <div className="relative">
+                {/* 오른쪽 하단 이미지 */}
+                <motion.div
+                  initial={{opacity:0, y:50, rotate:15}}
+                  whileInView={{opacity:1, y:0, rotate:0}}
+                  viewport={{once:true}}
+                  transition={{duration:1, delay:1}}
+                  className="relative z-10 overflow-hidden rounded-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500"
+                >
+                  <div className="relative w-80 h-96">
+                    {heroImages.map((image, index) => (
+                      <motion.img
+                        key={index}
+                        src={image}
+                        alt={`성모이음 정신건강의학과 ${index === 0 ? '이미지1' : '이미지2'}`}
+                        className="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl"
+                        initial={{ opacity: 0, scale: 1.2, rotate: index === 0 ? 8 : -8, y: 30 }}
+                        animate={{ 
+                          opacity: index === currentImageIndex ? 1 : 0,
+                          scale: index === currentImageIndex ? 1 : 1.2,
+                          rotate: index === currentImageIndex ? 0 : (index === 0 ? 8 : -8),
+                          y: index === currentImageIndex ? 0 : 30
+                        }}
+                        transition={{ 
+                          duration: 1.5, 
+                          ease: "easeInOut",
+                          delay: index === currentImageIndex ? 0.3 : 0
+                        }}
+                      />
+                    ))}
+                    
+                    {/* 이미지 인디케이터 */}
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                      {heroImages.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                            index === currentImageIndex 
+                              ? 'bg-white shadow-lg' 
+                              : 'bg-white/50 hover:bg-white/75'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
                 
                 {/* 자유로운 장식 요소들 */}
                 <motion.div 
