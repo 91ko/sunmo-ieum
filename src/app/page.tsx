@@ -60,7 +60,6 @@ const HomePage = () => {
     }
   };
 
-  const heroImage = "/images/hero/sungmo-ieum1.png";
 
   // 페이지 진입 시 진료일정 팝업 자동 표시
   useEffect(() => {
@@ -414,27 +413,6 @@ const HomePage = () => {
             React.createElement('div', {
               className: "relative"
             },
-              // 대각선 이미지 배치 - 슬라이드 효과
-              React.createElement(motion.div, {
-                initial: {opacity:0, y:50, rotate:-15},
-                whileInView: {opacity:1, y:0, rotate:0},
-                viewport: {once:true},
-                transition: {duration:1, delay:0.6},
-                className: "relative z-10 transform hover:scale-105 transition-transform duration-500"
-              },
-                React.createElement('div', {
-                  className: "relative w-full max-w-2xl ml-auto mr-0 h-[32rem]"
-                },
-                  React.createElement(motion.img, {
-                    src: heroImage,
-                    alt: "성모이음 정신건강의학과",
-                    className: "w-full h-full object-cover",
-                    initial: { opacity: 0, scale: 1.1, rotate: -5 },
-                    animate: { opacity: 1, scale: 1, rotate: 0 },
-                    transition: { duration: 1.2, ease: "easeInOut", delay: 0.2 }
-                  })
-                )
-              ),
               
               // 자유로운 장식 요소들
               React.createElement(motion.div, {
