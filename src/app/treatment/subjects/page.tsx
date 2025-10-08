@@ -1,9 +1,11 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import {
   ChevronLeft,
   ChevronDown,
+  Menu,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -141,6 +143,15 @@ export default function TreatmentSubjectsPage() {
                 <span className="sm:hidden">상담</span>
               </a>
             </Button>
+            <Button asChild className="bg-green-500 hover:bg-green-600 text-white border-0">
+              <a href="https://blog.naver.com/sungmo-ieum" target="_blank" rel="noopener noreferrer">
+                <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span className="hidden sm:inline">네이버 블로그</span>
+                <span className="sm:hidden">블로그</span>
+              </a>
+            </Button>
           </div>
         </div>
       </header>
@@ -158,15 +169,34 @@ export default function TreatmentSubjectsPage() {
         </div>
 
         {/* 페이지 제목 */}
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">진료과목</h1>
           <p className="text-lg text-slate-600">전문적인 진료로 마음을 치료합니다</p>
-        </div>
+        </motion.div>
 
         {/* 진료과목 그리드 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           {subjects.map((subject, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-white">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-white">
               <div className="relative">
                 <img 
                   src={subject.image} 
@@ -190,11 +220,18 @@ export default function TreatmentSubjectsPage() {
                 </div>
               </CardContent>
             </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* 예약 안내 */}
-        <div className="text-center">
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <Card className="max-w-2xl mx-auto bg-gradient-to-r from-teal-50 to-blue-50 border-teal-200">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">진료 예약 안내</h3>
@@ -222,7 +259,7 @@ export default function TreatmentSubjectsPage() {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </motion.div>
       </main>
 
       {/* 푸터 */}

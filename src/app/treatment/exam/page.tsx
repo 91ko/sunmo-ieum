@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import {
   ChevronLeft,
   ChevronDown,
@@ -9,6 +10,7 @@ import {
   Activity,
   Zap,
   Heart,
+  Menu,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -155,6 +157,15 @@ export default function ExamPage() {
                 <span className="sm:hidden">상담</span>
               </a>
             </Button>
+            <Button asChild className="bg-green-500 hover:bg-green-600 text-white border-0">
+              <a href="https://blog.naver.com/sungmo-ieum" target="_blank" rel="noopener noreferrer">
+                <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span className="hidden sm:inline">네이버 블로그</span>
+                <span className="sm:hidden">블로그</span>
+              </a>
+            </Button>
           </div>
         </div>
       </header>
@@ -172,10 +183,16 @@ export default function ExamPage() {
         </div>
 
         {/* 페이지 제목 */}
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">치료 및 검사</h1>
           <p className="text-lg text-slate-600">전문적인 검사와 치료로 마음을 치료합니다</p>
-        </div>
+        </motion.div>
 
         {/* 검사 안내 */}
         <div className="mb-16">
