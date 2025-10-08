@@ -128,13 +128,11 @@ export default function ScheduleModal({ isOpen, onClose }: ScheduleModalProps) {
 
             {/* 진료일정 이미지 */}
             <div className="p-4">
-              <div className="relative">
-                <img
-                  src={getCurrentImage()}
-                  alt={`${currentYear}년 ${getMonthName(currentMonth)} 진료일정`}
-                  className="w-full h-auto object-contain rounded-lg"
-                />
-              </div>
+              <img
+                src={getCurrentImage()}
+                alt={`${currentYear}년 ${getMonthName(currentMonth)} 진료일정`}
+                className="w-full h-auto object-contain rounded-lg"
+              />
             </div>
 
             {/* 하단 닫기 버튼 */}
