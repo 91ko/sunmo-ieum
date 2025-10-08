@@ -44,7 +44,6 @@ const services = [
   },
 ];
 
-
 export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -431,8 +430,6 @@ export default function HomePage() {
         </div>
       </section>
 
-
-
       {/* 진료과목 */}
       <section id="services" className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 py-16 sm:py-20">
         <motion.div 
@@ -626,7 +623,6 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-
       {/* 위치/진료시간 */}
       <section id="location" className="mx-auto max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 pb-20">
         <motion.div 
@@ -698,7 +694,6 @@ export default function HomePage() {
           </Card>
         </div>
       </section>
-
 
       {/* 이미지 확대 모달 */}
       {selectedImage && (
