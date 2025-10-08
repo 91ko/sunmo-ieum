@@ -317,26 +317,6 @@ export default function NonBenefitPage() {
         {/* 페이지 제목 */}
         <div className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">비급여 진료</h1>
-          <p className="text-lg text-slate-600">건강보험 적용이 되지 않는 전문적인 검사와 치료 서비스</p>
-        </div>
-
-        {/* 안내 메시지 */}
-        <div className="max-w-4xl mx-auto mb-12">
-          <Card className="bg-blue-50 border-blue-200">
-            <CardContent className="p-6">
-              <div className="flex items-start gap-3">
-                <Info className="h-6 w-6 text-blue-600 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold text-blue-900 mb-2">비급여 진료 안내</h3>
-                  <p className="text-blue-800 text-sm">
-                    비급여 진료는 건강보험에서 보장하지 않는 전문적인 검사와 치료 서비스입니다. 
-                    정확한 진단과 효과적인 치료를 위해 필요에 따라 제공되며, 
-                    모든 비용은 환자 본인이 부담하셔야 합니다.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
 
         {/* 진단서/서류 */}
