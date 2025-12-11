@@ -20,6 +20,7 @@ import {
 import { Button } from "@/components/ui/button";
 import KakaoMap from "@/components/maps/KakaoMap";
 import Link from "next/link";
+import ScheduleWidget from "@/components/ScheduleWidget";
 
 const services = [
   { 
@@ -71,36 +72,6 @@ const HomePage = () => {
     return () => clearInterval(interval);
   }, [galleryImages.length]);
 
-  // 팝업창 열기 기능
-  const openSchedulePopup = () => {
-    const popup = window.open(
-      '/schedule-popup',
-      'schedulePopup',
-      'width=800,height=600,scrollbars=yes,resizable=yes,menubar=no,toolbar=no,location=no,status=no'
-    );
-    if (popup) {
-      popup.focus();
-    }
-  };
-
-
-  // 페이지 진입 시 진료일정 팝업 자동 표시
-  useEffect(() => {
-    // 일주일간 보지않기 체크
-    const hiddenUntil = localStorage.getItem('scheduleModalHidden');
-    if (hiddenUntil) {
-      const hideDate = new Date(hiddenUntil);
-      if (hideDate > new Date()) {
-        return; // 아직 숨김 기간이면 팝업 표시하지 않음
-      }
-    }
-
-    const timer = setTimeout(() => {
-      openSchedulePopup();
-    }, 2000); // 2초 후 팝업 표시
-    
-    return () => clearTimeout(timer);
-  }, []);
   
   return React.createElement('div', {
     className: "min-h-screen bg-gradient-to-b from-[#f6f8fb] to-white text-slate-900 relative overflow-hidden"
@@ -1019,7 +990,9 @@ const HomePage = () => {
         React.createElement('div', {
           className: "mt-4"
         }, `© ${new Date().getFullYear()} SeongmoIeum. All rights reserved.`)
-      )
+      ),
+      // 스케줄 위젯
+      React.createElement(ScheduleWidget)
     )
   );
 };
