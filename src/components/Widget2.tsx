@@ -9,6 +9,18 @@ export default function Widget2() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
+  const widget1Height = 350; // Widget1의 예상 높이 (동적으로 받아올 수도 있음)
+  const [isMobile, setIsMobile] = useState(false);
+
+  // 모바일 감지
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // 위젯 이미지들
   const widgetImages = [
@@ -67,12 +79,30 @@ export default function Widget2() {
           initial={{ opacity: 0, y: 20, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.9 }}
-          className="fixed left-4 z-40"
-          style={{ maxWidth: '280px', bottom: '420px' }}
+          className="fixed z-40"
+          style={{ 
+            maxWidth: 'calc(100vw - 1rem)', 
+            width: isMobile ? '180px' : '280px',
+            maxHeight: 'calc(100vh - 2rem)',
+            overflow: 'visible',
+            ...(isMobile ? {
+              top: '1rem',
+              right: '0.5rem',
+              left: 'auto',
+              bottom: 'auto'
+            } : {
+              left: '1rem',
+              bottom: `calc(${widget1Height}px + 1rem + 1rem)`
+            })
+          }}
         >
           <motion.div
             className="bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden relative"
-            style={{ width: '280px' }}
+            style={{ 
+              width: isMobile ? '180px' : '280px',
+              maxHeight: 'calc(100vh - 2rem)',
+              overflowY: 'auto'
+            }}
           >
             {/* 닫기 버튼 */}
             <Button
