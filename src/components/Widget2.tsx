@@ -86,7 +86,7 @@ export default function Widget2() {
             maxHeight: 'calc(100vh - 2rem)',
             overflow: 'visible',
             ...(isMobile ? {
-              top: '1rem',
+              top: '5rem',
               right: '0.5rem',
               left: 'auto',
               bottom: 'auto'

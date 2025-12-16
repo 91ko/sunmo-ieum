@@ -93,7 +93,7 @@ export default function Widget1() {
             maxWidth: 'calc(100vw - 1rem)', 
             width: isMobile ? '180px' : '280px',
             ...(isMobile ? {
-              top: '1rem',
+              top: '5rem',
               left: '0.5rem',
               bottom: 'auto'
             } : {
