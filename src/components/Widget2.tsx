@@ -67,8 +67,8 @@ export default function Widget2() {
           initial={{ opacity: 0, y: 20, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.9 }}
-          className="fixed bottom-[360px] left-4 z-40"
-          style={{ maxWidth: '280px' }}
+          className="fixed left-4 z-40"
+          style={{ maxWidth: '280px', bottom: '420px' }}
         >
           <motion.div
             className="bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden relative"
