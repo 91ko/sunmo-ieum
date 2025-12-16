@@ -21,6 +21,8 @@ import { Button } from "@/components/ui/button";
 import KakaoMap from "@/components/maps/KakaoMap";
 import Link from "next/link";
 import ScheduleWidget from "@/components/ScheduleWidget";
+import Widget1 from "@/components/Widget1";
+import Widget2 from "@/components/Widget2";
 
 const services = [
   { 
@@ -992,7 +994,11 @@ const HomePage = () => {
         }, `© ${new Date().getFullYear()} SeongmoIeum. All rights reserved.`)
       ),
       // 스케줄 위젯
-      React.createElement(ScheduleWidget)
+      React.createElement(ScheduleWidget),
+      // 위젯 1
+      React.createElement(Widget1),
+      // 위젯 2
+      React.createElement(Widget2)
     )
   );
 };
