@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 export default function Widget1() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   // 위젯 이미지들
   const widgetImages = [
@@ -109,17 +110,18 @@ export default function Widget1() {
                 </Button>
               )}
 
-              {/* 이미지 */}
+              {/* 이미지 - 클릭하면 확대 */}
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentImageIndex}
                   src={widgetImages[currentImageIndex]}
                   alt="위젯 1"
-                  className="w-full h-auto object-contain"
+                  className="w-full h-auto object-contain cursor-pointer"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
+                  onClick={() => setIsExpanded(true)}
                 />
               </AnimatePresence>
             </div>
@@ -138,6 +140,41 @@ export default function Widget1() {
           </motion.div>
         </motion.div>
       )}
+      
+      {/* 확대 모달 */}
+      <AnimatePresence>
+        {isExpanded && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] bg-black/80 flex items-center justify-center p-4"
+            onClick={() => setIsExpanded(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="relative max-w-4xl max-h-[90vh] w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsExpanded(false)}
+                className="absolute top-2 right-2 z-10 h-8 w-8 p-0 bg-black/50 hover:bg-black/70 text-white rounded-full"
+              >
+                <X className="h-5 w-5" />
+              </Button>
+              <img
+                src={widgetImages[currentImageIndex]}
+                alt="위젯 1 확대"
+                className="w-full h-auto object-contain rounded-lg"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </AnimatePresence>
   );
 }
